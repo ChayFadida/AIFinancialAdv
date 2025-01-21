@@ -10,7 +10,7 @@ router = APIRouter(prefix="/stocksQ&KReports", tags=["Stock Q&K Reports"])
 def analyze_and_push_to_db(stock : str):
     if not stock.isalpha():
         raise HTTPException(status_code=400, detail="Invalid stock symbol. Must be alphabetic.")
-    analysis_result = StockReportAnalysisCrew(stock).analyze()
+    analysis_result = StockReportAnalysisCrew(stock).analyzeRisks()
     repo = get_stock_report_repo()
     repo.add_report(stock_symbol=stock, analysis_data=analysis_result)
 

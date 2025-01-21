@@ -5,10 +5,12 @@ from crewAI.tools.calcTool import CalculatorTool
 from crewai_tools import FileReadTool
 from crewAI.utils.reports_api import Reports
 from config.logger_config import log
+from utils.analysis_types import AnalysisType
 import os
 
 llm = LLM(model=f"ollama/{AI_MODEL}")
 file_read_tool_desc = 'A tool to read reports from txt files'
+
 @CrewBase
 class StockReportAnalysisCrew:
     agents_config = 'configs/agents.yaml'
@@ -106,6 +108,83 @@ class StockReportAnalysisCrew:
             agent=self.investment_advisor_agent(),
         )
 
+
+    @agent
+    def market_volatility_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['financial_risk_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[
+                FileReadTool(file_path=self.report_10k, description=file_read_tool_desc),
+                FileReadTool(file_path=self.report_10q, description=file_read_tool_desc),
+                CalculatorTool(),
+            ]
+        )
+
+    @agent
+    def sector_risk_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['sector_risk_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[
+                FileReadTool(file_path=self.report_10k, description=file_read_tool_desc),
+                FileReadTool(file_path=self.report_10q, description=file_read_tool_desc),
+                CalculatorTool(),
+            ]
+        )
+
+    @agent
+    def macroeconomic_risk_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['macroeconomic_risk_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[
+                FileReadTool(file_path=self.report_10k, description=file_read_tool_desc),
+                FileReadTool(file_path=self.report_10q, description=file_read_tool_desc),
+                CalculatorTool(),
+            ]
+        )
+
+    @agent
+    def risk_summary_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['risk_summary_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[],
+        )
+
+    @task
+    def market_volatility_analysis(self) -> Task:
+        return Task(
+            config=self.tasks_config['financial_risk_analysis'],
+            agent=self.market_volatility_agent(),
+        )
+
+    @task
+    def sector_risk_analysis(self) -> Task:
+        return Task(
+            config=self.tasks_config['sector_risk_analysis'],
+            agent=self.sector_risk_agent(),
+        )
+
+    @task
+    def macroeconomic_risk_analysis(self) -> Task:
+        return Task(
+            config=self.tasks_config['macroeconomic_risk_analysis'],
+            agent=self.macroeconomic_risk_agent(),
+        )
+
+    @task
+    def risk_summary(self) -> Task:
+        return Task(
+            config=self.tasks_config['risk_summary'],
+            agent=self.risk_summary_agent(),
+        )
+
     @crew
     def crew(self) -> Crew:
         """Creates the Stock Analysis"""
@@ -116,14 +195,43 @@ class StockReportAnalysisCrew:
             verbose=True,
         )
 
-    def analyze(self):
+    def riskCrew(self) -> Crew:
+        """Creates risk Analysis"""
+        return Crew(
+            agents=[
+                self.market_volatility_agent(),
+                self.sector_risk_agent(),
+                self.macroeconomic_risk_agent(),
+                self.risk_summary_agent(),
+            ],
+            tasks=[
+                self.market_volatility_analysis(),
+                self.sector_risk_analysis(),
+                self.macroeconomic_risk_analysis(),
+                self.risk_summary()
+            ],
+            process=Process.sequential,
+            verbose=True,
+        )
+
+    def analyze(self, analysis_type: AnalysisType):
         inputs = {
             'query': 'What is the company you want to analyze?',
             'company_stock': self.stock,
         }
-        analysis_crew = self.crew()
-        log.info(f"kickoff AI for analyze report for {self.stock}")
-        crew_output = analysis_crew.kickoff(inputs=inputs)
+        # Mapping enum values to crew methods
+        crew_methods = {
+            AnalysisType.FINANCIAL: self.crew,
+            AnalysisType.RISK: self.riskCrew,
+            # Add more mappings here as you add new crew methods
+        }
+        crew_method = crew_methods.get(analysis_type)
+        if not crew_method:
+            log.error(f"Unsupported analysis type: {analysis_type}")
+            return None
+        log.info(f"Kickoff AI for {analysis_type.value} analysis for {self.stock}")
+        crew_instance = crew_method()
+        crew_output = crew_instance.kickoff(inputs=inputs)
         # Safe access to tasks_output
         try:
             taks_output = crew_output.model_dump()['tasks_output'][0]
@@ -132,3 +240,5 @@ class StockReportAnalysisCrew:
             taks_output = None
         
         return taks_output
+    
+    

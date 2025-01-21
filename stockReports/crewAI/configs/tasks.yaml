@@ -49,3 +49,68 @@ recommend:
     Your final answer MUST be a recommendation for your customer. It should be a full super detailed report, providing a 
     clear investment stance and strategy with supporting evidence.
     Make it pretty and well formatted for your customer.
+
+market_sentiment_analysis:
+  description: >
+    Analyze recent news, social media trends, and analyst reports to determine the sentiment around the {company_stock} stock. 
+    Highlight any significant sentiment shifts and their potential impact on the stock's performance.
+
+  expected_output: >
+    A summary report detailing the current market sentiment, including key drivers of sentiment shifts,
+    and their potential implications for the stock's short-term and long-term performance.
+
+financial_risk_analysis:
+  description: >
+    Assess the financial risks associated with {company_stock}, including liquidity risks, solvency risks, 
+    and creditworthiness. Analyze financial ratios and statements to identify potential red flags.
+
+  expected_output: >
+    A detailed financial risk report identifying key risk factors, red flags, and their potential 
+    impact on the stock's performance.
+
+sector_risk_analysis:
+  description: >
+    Evaluate risks specific to the sector {company_stock} belongs to, and compare its performance with key competitors. 
+    Focus on industry trends, competitive positioning, and external risks such as supply chain disruptions.
+
+  expected_output: >
+    A report summarizing the sector's risk factors, {company_stock}'s position within the sector, and any relevant 
+    comparisons to its competitors.
+
+macroeconomic_risk_analysis:
+  description: >
+    Analyze broader macroeconomic factors affecting {company_stock}, including inflation, interest rates, 
+    currency fluctuations, and geopolitical events. Assess how these factors could impact the stock's performance.
+
+  expected_output: >
+    A report summarizing macroeconomic risks, their potential impacts on {company_stock}, and strategic 
+    considerations for mitigating these risks.
+
+regulatory_risk_analysis:
+  description: >
+    Identify and evaluate regulatory risks associated with {company_stock}, including compliance challenges, 
+    potential regulatory changes, and legal risks. Highlight any potential impacts on the stock's performance.
+
+  expected_output: >
+    A detailed regulatory risk assessment report highlighting key risks, compliance considerations, and their 
+    implications for the stock.
+
+risk_report:
+  description: >
+    Combine all individual risk assessments and synthesize them into a comprehensive risk report for {company_stock}. 
+    Highlight key risks, mitigation strategies, and a holistic risk profile for the stock.
+
+  expected_output: >
+    A full risk report detailing the financial, market, sector, macroeconomic, and regulatory risks associated with {company_stock}. 
+    The report should be well-formatted, easy to understand, and provide actionable insights for the customer.
+
+risk_summary:
+  description: >
+    Aggregate the results from the market volatility, sector risk, macroeconomic risk, and geopolitical risk analyses 
+    to produce a comprehensive risk summary for investing in {company_stock}.
+    Consider the weight and impact of each risk category and how they interact with each other to influence overall investment risk.
+
+  expected_output: >
+    Provide a detailed, structured report summarizing all key risks associated with investing in {company_stock}.
+    Highlight the most significant risks, their potential impact, and any mitigating factors.
+    Include a final risk assessment and recommendation for the customer, formatted in an easily digestible and visually appealing way.
