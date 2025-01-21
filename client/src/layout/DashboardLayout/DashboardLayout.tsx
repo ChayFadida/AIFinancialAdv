@@ -15,6 +15,7 @@ import { paths } from "../../services/routes";
 import {
   Dashboard,
   ExitToApp,
+  Grade,
   Paid,
   Person,
   SmartToy,
@@ -58,10 +59,10 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       path: paths.dashboard.myNews.absolute,
     },
     {
-      id: "newInvestment",
-      label: "New Investment",
-      icon: <Paid />,
-      path: paths.dashboard.newInvestment.absolute,
+      id: "Recommendation",
+      label: "Recommendation",
+      icon: <Grade />,
+      path: paths.dashboard.Recommendation.absolute,
     },
     {
       id: "chatBot",

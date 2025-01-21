@@ -48,4 +48,9 @@ export const dashboardPaths = {
     absolute: "/dashboard/chat-bot",    // Add /dashboard prefix
     relative: "chat-bot",
   },
+
+  Recommendation: {
+    absolute: "/dashboard/recommendation",    // Add /dashboard prefix
+    relative: "recommendation",
+  },
 } as const;
