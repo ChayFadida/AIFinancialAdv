@@ -16,7 +16,6 @@ import {
   Dashboard,
   ExitToApp,
   Grade,
-  Paid,
   Person,
   SmartToy,
 } from "@mui/icons-material";

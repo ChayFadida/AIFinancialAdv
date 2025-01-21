@@ -461,7 +461,6 @@ import {
   ListItem,
   ListItemText,
   ListItemButton,
-  ListItemSecondaryAction,
   IconButton,
   Divider,
   Chip,
@@ -470,7 +469,6 @@ import {
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
-import TimelineIcon from '@mui/icons-material/Timeline';
 
 interface RecommendationHistory {
   id: string;
