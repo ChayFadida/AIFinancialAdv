@@ -5,6 +5,7 @@ import { Dashboard, Portfolio, News } from "../../../pages";
 import Chatbot from "../../../pages/Chatbot/Chatbot";
 import { DashboardLayout } from "../../../layout";
 import { useUser } from "../../../context";
+import Recommendation from "../../../pages/Recommendation/recommendation";
 
 function Layout() {
   const { user } = useUser();
@@ -38,8 +39,9 @@ export const dashboardRoutes: RouteObject[] = [
         element: <News />,
       },
       {
-        path: dashboardPaths.newInvestment.relative,
-        element: <div>New Investment</div>,
+        path: dashboardPaths.Recommendation.relative,
+        // element: <div>Recommandation</div>,
+        element: <Recommendation />,
       },
       //{ path: dashboardPaths.chatBot.relative, element: <div>Chat Bot</div> },
       {
