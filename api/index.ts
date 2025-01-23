@@ -4,9 +4,9 @@ dotenv.config();
 
 import express from 'express';
 import { connect as mongoConnect } from 'mongoose';
-
 import { authRouter } from './src/features/auth';
 import { conversationRouter } from './src/features/conversation/router';
+import { reportsRouter } from './src/features/reports/router';
 
 const app = express();
 
@@ -50,7 +50,7 @@ app.use(cors());
 
 app.use('/api/auth', authRouter);
 app.use('/api/conversation', conversationRouter)
-
+app.use('/api/reports', reportsRouter)
 app.get('/', (_req, res) => {
   res.send('Server api');
 });
