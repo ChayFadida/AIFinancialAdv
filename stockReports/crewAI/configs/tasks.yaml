@@ -114,3 +114,42 @@ risk_summary:
     Provide a detailed, structured report summarizing all key risks associated with investing in {company_stock}.
     Highlight the most significant risks, their potential impact, and any mitigating factors.
     Include a final risk assessment and recommendation for the customer, formatted in an easily digestible and visually appealing way.
+
+market_expansion_analysis:
+  description: >
+    Assess and summarize a company's efforts to enter new geographical or sector-specific markets. 
+    Focus on how this expansion may impact the company’s revenue growth, market share, and long-term positioning.
+    Provide an analysis of market risks, potential challenges, and opportunities in these new markets.
+  expected_output: >
+    A detailed report outlining the company's expansion plans, including a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats)
+    of entering these markets and a forecast of potential financial impact, including revenue growth projections and market share shifts.
+
+product_innovation_impact:
+  description: >
+    Evaluate the potential impact of upcoming product launches (e.g., new products, services, or technological innovations) on the company's earnings.
+    Consider product features, market demand, competition, and consumer interest.
+  expected_output: >
+    A comprehensive analysis that includes a timeline for product launches, expected market reception, and potential revenue and earnings impact
+    from these innovations. Include comparisons with competitors' products, if applicable.
+
+mergers_acquisitions_assessment:
+  description: >
+    Review any mergers, acquisitions, or strategic partnerships the company is considering. 
+    Analyze how these actions could affect the company's long-term growth prospects and market positioning.
+  expected_output: >
+    An in-depth assessment of the strategic value of potential mergers and acquisitions, including their impact on revenue growth,
+    operational efficiency, market presence, and competitive advantage. Provide a risk analysis for each potential M&A deal.
+
+growth_summary:
+  description: >
+    Aggregate the insights from the market expansion analysis, product innovation impact, and M&A assessment 
+    to produce a comprehensive summary of {company_stock}'s growth potential. 
+    Evaluate the weight and impact of each growth driver and how they interact with one another to influence 
+    {company_stock}'s overall growth trajectory. Highlight opportunities and challenges in the context of current market conditions.
+    
+  expected_output: >
+    Provide a detailed, structured report summarizing all key growth drivers for {company_stock}, 
+    including market expansion opportunities, product innovation potential, and the impact of mergers and acquisitions. 
+    Highlight the most significant growth opportunities, their expected financial impact, and potential risks. 
+    Include a final growth assessment and actionable recommendations for {company_stock}, formatted to be visually appealing 
+    and easy to understand for stakeholders.

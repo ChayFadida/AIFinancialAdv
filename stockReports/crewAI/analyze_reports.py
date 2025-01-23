@@ -6,6 +6,7 @@ from crewai_tools import FileReadTool
 from crewAI.utils.reports_api import Reports
 from config.logger_config import log
 from utils.analysis_types import AnalysisType
+from concurrent.futures import ThreadPoolExecutor
 import os
 
 llm = LLM(model=f"ollama/{AI_MODEL}")
@@ -157,6 +158,51 @@ class StockReportAnalysisCrew:
             tools=[],
         )
 
+    @agent
+    def market_expansion_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['market_expansion_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[
+                FileReadTool(file_path=self.report_10k, description=file_read_tool_desc),
+                FileReadTool(file_path=self.report_10q, description=file_read_tool_desc)
+            ]
+        )
+
+    @agent
+    def product_innovation_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['product_innovation_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[
+                FileReadTool(file_path=self.report_10k, description=file_read_tool_desc),
+                FileReadTool(file_path=self.report_10q, description=file_read_tool_desc)
+            ]
+        )
+
+    @agent
+    def mergers_acquisitions_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['mergers_acquisitions_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[
+                FileReadTool(file_path=self.report_10k, description=file_read_tool_desc),
+                FileReadTool(file_path=self.report_10q, description=file_read_tool_desc)
+            ]
+        )
+
+    @agent
+    def growth_recommendation_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['growth_recommendation_analyst'],
+            verbose=True,
+            llm=llm,
+            tools=[]
+        )
+
     @task
     def market_volatility_analysis(self) -> Task:
         return Task(
@@ -183,6 +229,34 @@ class StockReportAnalysisCrew:
         return Task(
             config=self.tasks_config['risk_summary'],
             agent=self.risk_summary_agent(),
+        )
+    
+    @task
+    def market_expansion_analysis(self) -> Task: 
+        return Task(
+            config=self.tasks_config['market_expansion_analysis'],
+            agent=self.market_expansion_agent(),
+        )
+
+    @task
+    def mergers_acquisitions_assessment(self) -> Task:
+        return Task(
+            config=self.tasks_config['mergers_acquisitions_assessment'],
+            agent=self.mergers_acquisitions_agent(),
+        )
+
+    @task
+    def product_innovation_impact(self) -> Task:
+        return Task(
+            config=self.tasks_config['product_innovation_impact'],
+            agent=self.product_innovation_agent(),
+        )
+
+    @task
+    def growth_recommendation(self) -> Task:
+        return Task(
+            config=self.tasks_config['growth_summary'],
+            agent=self.growth_recommendation_agent(),
         )
 
     @crew
@@ -214,6 +288,25 @@ class StockReportAnalysisCrew:
             verbose=True,
         )
 
+    def growthCrew(self) -> Crew:
+        """Creates Growth Analysis Crew"""
+        return Crew(
+            agents=[
+                self.market_expansion_agent(),
+                self.product_innovation_agent(),
+                self.mergers_acquisitions_agent(),
+                self.growth_recommendation_agent(),
+            ],
+            tasks=[
+                self.market_expansion_analysis(),
+                self.product_innovation_impact(),
+                self.mergers_acquisitions_assessment(),
+                self.growth_recommendation()
+            ],
+            process=Process.sequential,
+            verbose=True,
+        )
+
     def analyze(self, analysis_type: AnalysisType):
         inputs = {
             'query': 'What is the company you want to analyze?',
@@ -223,7 +316,7 @@ class StockReportAnalysisCrew:
         crew_methods = {
             AnalysisType.FINANCIAL: self.crew,
             AnalysisType.RISK: self.riskCrew,
-            # Add more mappings here as you add new crew methods
+            AnalysisType.GROWTH: self.growthCrew
         }
         crew_method = crew_methods.get(analysis_type)
         if not crew_method:
@@ -234,11 +327,26 @@ class StockReportAnalysisCrew:
         crew_output = crew_instance.kickoff(inputs=inputs)
         # Safe access to tasks_output
         try:
-            taks_output = crew_output.model_dump()['tasks_output'][0]
+            taks_output = crew_output.model_dump()['tasks_output'][-1]['raw']
         except (KeyError, IndexError, AttributeError) as e:
             log.error(f"Error accessing 'tasks_output': {e}")
             taks_output = None
         
         return taks_output
     
+    def getReport(self):
+        res = {}
+        
+        # Using ThreadPoolExecutor to run the analyze method calls in parallel
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            # Submit the analysis tasks to the executor
+            future_risks = executor.submit(self.analyze, AnalysisType.RISK)
+            future_grow = executor.submit(self.analyze, AnalysisType.GROWTH)
+            
+            # Wait for the tasks to complete and store the results in the dictionary
+            res["risks"] = future_risks.result()
+            res["grow"] = future_grow.result()
+        
+        return res
+
     
