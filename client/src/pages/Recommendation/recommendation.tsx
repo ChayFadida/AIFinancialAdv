@@ -22,7 +22,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { getQRReport } from "../../features/report";
-
+import { getFinanceData } from "../../features/finance";
 interface RecommendationHistory {
   id: string;
   stockName: string;
@@ -76,11 +76,13 @@ const Recommendation: React.FC = () => {
   const generateReport = async (stockName: string, analysisType: string): Promise<StockReport> => {
     const report = await getQRReport(stockName);  // Wait for the promise to resolve
     const analysis_data = report.analysis_data
-    console.log(analysis_data)
+    const financeData = await getFinanceData(stockName)
+    console.log(financeData)
     return {
       ...report,
       stockName,
       analysisType,
+      financeData,
       date: new Date().toISOString(),
       recommendation: 'Buy',
       confidence: 85,
@@ -88,10 +90,10 @@ const Recommendation: React.FC = () => {
       targetPrice: 210.50,
       summary: `Based on our comprehensive analysis of ${stockName}, we observe strong fundamental indicators and positive market sentiment. The company shows robust financial health with increasing revenue streams and effective cost management.`,
       keyMetrics: [
-        { label: 'Revenue Growth', value: '$96.7B', change: 8.1 },
-        { label: 'Profit Margin', value: '25.3%', change: 2.4 },
-        { label: 'Cash Flow', value: '$24.3B', change: 5.7 },
-        { label: 'P/E Ratio', value: '28.5', change: -1.2 }
+        { label: 'Revenue Growth', value: financeData.totalRevenue, change: financeData.revenueGrowth },
+        { label: 'Profit Margin', value: financeData.profitMargins },
+        { label: 'Cash Flow', value: financeData.freeCashFlow},
+        { label: 'P/E Ratio', value: financeData.currentRatio}
       ],
       analysisPoints: [
         {

@@ -13,7 +13,6 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
   const response = await aiAxios.get(`/stocksQ%26KReports/getLatestReport`, {
     params: { stock_symbol: stock_symbol },
   });
-  console.log(response.data)
 
   if (!response.data) {
     return res.status(404).json({ message: 'Report not found' });
