@@ -21,6 +21,7 @@ import {
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import ReactMarkdown from 'react-markdown'
 import { getQRReport } from "../../features/report";
 import { getFinanceData } from "../../features/finance";
 interface RecommendationHistory {
@@ -414,7 +415,7 @@ const Recommendation: React.FC = () => {
                       <Typography variant="h6">
                         {metric.value}
                       </Typography>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                      {!!metric.change && <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                         {metric.change > 0 ? <TrendingUpIcon color="success" /> : <TrendingDownIcon color="error" />}
                         <Typography 
                           variant="body2"
@@ -424,7 +425,7 @@ const Recommendation: React.FC = () => {
                         >
                           {Math.abs(metric.change)}%
                         </Typography>
-                      </Box>
+                      </Box>}
                     </Box>
                   ))}
                 </Box>
@@ -442,12 +443,10 @@ const Recommendation: React.FC = () => {
                       bgcolor: 'rgba(255, 255, 255, 0.05)',
                     }}
                   >
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="h6" gutterBottom>
                       {point.title}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                      {point.content}
-                    </Typography>
+                    <ReactMarkdown className="prose">{point.content}</ReactMarkdown>
                   </Box>
                 ))}
               </Box>

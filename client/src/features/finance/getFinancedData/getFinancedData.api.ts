@@ -22,7 +22,7 @@ export async function getFinanceData(stockName: string): Promise<FinancialMetric
   return {
     totalRevenue: financeData.totalRevenue?.fmt || financeData.totalRevenue,
     profitMargins: financeData.profitMargins?.fmt || financeData.profitMargins,
-    freeCashFlow: financeData.freeCashFlow?.fmt || financeData.freeCashFlow,
+    freeCashFlow: financeData.freeCashflow?.fmt || financeData.freeCashflow,
     peRatio: financeData.peRatio?.fmt || financeData.peRatio,
     revenueGrowth: financeData.revenueGrowth?.raw * 100 || financeData.revenueGrowth,
     currentRatio: financeData.currentRatio?.fmt || financeData.currentRatio
