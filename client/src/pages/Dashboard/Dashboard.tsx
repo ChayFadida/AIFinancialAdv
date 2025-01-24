@@ -1,18 +1,23 @@
 import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import { Card, Select, StocksChart } from "../../components";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { yahooChartAxios } from "../../services/axios/yahooChartAxios";
+import { useUser } from "../../context";
 
-const stocks = [
-  { id: "AAPL", label: "Apple Inc." },
-  { id: "MSFT", label: "Microsoft Corporation" },
-  { id: "GOOGL", label: "Alphabet Inc." },
-  { id: "AMZN", label: "Amazon.com Inc." },
-  { id: "TSLA", label: "Tesla Inc." },
-];
+// const stocks = [
+//   { id: "AAPL", label: "Apple Inc." },
+//   { id: "MSFT", label: "Microsoft Corporation" },
+//   { id: "GOOGL", label: "Alphabet Inc." },
+//   { id: "AMZN", label: "Amazon.com Inc." },
+//   { id: "TSLA", label: "Tesla Inc." },
+// ];
 
 export const Dashboard = () => {
-  const [currentStock, setCurrentStock] = useState(stocks[0].id);
+  const { user } = useUser()
+
+  const userStocks = useMemo(() => user?.stocks?.map(stock => ({ id: stock.stock_symbol, label: stock.company })) || [], [user])
+
+  const [currentStock, setCurrentStock] = useState(userStocks[0].id);
   const [stockHistory, setStockHistory] = useState([]);
   const [isStockHistoryLoading, setIsStockHistoryLoading] = useState(false);
 
@@ -58,15 +63,17 @@ export const Dashboard = () => {
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
+                marginBottom={2}
               >
-                <Box width="250px">
-                  <Select
-                    label="Stock"
-                    value={currentStock}
-                    onChange={handleStockChange}
-                    options={stocks}
-                  />
-                </Box>
+                <Select
+                  label="Stock"
+                  value={currentStock}
+                  onChange={handleStockChange}
+                  options={userStocks}
+                  width={250}
+                />
+                <Typography fontWeight={600} fontSize={30}>{currentStock}</Typography>
+                <Box sx={{width: '250px'}}></Box>
               </Box>
             }
             sx={{ flex: 1 }}
