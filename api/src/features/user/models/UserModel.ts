@@ -23,9 +23,14 @@ const UserSchema = new Schema<UserType>(
       required: [true, 'User password is required'],
     },
     stocks: {
-      type: String,
-      default: '',
-    },
+      type: [
+        {
+          symbol: { type: String, required: true },
+          company_name: { type: String, required: true },
+        },
+      ],
+      default: []
+    }
   },
   { timestamps: true },
 );

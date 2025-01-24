@@ -69,7 +69,8 @@ export function Register() {
   };
 
   // Handle form submission
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
     if (!validateForm()) return;
 
     try {
@@ -103,92 +104,93 @@ export function Register() {
           backgroundColor: "#121212",
         }}
       >
-        <Box
-          sx={{
-            width: 400,
-            padding: 4,
-            backgroundColor: "#1e1e1e",
-            borderRadius: 2,
-            boxShadow: 3,
-            textAlign: "center",
-          }}
-        >
-          <Typography variant="h5" sx={{ mb: 2, color: "white" }}>
-            Register
-          </Typography>
-          <TextField
-            label="Name"
-            name="name"
-            variant="outlined"
-            fullWidth
-            sx={{ mb: 2 }}
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <TextField
-            label="Email"
-            name="email"
-            type="email"
-            variant="outlined"
-            fullWidth
-            sx={{ mb: 2 }}
-            value={formData.email}
-            onChange={handleChange}
-            error={!!error && error.includes("email")}
-            helperText={error && error.includes("email") ? error : ""}
-          />
-          <TextField
-            label="Password"
-            name="password"
-            type="password"
-            variant="outlined"
-            fullWidth
-            sx={{ mb: 2 }}
-            value={formData.password}
-            onChange={handleChange}
-            error={!!passwordError}
-            helperText={passwordError}
-          />
-          <TextField
-            label="Confirm Password"
-            name="confirmPassword"
-            type="password"
-            variant="outlined"
-            fullWidth
-            sx={{ mb: 2 }}
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            error={!!passwordError}
-            helperText={passwordError}
-          />
-          <TextField
-            label="Stocks to follow (separate with a ',')"
-            name="stocks"
-            variant="outlined"
-            fullWidth
-            sx={{ mb: 2 }}
-            value={formData.stocks}
-            onChange={handleChange}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{ mb: 2 }}
-            onClick={handleSubmit}
+        <form onSubmit={handleSubmit}>
+          <Box
+            sx={{
+              width: 400,
+              padding: 4,
+              backgroundColor: "#1e1e1e",
+              borderRadius: 2,
+              boxShadow: 3,
+              textAlign: "center",
+            }}
           >
-            Register
-          </Button>
-          <Button
-            variant="text"
-            color="secondary"
-            fullWidth
-            onClick={() => navigate("/login")}
-          >
-            Back to Login
-          </Button>
-        </Box>
-
+            <Typography variant="h5" sx={{ mb: 2, color: "white" }}>
+              Register
+            </Typography>
+            <TextField
+              label="Name"
+              name="name"
+              variant="outlined"
+              fullWidth
+              sx={{ mb: 2 }}
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <TextField
+              label="Email"
+              name="email"
+              type="email"
+              variant="outlined"
+              fullWidth
+              sx={{ mb: 2 }}
+              value={formData.email}
+              onChange={handleChange}
+              error={!!error && error.includes("email")}
+              helperText={error && error.includes("email") ? error : ""}
+            />
+            <TextField
+              label="Password"
+              name="password"
+              type="password"
+              variant="outlined"
+              fullWidth
+              sx={{ mb: 2 }}
+              value={formData.password}
+              onChange={handleChange}
+              error={!!passwordError}
+              helperText={passwordError}
+            />
+            <TextField
+              label="Confirm Password"
+              name="confirmPassword"
+              type="password"
+              variant="outlined"
+              fullWidth
+              sx={{ mb: 2 }}
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              error={!!passwordError}
+              helperText={passwordError}
+            />
+            <TextField
+              label="Stocks to follow (separate with a ',')"
+              name="stocks"
+              variant="outlined"
+              fullWidth
+              sx={{ mb: 2 }}
+              value={formData.stocks}
+              onChange={handleChange}
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ mb: 2 }}
+              type="submit"
+            >
+              Register
+            </Button>
+            <Button
+              variant="text"
+              color="secondary"
+              fullWidth
+              onClick={() => navigate("/login")}
+            >
+              Back to Login
+            </Button>
+          </Box>
+        </form>
         {/* Snackbar for Success */}
         {successMessage && (
           <Snackbar

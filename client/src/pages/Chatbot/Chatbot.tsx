@@ -27,9 +27,14 @@ export default function Chatbot() {
 
   useEffect(() => {
     const getConversationMessages = async () => {
-      const messagesResponse = await getConversation()
+      try {
 
-      setMessages(messagesResponse)
+        const messagesResponse = await getConversation()
+
+        setMessages(messagesResponse)
+      } catch (err) {
+        console.error(err);
+      }
     }
     getConversationMessages()
   }, [])
@@ -44,7 +49,8 @@ export default function Chatbot() {
     scrollToBottom();
   }, [messages]);
 
-  const handleSend = async () => {
+  const handleSend = async (e: React.FormEvent) => {
+    e.preventDefault()
     if (input.trim()) {
       const userMessage: Message = {
         content: input,
@@ -201,30 +207,32 @@ export default function Chatbot() {
             ))}
             <div ref={messagesEndRef} />
           </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1,
-              pt: 2,
-            }}
-          >
-            <TextField
-              fullWidth
-              variant="outlined"
-              placeholder="Type your message..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-            />
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleSend}
-              endIcon={<SendIcon />}
+          <form onSubmit={handleSend}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+                pt: 2,
+              }}
             >
-              Send
-            </Button>
-          </Box>
+              <TextField
+                fullWidth
+                variant="outlined"
+                placeholder="Type your message..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                endIcon={<SendIcon />}
+                type="submit"
+              >
+                Send
+              </Button>
+            </Box>
+          </form>
         </CardContent>
       </Card>
     </Box>

@@ -1,18 +1,30 @@
 import { Box, Grid2 as Grid, Typography } from "@mui/material";
 import { Card, Select, StocksChart } from "../../components";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { yahooChartAxios } from "../../services/axios/yahooChartAxios";
+import { useUser } from "../../context";
 
-const stocks = [
-  { id: "AAPL", label: "Apple Inc." },
-  { id: "MSFT", label: "Microsoft Corporation" },
-  { id: "GOOGL", label: "Alphabet Inc." },
-  { id: "AMZN", label: "Amazon.com Inc." },
-  { id: "TSLA", label: "Tesla Inc." },
-];
+// const stocks = [
+//   { id: "AAPL", label: "Apple Inc." },
+//   { id: "MSFT", label: "Microsoft Corporation" },
+//   { id: "GOOGL", label: "Alphabet Inc." },
+//   { id: "AMZN", label: "Amazon.com Inc." },
+//   { id: "TSLA", label: "Tesla Inc." },
+// ];
 
 export const Dashboard = () => {
-  const [currentStock, setCurrentStock] = useState(stocks[0].id);
+  const { user } = useUser()
+
+  const userStocks = useMemo(() => {
+    const stocks = user?.stocks?.split(',') || []
+
+    return stocks.map(stock => ({
+      id: stock,
+      label: stock
+    })) || []
+  }, [user])
+
+  const [currentStock, setCurrentStock] = useState(userStocks[0].id);
   const [stockHistory, setStockHistory] = useState([]);
   const [isStockHistoryLoading, setIsStockHistoryLoading] = useState(false);
 
@@ -64,7 +76,7 @@ export const Dashboard = () => {
                     label="Stock"
                     value={currentStock}
                     onChange={handleStockChange}
-                    options={stocks}
+                    options={userStocks}
                   />
                 </Box>
               </Box>

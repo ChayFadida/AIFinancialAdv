@@ -23,10 +23,11 @@ import { Drawer, DrawerHeader, StyledAppBar } from "./DashboardLayout.styles";
 import { NavItem } from "./NavItem";
 import { appStorage } from "../../services/appStorage";
 import { useUser } from "../../context";
+import { Avatar } from "@mui/material";
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const theme = useTheme();
-  const { handleUser } = useUser();
+  const { user, handleUser } = useUser();
 
   const [open, setOpen] = React.useState(false);
 
@@ -94,15 +95,25 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             background: (theme) => theme.palette.background.paper,
           }}
         >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ marginRight: 5, ...(open && { display: "none" }) }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', }}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                sx={{ marginRight: 5, ...(open && { display: "none" }) }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6">Hello, {user?.name}</Typography>
+            </Box>
+            <Box >
+              <Avatar sx={{ marginRight: 2 }}>{user?.name.substring(0, 1).toUpperCase()}</Avatar>
+              {/* <IconButton><ChevronDown></IconButton> */}
+            </Box>
+          </Box>
         </Toolbar>
         <Divider />
       </StyledAppBar>

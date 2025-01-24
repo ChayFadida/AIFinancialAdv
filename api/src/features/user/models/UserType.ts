@@ -3,6 +3,6 @@ export interface UserType {
   name: string;
   email: string;
   password: string;
-  stocks: string;
+  stocks: { symbol: string; company_name: string; }[];
   createdAt: Date;
 }
