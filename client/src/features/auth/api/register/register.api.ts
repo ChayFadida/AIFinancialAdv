@@ -5,7 +5,7 @@ export interface RegisterRequest {
   name: string;
   email: string;
   password: string;
-  stocks: string;
+  stocks: { stock_symbol: string; company: string }[]
 }
 
 export type RegisterResponse = User;

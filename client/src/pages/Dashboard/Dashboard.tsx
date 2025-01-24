@@ -15,14 +15,7 @@ import { useUser } from "../../context";
 export const Dashboard = () => {
   const { user } = useUser()
 
-  const userStocks = useMemo(() => {
-    const stocks = user?.stocks?.split(',') || []
-
-    return stocks.map(stock => ({
-      id: stock,
-      label: stock
-    })) || []
-  }, [user])
+  const userStocks = useMemo(() => user?.stocks?.map(stock => ({ id: stock.stock_symbol, label: stock.company })) || [], [user])
 
   const [currentStock, setCurrentStock] = useState(userStocks[0].id);
   const [stockHistory, setStockHistory] = useState([]);
@@ -70,15 +63,17 @@ export const Dashboard = () => {
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
+                marginBottom={2}
               >
-                <Box width="250px">
-                  <Select
-                    label="Stock"
-                    value={currentStock}
-                    onChange={handleStockChange}
-                    options={userStocks}
-                  />
-                </Box>
+                <Select
+                  label="Stock"
+                  value={currentStock}
+                  onChange={handleStockChange}
+                  options={userStocks}
+                  width={250}
+                />
+                <Typography fontWeight={600} fontSize={30}>{currentStock}</Typography>
+                <Box sx={{width: '250px'}}></Box>
               </Box>
             }
             sx={{ flex: 1 }}

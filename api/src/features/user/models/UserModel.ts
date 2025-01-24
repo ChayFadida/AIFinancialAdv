@@ -25,8 +25,8 @@ const UserSchema = new Schema<UserType>(
     stocks: {
       type: [
         {
-          symbol: { type: String, required: true },
-          company_name: { type: String, required: true },
+          stock_symbol: { type: String, required: true },
+          company: { type: String, required: true },
         },
       ],
       default: []

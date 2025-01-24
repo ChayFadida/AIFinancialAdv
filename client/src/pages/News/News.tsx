@@ -3,11 +3,13 @@ import { yahooAxios } from "../../services/axios/yahooAxios";
 import { Box, CircularProgress } from "@mui/material";
 import { Article, NewsArticle } from "./Article";
 import { SidePanel } from "./SidePanel";
+import { useUser } from "../../context";
 
 const SIDE_PANEL_WIDTH = 350;
 const SPACING = 24;
 
 export const News = () => {
+  const { user } = useUser()
   const [news, setNews] = useState<NewsArticle[]>([]);
   const [isLoadingNews, setIsLoadingNews] = useState(false);
 
@@ -36,10 +38,15 @@ export const News = () => {
   useEffect(() => {
     const getNews = async () => {
       try {
+        const stocksSymbol = user?.stocks.reduce((acc, stock) => {
+          if (!acc.length) return stock.stock_symbol;
+
+          return `${acc},${stock.stock_symbol}`
+        }, '' as string)
         setIsLoadingNews(true);
         const response = await yahooAxios.get("/news/list-by-symbol", {
           params: {
-            s: "AAPL,GOOGL,TSLA",
+            s: stocksSymbol,
             snippetCount: "51",
           },
         });
@@ -71,8 +78,8 @@ export const News = () => {
   }, []);
 
   return (
-    <Box sx={{ 
-      position: 'relative', 
+    <Box sx={{
+      position: 'relative',
       width: '100%',
       minHeight: '100vh'
     }}>
@@ -88,9 +95,9 @@ export const News = () => {
           <CircularProgress color="primary" />
         </Box>
       ) : (
-        <Box 
+        <Box
           ref={containerRef}
-          sx={{ 
+          sx={{
             display: "flex",
             gap: `${SPACING}px`,
             position: "relative",

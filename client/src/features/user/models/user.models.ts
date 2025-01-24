@@ -3,7 +3,7 @@ export interface User {
   name: string;
   email: string;
   token: string;
-  stocks: string;
+  stocks: { stock_symbol: string, company: string }[];
   createdAt: Date;
   updatedAt: Date;
 }

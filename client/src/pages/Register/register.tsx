@@ -13,19 +13,33 @@ import { useNavigate } from "react-router-dom";
 import { register } from "../../features/auth/api";
 import { appStorage } from "../../services/appStorage";
 import { useUser } from "../../context";
+import Checkbox from '@mui/material/Checkbox';
+import Autocomplete from '@mui/material/Autocomplete';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import company_symbol from "../../utils/company_symbol.json"; // Import your JSON file
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 export function Register() {
   const theme = useTheme();
   const navigate = useNavigate();
   const { handleUser } = useUser();
 
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = React.useState<{
+    name: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+    stocks: { stock_symbol: string; company: string }[]; // Define the correct type
+  }>({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
-    stocks: "",
+    stocks: [], // Initialize as an empty array
   });
+  
   const [error, setError] = React.useState("");
   const [passwordError, setPasswordError] = React.useState("");
   const [successMessage, setSuccessMessage] = React.useState("");
@@ -70,17 +84,17 @@ export function Register() {
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!validateForm()) return;
-
+  
     try {
       const user = await register({
         name: formData.name,
         email: formData.email,
         password: formData.password, // Password sent as plain text, hash on the backend
-        stocks: formData.stocks, // Stocks as a comma-separated string
+        stocks: formData.stocks
       });
-
+  
       if (user.id) {
         appStorage.setToken(user.token);
         handleUser(user);
@@ -91,6 +105,7 @@ export function Register() {
       setError("Failed to register user. Please try again later.");
     }
   };
+  
 
   return (
     <AppProvider theme={theme}>
@@ -163,15 +178,34 @@ export function Register() {
               error={!!passwordError}
               helperText={passwordError}
             />
-            <TextField
-              label="Stocks to follow (separate with a ',')"
-              name="stocks"
-              variant="outlined"
-              fullWidth
-              sx={{ mb: 2 }}
+            <Autocomplete
+              multiple
+              id="stocks-to-follow"
+              options={company_symbol} // Use the JSON data directly
+              disableCloseOnSelect
+              getOptionLabel={(option) => String(option.stock_symbol)} // Convert to string
               value={formData.stocks}
-              onChange={handleChange}
+              onChange={(event, newValue) => {
+                setFormData({ ...formData, stocks: newValue as { stock_symbol: string; company: string }[] }); // Explicitly cast the type
+              }}
+              renderOption={(props, option, { selected }) => (
+                <li {...props}>
+                  <Checkbox
+                    icon={icon}
+                    checkedIcon={checkedIcon}
+                    style={{ marginRight: 8 }}
+                    checked={selected}
+                  />
+                  {option.stock_symbol} ({option.company})
+                </li>
+              )}
+              renderInput={(params) => (
+                <TextField {...params} label="Stocks to follow" placeholder="Select stocks" fullWidth />
+              )}
+              sx={{ mb: 2 }}
             />
+
+
             <Button
               variant="contained"
               color="primary"
