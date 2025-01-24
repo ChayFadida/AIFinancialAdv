@@ -1,4 +1,4 @@
-import { yahooChartAxios } from "../../../services";
+import { yahooChartAxios } from "../../../services/axios/yahooChartAxios";
 
 export type YahooResponse = any;
 interface FinancialMetrics {
