@@ -183,7 +183,7 @@ export function Register() {
               id="stocks-to-follow"
               options={company_symbol} // Use the JSON data directly
               disableCloseOnSelect
-              getOptionLabel={(option) => String(option.stock_symbol)} // Convert to string
+              getOptionLabel={(option) => String(option.company)} // Convert to string
               value={formData.stocks}
               onChange={(event, newValue) => {
                 setFormData({ ...formData, stocks: newValue as { stock_symbol: string; company: string }[] }); // Explicitly cast the type
