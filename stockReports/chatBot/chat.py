@@ -2,22 +2,14 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel
 from typing import List, Dict
-
+from config.app_contex import AI_MODEL
+from utils.prompts.prompts import chat_bot_template
 class ChatRequest(BaseModel):
     history: List[Dict[str, str]]  # Each entry has "role" ("user" or "chat") and "content"
     question: str
 
 
-chat_bot_template = """
-    You are a financial expert specializing in providing advice to middle-class working families. Use your expertise to answer the question below.
-    This is the conversation history: {history}
-
-    Question: {question}
-
-    Answer:
-"""
-
-llm = ChatOllama(model="llama3.2-vision:11b")
+llm = ChatOllama(model=AI_MODEL)
 prompt = ChatPromptTemplate.from_template(chat_bot_template)
 
 def get_chatbot_chain():
