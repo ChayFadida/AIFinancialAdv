@@ -60,20 +60,7 @@ const Recommendation: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const resultRef = React.useRef<HTMLDivElement>(null);
   
-  const [history, setHistory] = React.useState<RecommendationHistory[]>([
-    {
-      id: "1",
-      stockName: "AAPL",
-      analysisType: "Quarterly Reports",
-      date: "2024-03-20"
-    },
-    {
-      id: "2",
-      stockName: "GOOGL",
-      analysisType: "Both",
-      date: "2024-03-19"
-    },
-  ]);
+  const [history, setHistory] = React.useState<RecommendationHistory[]>([]);
   const generateReport = async (stockName: string, analysisType: string): Promise<StockReport> => {
     const report = await getQRReport(stockName);  // Wait for the promise to resolve
     const analysis_data = report.analysis_data
@@ -86,35 +73,35 @@ const Recommendation: React.FC = () => {
       financeData,
       date: new Date().toISOString(),
       recommendation: 'Buy',
-      confidence: 85,
+      confidence: analysis_data.score,
       currentPrice: 175.34,
       targetPrice: 210.50,
-      summary: `Based on our comprehensive analysis of ${stockName}, we observe strong fundamental indicators and positive market sentiment. The company shows robust financial health with increasing revenue streams and effective cost management.`,
+      summary: analysis_data.summary,
       keyMetrics: [
-        { label: 'Revenue Growth', value: financeData.totalRevenue, change: financeData.revenueGrowth },
+        { label: 'Revenue Growth', value: financeData.totalRevenue },
         { label: 'Profit Margin', value: financeData.profitMargins },
         { label: 'Cash Flow', value: financeData.freeCashFlow},
         { label: 'P/E Ratio', value: financeData.currentRatio}
       ],
       analysisPoints: [
         {
-          title: 'Financial Performance',
-          content: 'Strong quarterly results with revenue exceeding expectations by 12%. Consistent profit margin improvement observed.',
+          title: 'Industry Trends and Market Position',
+          content: analysis_data.market_position,
           sentiment: 'positive'
         },
         {
-          title: 'Market Position',
-          content: 'Leading market share in key segments with expanding global presence. New product launches expected to drive growth.',
+          title: 'Valuation of the Company',
+          content: analysis_data.valuation,
           sentiment: 'positive'
         },
         {
           title: 'Risk Factors',
-          content: analysis_data.risks,
+          content: analysis_data.risk,
           sentiment: 'negative'
         },
         {
           title: 'Company Growth',
-          content: analysis_data.grow,
+          content: analysis_data.growth,
           sentiment: 'neutral'
         }
       ]
@@ -400,7 +387,7 @@ const Recommendation: React.FC = () => {
               <Box sx={{ mb: 4 }}>
                 <Typography variant="h6" gutterBottom>Summary</Typography>
                 <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                {report.summary}
+                <ReactMarkdown className="prose">{report.summary}</ReactMarkdown>
                 </Typography>
               </Box>
 

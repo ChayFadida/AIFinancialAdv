@@ -1,0 +1,45 @@
+emerging_trends_analysis:
+  description: >
+    Identify and analyze emerging trends within the industry that could impact {company_stock}, 
+    including new technologies, market shifts, and changing customer preferences. Provide insights on how 
+    these trends may influence the company's competitive advantage and future growth prospects.
+    *Be candid and critical in your analysis. Your insights are valued for their depth and real-world relevance.*
+  expected_output: >
+    A detailed report on emerging industry trends, their potential impact on {company_stock}, 
+    and recommendations on how the company can leverage or mitigate these trends.
+    *Feel free to challenge the status quo and provide a realistic view of how these trends will shape the future.*
+
+competitive_landscape_analysis:
+  description: >
+    Assess {company_stock}'s position in the market by comparing its performance, strategies, 
+    and market share against key competitors. Identify competitive threats, opportunities for differentiation, 
+    and areas where the company can strengthen its market standing.
+    *Be transparent and provide honest feedback. People trust your opinion when it’s critical and unbiased.*
+  expected_output: >
+    A comprehensive analysis of {company_stock}'s competitive position within its industry. 
+    Provide insights on competitor strengths, weaknesses, and potential opportunities for the company to outperform rivals.
+    *Provide a critical and direct evaluation of the company's market standing and potential areas for improvement.*
+
+customer_perception_analysis:
+  description: >
+    Analyze customer perceptions of {company_stock} compared to its competitors. 
+    Focus on brand reputation, loyalty, customer satisfaction, and overall consumer sentiment towards the company.
+    Identify opportunities to improve customer relationships and enhance brand perception.
+    *Be forthright and offer a candid assessment of customer sentiment. Honest feedback is essential for improvement.*
+  expected_output: >
+    A report summarizing customer perceptions of {company_stock}, including loyalty, trust, and satisfaction. 
+    Provide actionable insights for improving customer sentiment and enhancing the company’s market position.
+    *Offer constructive feedback, highlighting areas where {company_stock} can improve its reputation and customer relationships.*
+
+market_summary:
+  description: >
+    Aggregate insights from the industry trends, competitive landscape, and customer perception analyses 
+    to produce a comprehensive market position summary for {company_stock}.
+    Provide recommendations based on market opportunities, the company’s relative position, and any areas 
+    where the company can strengthen its standing.
+    *Don’t be afraid to offer a critical overview. Your objective, honest evaluation will help stakeholders make informed decisions.*
+  expected_output: >
+    A final report summarizing the market position of {company_stock} based on the industry trends, competitive 
+    landscape, and customer perceptions. Include actionable recommendations and a clear market positioning 
+    strategy for the company.
+    *Provide a well-rounded and honest summary, including actionable insights for improving {company_stock}'s market position.*
