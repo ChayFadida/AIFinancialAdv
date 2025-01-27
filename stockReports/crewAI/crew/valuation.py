@@ -1,16 +1,17 @@
-from crewAI.crew.qr_reports.base import BaseCrew
+from crewAI.crew.base import BaseCrew
 from crewai.project import CrewBase, agent, task, crew
 from crewai import Agent, Task, Crew, Process
 from crewAI.tools.calcTool import CalculatorTool
 from crewai_tools import FileReadTool
+from utils.types.report_types import ReportType
 
 @CrewBase
 class ValuationCrew(BaseCrew):
     agents_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/valuation/agents.yaml"
     tasks_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/valuation/tasks.yaml"
 
-    def __init__(self, stock: str):
-        super().__init__(stock)
+    def __init__(self, stock: str, report_type: ReportType):
+        super().__init__(stock, report_type)
 
     @agent
     def intrinsic_valuation_agent(self) -> Agent:
@@ -18,11 +19,7 @@ class ValuationCrew(BaseCrew):
             config=self.agents_config['intrinsic_valuation_analyst'],
             verbose=True,
             llm=self.llm,
-            tools=[
-                FileReadTool(file_path=self.report_10k, description=self.file_read_tool_desc),
-                FileReadTool(file_path=self.report_10q, description=self.file_read_tool_desc),
-                CalculatorTool(),
-            ]
+            tools=self.get_tools()
         )
 
     @agent
@@ -31,11 +28,7 @@ class ValuationCrew(BaseCrew):
             config=self.agents_config['relative_valuation_analyst'],
             verbose=True,
             llm=self.llm,
-            tools=[
-                FileReadTool(file_path=self.report_10k, description=self.file_read_tool_desc),
-                FileReadTool(file_path=self.report_10q, description=self.file_read_tool_desc),
-                CalculatorTool(),
-            ]
+            tools=self.get_tools()
         )
 
     @agent
@@ -44,11 +37,7 @@ class ValuationCrew(BaseCrew):
             config=self.agents_config['growth_potential_analyst'],
             verbose=True,
             llm=self.llm,
-            tools=[
-                FileReadTool(file_path=self.report_10k, description=self.file_read_tool_desc),
-                FileReadTool(file_path=self.report_10q, description=self.file_read_tool_desc),
-                CalculatorTool(),
-            ]
+            tools=self.get_tools()
         )
 
     @agent

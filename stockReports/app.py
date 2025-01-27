@@ -7,6 +7,8 @@ import uvicorn
 from router import stocks_reports, chat_bot
 from config.app_contex import api_title, api_description, api_version, api_docs_url
 from fastapi.middleware.cors import CORSMiddleware
+from crewAI.analyze_reports import ReportGeneration
+from utils.types.report_types import ReportType
 
 # Create an instance of the FastAPI class
 app = FastAPI(
