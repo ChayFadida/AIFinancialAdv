@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Query, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends
 from chatBot.chat import ChatRequest, get_chatbot_chain, process_history
 from langchain_core.prompts import ChatPromptTemplate
 

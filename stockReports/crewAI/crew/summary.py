@@ -1,7 +1,6 @@
 from crewai.project import CrewBase, agent, task, crew
 from crewai import Agent, Task, Crew, Process
 from crewai.knowledge.source.string_knowledge_source import StringKnowledgeSource
-from crewai.knowledge.source.json_knowledge_source import JSONKnowledgeSource
 from config.app_contex import AI_MODEL
 from crewai import LLM
 

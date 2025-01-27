@@ -1,10 +1,7 @@
-from crewAI.api.reports_api import Reports
-from config.logger_config import log
 from crewAI.tools.report_tool import ReportTools
 from crewai import LLM
 from config.app_contex import AI_MODEL
 from utils.types.report_types import ReportType  # Import the enum
-
 
 llm = LLM(model=f"ollama/{AI_MODEL}")
 

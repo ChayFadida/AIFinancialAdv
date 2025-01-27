@@ -1,8 +1,6 @@
 from crewAI.crew.base import BaseCrew
 from crewai.project import CrewBase, agent, task, crew
 from crewai import Agent, Task, Crew, Process
-from crewAI.tools.calcTool import CalculatorTool
-from crewai_tools import FileReadTool
 from utils.types.report_types import ReportType
 
 @CrewBase
