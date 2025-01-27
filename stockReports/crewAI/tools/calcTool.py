@@ -1,6 +1,5 @@
 from crewai_tools import BaseTool
 
-
 class CalculatorTool(BaseTool):
     name: str = "Calculator tool"
     description: str = (

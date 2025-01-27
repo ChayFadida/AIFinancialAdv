@@ -6,7 +6,7 @@ from dependency.dependencies import get_stock_report_repo
 from utils.types.report_types import ReportType
 from pydantic import BaseModel
 
-router = APIRouter(prefix="/stocksQ&KReports", tags=["Stock Q&K Reports"])
+router = APIRouter(prefix="/stocksReports", tags=["Stock Reports"])
 
 class ReportRequest(BaseModel):
     stock: str
