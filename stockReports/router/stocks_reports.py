@@ -3,20 +3,25 @@ from crewAI.analyze_reports import ReportGeneration
 from multiprocessing import Process
 from database.stockReportRepo import StockReportRepository
 from dependency.dependencies import get_stock_report_repo
+from utils.types.report_types import ReportType
+from pydantic import BaseModel
 
 router = APIRouter(prefix="/stocksQ&KReports", tags=["Stock Q&K Reports"])
 
+class ReportRequest(BaseModel):
+    stock: str
+    report_type: ReportType 
 
-def analyze_and_push_to_db(stock : str):
+def analyze_and_push_to_db(stock : str, report_type: ReportType):
     if not stock.isalpha():
         raise HTTPException(status_code=400, detail="Invalid stock symbol. Must be alphabetic.")
-    analysis_result = ReportGeneration.getReport(stock)
+    analysis_result = ReportGeneration.getReport(stock, report_type)
     repo = get_stock_report_repo()
-    repo.add_report(stock_symbol=stock, analysis_data=analysis_result)
+    repo.add_report(stock_symbol=stock, analysis_data=analysis_result, report_type=report_type)
 
 @router.post('/analyzeReport')
 def analyze_report(
-    stock: str = Query(..., description="Stock symbol to analyze, e.g., 'intc'"),
+    request: ReportRequest
 ):
     """
     Analyze report for a single stock symbol.
@@ -27,27 +32,15 @@ def analyze_report(
     Returns:
         dict: A response indicating the result of the analysis.
     """
-
-    # Perform some operation on the stock symbol
-    process = Process(target=analyze_and_push_to_db, args=(stock,))
+    stock = request.stock
+    report_type = request.report_type
+    process = Process(target=analyze_and_push_to_db, args=(stock, report_type,))
     process.start()
     return {"status": "success", "stock": stock}
 
-@router.post('/addReport')
-def add_report(
-    stock_symbol: str,
-    analysis_data: dict,
-    repo: StockReportRepository = Depends(get_stock_report_repo)
-):
-    """
-    Endpoint to add a stock report to the database.
-    """
-    
-    return repo.add_report(stock_symbol, analysis_data)
-
 @router.get('/getLatestReport')
 def get_latest_report(
-    stock_symbol: str = Query(..., description="Stock symbol to fetch the latest report, e.g., 'intc'"),
+    request: ReportRequest,
     repo: StockReportRepository = Depends(get_stock_report_repo)
 ):
     """
@@ -59,7 +52,7 @@ def get_latest_report(
     Returns:
         dict: The latest stock report.
     """
-    return repo.get_latest_report(stock_symbol)
+    return repo.get_latest_report(request.stock)
 
 @router.get('/getAllReports')
 def get_all_reports(

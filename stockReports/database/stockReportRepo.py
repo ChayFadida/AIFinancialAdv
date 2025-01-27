@@ -1,12 +1,12 @@
 from datetime import datetime
 from pymongo.collection import Collection
 from fastapi import HTTPException
-
+from utils.types.report_types import ReportType
 class StockReportRepository:
     def __init__(self, collection: Collection):
         self.collection = collection
 
-    def add_report(self, stock_symbol: str, analysis_data: dict):
+    def add_report(self, stock_symbol: str, analysis_data: dict, report_type: ReportType):
         """
         Add a stock report to the database.
 
@@ -24,6 +24,7 @@ class StockReportRepository:
             "stock_symbol": stock_symbol.upper(),
             "analysis_data": analysis_data,
             "created_at": datetime.utcnow(),
+            "report_type": report_type.name
         }
         result = self.collection.insert_one(report)
         return {"id": str(result.inserted_id), "stock_symbol": stock_symbol}
@@ -37,7 +38,7 @@ class StockReportRepository:
         """
         return list(self.collection.find({}, {"_id": 0}))
 
-    def get_latest_report(self, stock_symbol: str):
+    def get_latest_report(self, stock_symbol: str, report_type: ReportType):
         """
         Retrieve the latest report for a specific stock symbol from the database.
 
@@ -48,7 +49,10 @@ class StockReportRepository:
             dict: The latest report for the stock symbol.
         """
         report = self.collection.find_one(
-            {"stock_symbol": stock_symbol.upper()},
+            {
+                "stock_symbol": stock_symbol.upper(),
+                "report_type": report_type.name
+             },
             sort=[("created_at", -1)],  # Sort by created_at descending to get the latest
             projection={"_id": 0}  # Exclude the _id field from the result
         )

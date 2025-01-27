@@ -1,15 +1,14 @@
-from crewAI.crew.qr_reports.base import BaseCrew
+from crewAI.crew.base import BaseCrew
 from crewai.project import CrewBase, agent, task, crew
 from crewai import Agent, Task, Crew, Process
-from crewAI.tools.calcTool import CalculatorTool
-from crewai_tools import FileReadTool
+from utils.types.report_types import ReportType
 
 @CrewBase
 class GrowthCrew(BaseCrew):
     agents_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/growth/agents.yaml"
     tasks_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/growth/tasks.yaml"
-    def __init__(self, stock: str):
-        super().__init__(stock)
+    def __init__(self, stock: str, report_type: ReportType):
+        super().__init__(stock, report_type)
 
     @agent
     def market_expansion_agent(self) -> Agent:
@@ -17,11 +16,7 @@ class GrowthCrew(BaseCrew):
             config=self.agents_config['market_expansion_analyst'],
             verbose=True,
             llm=self.llm,
-            tools=[
-                CalculatorTool(),
-                FileReadTool(file_path=self.report_10k, description=self.file_read_tool_desc),
-                FileReadTool(file_path=self.report_10q, description=self.file_read_tool_desc)
-            ]
+            tools=self.get_tools()
         )
 
     @agent
@@ -30,11 +25,7 @@ class GrowthCrew(BaseCrew):
             config=self.agents_config['product_innovation_analyst'],
             verbose=True,
             llm=self.llm,
-            tools=[
-                CalculatorTool(),
-                FileReadTool(file_path=self.report_10k, description=self.file_read_tool_desc),
-                FileReadTool(file_path=self.report_10q, description=self.file_read_tool_desc)
-            ]
+            tools=self.get_tools()
         )
 
     @agent
@@ -43,11 +34,7 @@ class GrowthCrew(BaseCrew):
             config=self.agents_config['mergers_acquisitions_analyst'],
             verbose=True,
             llm=self.llm,
-            tools=[
-                CalculatorTool(),
-                FileReadTool(file_path=self.report_10k, description=self.file_read_tool_desc),
-                FileReadTool(file_path=self.report_10q, description=self.file_read_tool_desc)
-            ]
+            tools=self.get_tools()
         )
 
     @agent
