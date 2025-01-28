@@ -26,7 +26,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import ReactMarkdown from 'react-markdown'
-import { getQRReport } from "../../features/report";
+import { getQRReport, getProgressItems } from "../../features/report";
 import { getFinanceData } from "../../features/finance";
 
 interface RecommendationHistory {
@@ -57,11 +57,10 @@ interface StockReport {
   }[];
 }
 
-interface RequestProgress {
+export interface RequestProgress {
   reportName: string;
   status: 'done' | 'in_progress';
 }
-
 const Recommendation: React.FC = () => {
   const [stockName, setStockName] = React.useState("");
   const [analysisType, setAnalysisType] = React.useState("");
@@ -72,18 +71,16 @@ const Recommendation: React.FC = () => {
   
   const [history, setHistory] = React.useState<RecommendationHistory[]>([]);
   const [showGeneratingAlert, setShowGeneratingAlert] = React.useState(false);
+  const [progressItems, setProgressItems] = React.useState<RequestProgress[]>([]);
 
-  const [progressItems] = React.useState<RequestProgress[]>([
-    {
-      reportName: "AAPL Quarterly Analysis",
-      status: "done"
-    },
-    {
-      reportName: "TSLA Market News",
-      status: "in_progress"        
-    }
-  ]);
-
+  React.useEffect(() => {
+    const fetchProgressItems = async () => {
+      const response = await getProgressItems();
+      setProgressItems(response.data);  // Extract data from the response object
+    };
+  
+    fetchProgressItems();
+  }, []);
   const generateReport = async (stockName: string, analysisType: string): Promise<StockReport | null> => {
     const response = await getQRReport(stockName, analysisType);
     
@@ -94,7 +91,6 @@ const Recommendation: React.FC = () => {
     
     const analysis_data = response.data.analysis_data;
     const financeData = await getFinanceData(stockName);
-    console.log(financeData);
     
     return {
       ...response.data,

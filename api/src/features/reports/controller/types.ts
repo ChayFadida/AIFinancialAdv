@@ -10,7 +10,9 @@ export interface ReportResponse {
     summary: string;
     score: string;
   };
+  status: string;
   created_at: string;
+
 }
 
 export interface GetLatestReportRequest extends Request {
