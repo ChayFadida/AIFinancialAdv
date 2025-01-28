@@ -16,14 +16,26 @@ import {
   Dashboard,
   ExitToApp,
   Grade,
+  Info,
   Person,
+  PsychologyAlt,
   SmartToy,
 } from "@mui/icons-material";
 import { Drawer, DrawerHeader, StyledAppBar } from "./DashboardLayout.styles";
 import { NavItem } from "./NavItem";
 import { appStorage } from "../../services/appStorage";
 import { useUser } from "../../context";
-import { Avatar } from "@mui/material";
+import { Avatar, TextField } from "@mui/material";
+import { Menu, MenuItem, Button } from "@mui/material";
+import Checkbox from '@mui/material/Checkbox';
+import Autocomplete from '@mui/material/Autocomplete';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import company_symbol from "../../utils/company_symbol.json";
+import { updateUserProfile } from "../../features/auth/api";
+import HelpIcon from '@mui/icons-material/Help';
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const theme = useTheme();
@@ -38,6 +50,58 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const menuOpen = Boolean(anchorEl);
+  
+  const handleAvatarClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const [isEditing, setIsEditing] = React.useState(false);
+  const [editFormData, setEditFormData] = React.useState({
+    name: user?.name || "",
+    stocks: user?.stocks || [],
+  });
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+    setEditFormData({
+      name: user?.name || "",
+      stocks: user?.stocks || [],
+    });
+  };
+
+  const handleSaveChanges = async () => {
+    try {
+      console.log('Sending update with data:', editFormData); // Debug log
+      const updatedUser = await updateUserProfile(editFormData);
+      console.log('Received response:', updatedUser); // Debug log
+      
+      if (updatedUser) {
+        handleUser({ ...user, ...updatedUser }); // Merge with existing user data
+        setIsEditing(false);
+        handleMenuClose();
+        // Add a visual feedback
+        alert('Profile updated successfully!');
+        // Force a page refresh if needed
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error('Failed to update profile:', error);
+      alert('Failed to update profile. Please try again.');
+    }
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+    handleMenuClose();
+  }
+
 
   const navItems = [
     {
@@ -69,6 +133,18 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       label: "Chat Bot",
       icon: <SmartToy />,
       path: paths.dashboard.chatBot.absolute,
+    },
+    {
+      id: "About",
+      label: "About",
+      icon: <Info />,
+      path: paths.dashboard.About.absolute,
+    },
+    {
+      id: "FAQ",
+      label: "FAQ",
+      icon: <HelpIcon />,
+      path: paths.dashboard.FAQ.absolute,
     },
   ];
 
@@ -110,8 +186,104 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               <Typography variant="h6">Hello, {user?.name}</Typography>
             </Box>
             <Box >
-              <Avatar sx={{ marginRight: 2 }}>{user?.name.substring(0, 1).toUpperCase()}</Avatar>
+              <Avatar sx={{ marginRight: 2, cursor: 'pointer' }} onClick={handleAvatarClick}>{user?.name.substring(0, 1).toUpperCase()}</Avatar>
               {/* <IconButton><ChevronDown></IconButton> */}
+                <Menu
+        anchorEl={anchorEl}
+        open={menuOpen}
+        onClose={handleMenuClose}
+        PaperProps={{
+          sx: {
+            padding: 2,
+            width: 320,
+          }
+        }}
+      >
+        {!isEditing ? (
+          <>
+            <Box sx={{ px: 2, py: 1 }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                {user?.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {user?.email}
+              </Typography>
+            </Box>
+            <Divider sx={{ my: 1 }} />
+            <MenuItem>
+              <Button 
+                fullWidth 
+                variant="contained"
+                onClick={handleEditClick}
+              >
+                Edit Profile
+              </Button>
+            </MenuItem>
+          </>
+        ) : (
+          <Box sx={{ p: 2 }}>
+            <Typography variant="h6" sx={{ mb: 2 }}>
+              Edit Profile
+            </Typography>
+            <TextField
+              fullWidth
+              label="Name"
+              value={editFormData.name}
+              onChange={(e) => setEditFormData({ ...editFormData, name: e.target.value })}
+              sx={{ mb: 2 }}
+            />
+            <Autocomplete
+              multiple
+              options={company_symbol}
+              disableCloseOnSelect
+              getOptionLabel={(option) => String(option.company)}
+              value={editFormData.stocks}
+              onChange={(event, newValue) => {
+                setEditFormData({ 
+                  ...editFormData, 
+                  stocks: newValue as { stock_symbol: string; company: string }[] 
+                });
+              }}
+              renderOption={(props, option, { selected }) => (
+                <li {...props}>
+                  <Checkbox
+                    icon={icon}
+                    checkedIcon={checkedIcon}
+                    style={{ marginRight: 8 }}
+                    checked={selected}
+                  />
+                  {option.stock_symbol} ({option.company})
+                </li>
+              )}
+              renderInput={(params) => (
+                <TextField 
+                  {...params} 
+                  label="Stocks to follow" 
+                  placeholder="Select stocks"
+                />
+              )}
+              sx={{ mb: 2 }}
+            />
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <Button 
+                fullWidth 
+                variant="contained"
+                onClick={handleSaveChanges}
+              >
+                Save Changes
+              </Button>
+              <Button 
+                fullWidth 
+                variant="outlined"
+                onClick={handleCancel}
+              >
+                Cancel
+              </Button>
+            </Box>
+          </Box>
+        )}
+      </Menu>
+
             </Box>
           </Box>
         </Toolbar>

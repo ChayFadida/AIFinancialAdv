@@ -4,7 +4,7 @@ import { Response } from 'express';
 import { catchAsync, generateToken } from '../../../utils';
 import { User } from '../../user/models';
 
-import { LoginByTokenRequestType, LoginRequestType, RegisterUserRequestType } from './types';
+import { AuthRequest, LoginByTokenRequestType, LoginRequestType, RegisterUserRequestType } from './types';
 
 export const register = catchAsync(async (req: RegisterUserRequestType, res: Response) => {
   const { email, password, name, stocks } = req.body;
@@ -72,4 +72,26 @@ export const loginByToken = catchAsync(async (req: LoginByTokenRequestType, res:
   }
 
   return res.status(200).json({ id: user._id, email: user.email, name: user.name, stocks: user.stocks, token });
+});
+
+export const updateProfile = catchAsync(async (req: AuthRequest, res: Response) => {
+  const userId = req.user._id;
+  const { name, stocks } = req.body;
+
+  const updatedUser = await User.findByIdAndUpdate(
+    userId,
+    { name, stocks },
+    { new: true }
+  );
+
+  if (!updatedUser) {
+    throw 'User not found';
+  }
+
+  return res.status(200).json({
+    id: updatedUser._id,
+    name: updatedUser.name,
+    email: updatedUser.email,
+    stocks: updatedUser.stocks
+  });
 });

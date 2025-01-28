@@ -6,6 +6,8 @@ import Chatbot from "../../../pages/Chatbot/Chatbot";
 import { DashboardLayout } from "../../../layout";
 import { useUser } from "../../../context";
 import Recommendation from "../../../pages/Recommendation/recommendation";
+import About from "../../../pages/About/About";
+import FAQ from "../../../pages/FAQ/FAQ";
 
 function Layout() {
   const { user } = useUser();
@@ -47,6 +49,14 @@ export const dashboardRoutes: RouteObject[] = [
       {
         path: dashboardPaths.chatBot.relative,
         element: <Chatbot />,
+      },
+      {
+        path: dashboardPaths.About.relative,
+        element: <About />,
+      },
+      {
+        path: dashboardPaths.FAQ.relative,
+        element: <FAQ />,
       },
     ],
   },

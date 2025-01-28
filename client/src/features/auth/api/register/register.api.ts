@@ -1,3 +1,4 @@
+import { appStorage } from "../../../../services/appStorage/appStorage";
 import { axios } from "../../../../services/axios/axios";
 import { User } from "../../../user";
 
@@ -16,6 +17,18 @@ export async function register(
   const response = await axios.post<RegisterResponse>(
     `/auth/register`,
     request
+  );
+
+  return response.data;
+}
+
+export async function updateUserProfile(userData: {
+  name: string;
+  stocks: Array<{ stock_symbol: string; company: string }>;
+}) {
+  const response = await axios.put<RegisterResponse>(
+    `/auth/profile`,
+    userData
   );
 
   return response.data;
