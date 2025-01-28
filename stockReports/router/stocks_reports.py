@@ -8,16 +8,6 @@ from pydantic import BaseModel, field_validator
 
 router = APIRouter(prefix="/stocksReports", tags=["Stock Reports"])
 
-class ReportRequest(BaseModel):
-    stock: str
-    report_type: ReportType 
-    @field_validator('report_type')
-    def validate_report_type(cls, value):
-        # If you want to perform additional checks beyond Pydantic's Enum validation
-        if value not in ReportType:
-            raise ValueError(f"Invalid report_type. Valid values are: {list(ReportType)}")
-        return value
-
 def analyze_and_push_to_db(stock : str, report_type: ReportType):
     analysis_result = ReportGeneration.getReport(stock, report_type)
     repo = get_stock_report_repo()
@@ -25,7 +15,7 @@ def analyze_and_push_to_db(stock : str, report_type: ReportType):
 
 @router.post('/analyzeReport')
 def analyze_report(
-    request: ReportRequest
+    stock: str, report_type: ReportType,
 ):
     """
     Analyze report for a single stock symbol.
@@ -36,8 +26,6 @@ def analyze_report(
     Returns:
         dict: A response indicating the result of the analysis.
     """
-    stock = request.stock
-    report_type = request.report_type
     if not stock.isalpha():
         raise HTTPException(status_code=400, detail="Invalid stock symbol. Must be alphabetic.")
     process = Process(target=analyze_and_push_to_db, args=(stock, report_type,))
@@ -46,7 +34,7 @@ def analyze_report(
 
 @router.get('/getLatestReport')
 def get_latest_report(
-    stock: str, report_type: str,
+    stock: str, report_type: ReportType,
     repo: StockReportRepository = Depends(get_stock_report_repo)
 ):
     """
@@ -58,7 +46,7 @@ def get_latest_report(
     Returns:
         dict: The latest stock report.
     """
-    return repo.get_latest_report(stock)
+    return repo.get_latest_report(stock, report_type)
 
 @router.get('/getAllReports')
 def get_all_reports(

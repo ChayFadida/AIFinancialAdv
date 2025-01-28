@@ -57,14 +57,14 @@ def test_get_all_reports(stock_report_repo, mock_collection):
 def test_get_latest_report_not_found(stock_report_repo, mock_collection):
     mock_collection.find_one.return_value = None
 
-    with pytest.raises(HTTPException) as exc_info:
-        stock_report_repo.get_latest_report(
-            stock_symbol="AAPL",
-            report_type=ReportType.QK_REPORT
-        )
+    # Call the method and store the result
+    result = stock_report_repo.get_latest_report(
+        stock_symbol="AAPL",
+        report_type=ReportType.QK_REPORT
+    )
 
-    assert exc_info.value.status_code == 404
-    assert exc_info.value.detail == "No report found for stock symbol AAPL."
+    # Assert that the result is an empty dictionary
+    assert result == {}
 
 
 def test_get_reports_by_stock_symbol_success(stock_report_repo, mock_collection):

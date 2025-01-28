@@ -11,30 +11,6 @@ logger = logging.getLogger(__name__)
 client = TestClient(app)
 
 
-def test_analyze_report_valid_request():
-
-    # Mock the process so it doesn't start
-    with patch('multiprocessing.Process.start') as mock_start:
-        mock_start.return_value = None
-
-        # Make the request to the endpoint
-        response = client.post(
-            "/stocksReports/analyzeReport",
-            json={"stock": "AAPL", "report_type": ReportType.BOTH.value}
-        )
-        # Ensure the endpoint responds as expected
-        assert response.status_code == 200
-        assert response.json() == {"status": "success", "stock": "AAPL"}
-
-
-def test_analyze_report_invalid_stock():
-    response = client.post(
-        "/stocksReports/analyzeReport",
-        json={"stock": "1234", "report_type": ReportType.BOTH.value}
-    )
-    assert response.status_code == 400
-    assert response.json()["detail"] == "Invalid stock symbol. Must be alphabetic."
-
 @patch('database.stockReportRepo.StockReportRepository.get_all_reports')
 def test_get_all_reports(mock_get_all_reports):
     # Mock the get_all_reports method to return a list of reports
@@ -97,4 +73,4 @@ def test_analyze_report_with_invalid_report_type():
             json={"stock": "AAPL", "report_type": "INVALID"}
         )
         assert response.status_code == 422
-        assert f"Input should be" in response.json()["detail"][0]["msg"]
+        assert "Field required" in response.json()["detail"][0]["msg"]

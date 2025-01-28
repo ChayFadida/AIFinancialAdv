@@ -51,14 +51,14 @@ class StockReportRepository:
         report = self.collection.find_one(
             {
                 "stock_symbol": stock_symbol.upper(),
-                "report_type": report_type.name
+                "report_type": report_type.value.upper()
              },
             sort=[("created_at", -1)],  # Sort by created_at descending to get the latest
             projection={"_id": 0}  # Exclude the _id field from the result
         )
         
         if not report:
-            raise HTTPException(status_code=404, detail=f"No report found for stock symbol {stock_symbol}.")
+            return {}
         
         return report
 
