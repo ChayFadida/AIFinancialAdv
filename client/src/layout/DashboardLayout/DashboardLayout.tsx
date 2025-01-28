@@ -34,6 +34,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import company_symbol from "../../utils/company_symbol.json";
 import { updateUserProfile } from "../../features/auth/api";
 import HelpIcon from '@mui/icons-material/Help';
+import SendIcon from '@mui/icons-material/Send';
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
@@ -145,6 +146,12 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       label: "FAQ",
       icon: <HelpIcon />,
       path: paths.dashboard.FAQ.absolute,
+    },
+    {
+      id: "Contact",
+      label: "Contact",
+      icon: <SendIcon />,
+      path: paths.dashboard.Contact.absolute,
     },
   ];
 

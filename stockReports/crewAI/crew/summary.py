@@ -10,8 +10,8 @@ llm = LLM(model=f"ollama/{AI_MODEL}")
 
 @CrewBase
 class SummaryCrew():
-    agents_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/summary/agents.yaml"
-    tasks_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/summary/tasks.yaml"
+    agents_config = "/Users/tomer_lazarovitch/Documents/AIFinancialAdv/stockReports/crewAI/configs/summary/agents.yaml"
+    tasks_config = "/Users/tomer_lazarovitch/Documents/AIFinancialAdv/stockReports/crewAI/configs/summary/tasks.yaml"
     
     def __init__(self, stock: str, resultsToSummary: dict):
         self.stock = stock.upper()

@@ -8,6 +8,7 @@ import { useUser } from "../../../context";
 import Recommendation from "../../../pages/Recommendation/recommendation";
 import About from "../../../pages/About/About";
 import FAQ from "../../../pages/FAQ/FAQ";
+import Contact from "../../../pages/Contact/Contact";
 
 function Layout() {
   const { user } = useUser();
@@ -57,6 +58,10 @@ export const dashboardRoutes: RouteObject[] = [
       {
         path: dashboardPaths.FAQ.relative,
         element: <FAQ />,
+      },
+      {
+        path: dashboardPaths.Contact.relative,
+        element: <Contact />,
       },
     ],
   },
