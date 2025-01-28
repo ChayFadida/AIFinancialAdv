@@ -27,7 +27,7 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
     }
 
     // If fallback response is successful, return the data
-    return res.status(200).json(fallbackResponse.data);
+    return res.status(201).json(fallbackResponse.data);
   }
 
   // If the original response is not empty, return the data

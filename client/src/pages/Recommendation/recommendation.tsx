@@ -17,6 +17,10 @@ import {
   Divider,
   Chip,
   LinearProgress,
+  Alert,
+  AlertTitle,
+  Dialog,
+  DialogContent,
 } from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
@@ -24,6 +28,7 @@ import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import ReactMarkdown from 'react-markdown'
 import { getQRReport } from "../../features/report";
 import { getFinanceData } from "../../features/finance";
+
 interface RecommendationHistory {
   id: string;
   stockName: string;
@@ -52,6 +57,11 @@ interface StockReport {
   }[];
 }
 
+interface RequestProgress {
+  reportName: string;
+  status: 'done' | 'in_progress';
+}
+
 const Recommendation: React.FC = () => {
   const [stockName, setStockName] = React.useState("");
   const [analysisType, setAnalysisType] = React.useState("");
@@ -61,13 +71,33 @@ const Recommendation: React.FC = () => {
   const resultRef = React.useRef<HTMLDivElement>(null);
   
   const [history, setHistory] = React.useState<RecommendationHistory[]>([]);
-  const generateReport = async (stockName: string, analysisType: string): Promise<StockReport> => {
-    const report = await getQRReport(stockName, analysisType);  // Wait for the promise to resolve
-    const analysis_data = report.analysis_data
-    const financeData = await getFinanceData(stockName)
-    console.log(financeData)
+  const [showGeneratingAlert, setShowGeneratingAlert] = React.useState(false);
+
+  const [progressItems] = React.useState<RequestProgress[]>([
+    {
+      reportName: "AAPL Quarterly Analysis",
+      status: "done"
+    },
+    {
+      reportName: "TSLA Market News",
+      status: "in_progress"        
+    }
+  ]);
+
+  const generateReport = async (stockName: string, analysisType: string): Promise<StockReport | null> => {
+    const response = await getQRReport(stockName, analysisType);
+    
+    if (response.status === 201) {
+      setShowGeneratingAlert(true);
+      return null;
+    }
+    
+    const analysis_data = response.data.analysis_data;
+    const financeData = await getFinanceData(stockName);
+    console.log(financeData);
+    
     return {
-      ...report,
+      ...response.data,
       stockName,
       analysisType,
       financeData,
@@ -110,29 +140,33 @@ const Recommendation: React.FC = () => {
 
   const handleGenerate = async () => {
     setIsLoading(true);
-    setOpenSnackbar(true);
-    
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
     
     const newRecommendation = await generateReport(stockName, analysisType);
-    setRecommendations([newRecommendation, ...recommendations]);
     
-    // Add to history
-    const historyItem: RecommendationHistory = {
-      id: Date.now().toString(),
-      stockName,
-      analysisType,
-      date: new Date().toISOString().split('T')[0]
-    };
-    setHistory([historyItem, ...history]);
+    if (newRecommendation) {
+      setRecommendations([newRecommendation, ...recommendations]);
+      
+      const historyItem: RecommendationHistory = {
+        id: Date.now().toString(),
+        stockName,
+        analysisType,
+        date: new Date().toISOString().split('T')[0]
+      };
+      setHistory([historyItem, ...history]);
+
+      setTimeout(() => {
+        resultRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
     
     setIsLoading(false);
+  };
 
-    // Smooth scroll to results
-    setTimeout(() => {
-      resultRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+  const handleCloseGeneratingAlert = () => {
+    setShowGeneratingAlert(false);
+    // Reset form
+    setStockName("");
+    setAnalysisType("");
   };
 
   const handleHistoryClick = (item: RecommendationHistory) => {
@@ -155,6 +189,21 @@ const Recommendation: React.FC = () => {
         return '#ff9800';
     }
   };
+
+  const getStatusStyle = (status: string) => {
+    const styles = {
+      done: {
+        color: '#1a7f37',
+        bgcolor: 'rgba(31, 136, 61, 0.15)',
+      },
+      in_progress: {
+        color: '#9e6a03',
+        bgcolor: 'rgba(201, 139, 24, 0.15)',
+      },
+    };
+    return styles[status as keyof typeof styles] || styles.in_progress;
+  };
+
   return (
     <Box sx={{ p: 4, maxWidth: 1200, mx: "auto" }}>
       <Paper elevation={3} sx={{ 
@@ -162,6 +211,74 @@ const Recommendation: React.FC = () => {
         bgcolor: '#0c1014',
         minHeight: '600px',
       }}>
+        {/* Request Progress Sidebar */}
+        <Box sx={{ 
+          width: 400,
+          borderRight: '1px solid rgba(255, 255, 255, 0.12)',
+          bgcolor: '#0c1014',
+          p: 2
+        }}>
+          <Typography variant="h6" sx={{ mb: 2, color: '#fff' }}>
+            Request Progress
+          </Typography>
+          <Divider sx={{ bgcolor: 'rgba(255, 255, 255, 0.12)', mb: 2 }} />
+          <List>
+            {progressItems.map((item, index) => (
+              <ListItem 
+                key={index}
+                sx={{ 
+                  mb: 1.5,
+                  bgcolor: 'rgba(255, 255, 255, 0.05)',
+                  borderRadius: 1,
+                  display: 'block',
+                  p: 2
+                }}
+              >
+                <Box sx={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'flex-start',
+                }}>
+                  <Box>
+                    <Typography 
+                      sx={{ 
+                        color: '#fff',
+                        fontSize: '0.95rem',
+                        lineHeight: 1.2
+                      }}
+                    >
+                      {item.reportName.split(' ')[0]}
+                    </Typography>
+                    <Typography 
+                      sx={{ 
+                        color: '#fff',
+                        fontSize: '0.95rem',
+                        lineHeight: 1.2
+                      }}
+                    >
+                      {item.reportName.split(' ').slice(1).join(' ')}
+                    </Typography>
+                  </Box>
+                  <Typography 
+                    sx={{ 
+                      ...getStatusStyle(item.status),
+                      fontSize: '0.8rem',
+                      ml: 2,
+                      px: 1.5,
+                      py: 0.5,
+                      borderRadius: '2em',
+                      fontWeight: 500,
+                      whiteSpace: 'nowrap'
+                    }}
+                  >
+                    {item.status === 'done' ? 'Done' : 'In Progress'}
+                  </Typography>
+                </Box>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+
         {/* History Sidebar */}
         <Box sx={{ 
           width: 260, 
@@ -441,6 +558,34 @@ const Recommendation: React.FC = () => {
           ))}
         </Box>
       )}
+
+      <Dialog
+        open={showGeneratingAlert}
+        onClose={handleCloseGeneratingAlert}
+        PaperProps={{
+          sx: {
+            bgcolor: '#1a1a1a',
+            color: '#fff',
+          }
+        }}
+      >
+        <DialogContent>
+          <Alert 
+            severity="info"
+            onClose={handleCloseGeneratingAlert}
+            sx={{
+              bgcolor: 'rgba(33, 150, 243, 0.1)',
+              color: '#fff',
+              '& .MuiAlert-icon': {
+                color: '#2196f3'
+              }
+            }}
+          >
+            <AlertTitle>Report Generation in Progress</AlertTitle>
+            We are currently generating a new report for this stock. This process may take up to an hour. Please try again later.
+          </Alert>
+        </DialogContent>
+      </Dialog>
 
       <Snackbar
         open={openSnackbar}
