@@ -1,3 +1,4 @@
+
 from crewai_tools import FileReadTool
 from utils.types.report_types import ReportType  # Import the enum
 from config.logger_config import log
@@ -20,9 +21,10 @@ class ReportTools:
             if not os.path.exists(file_path):
                 log.info(f'{report_type} report for {stock} does not exist. retrive report from API')
                 report_content = Reports.get_report_content(stock ,report_type)
-                with open(file_path, "w", encoding="utf-8") as file:
-                    file.write(report_content)
-                    log.info(f'save new {report_type} report for {stock} in {file_path} path')
+                if report_content:
+                    with open(file_path, "w", encoding="utf-8") as file:
+                        file.write(report_content)
+                        log.info(f'save new {report_type} report for {stock} in {file_path} path')
         return file_path
     
     @staticmethod

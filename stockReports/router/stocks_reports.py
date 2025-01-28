@@ -4,14 +4,18 @@ from multiprocessing import Process
 from database.stockReportRepo import StockReportRepository
 from dependency.dependencies import get_stock_report_repo
 from utils.types.report_types import ReportType
-from pydantic import BaseModel, field_validator
 
 router = APIRouter(prefix="/stocksReports", tags=["Stock Reports"])
 
 def analyze_and_push_to_db(stock : str, report_type: ReportType):
-    analysis_result = ReportGeneration.getReport(stock, report_type)
     repo = get_stock_report_repo()
-    repo.add_report(stock_symbol=stock, analysis_data=analysis_result, report_type=report_type)
+    report_id = repo.create_report_placeholder(stock_symbol=stock, report_type=report_type)
+    try:
+        analysis_result = ReportGeneration.getReport(stock, report_type)
+        repo.update_report_status(report_id=report_id, status="done", analysis_data=analysis_result)
+    except Exception as e:
+        repo.update_report_status(report_id=report_id, status="failed")
+        raise e
 
 @router.post('/analyzeReport')
 def analyze_report(

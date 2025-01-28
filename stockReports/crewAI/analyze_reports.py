@@ -110,5 +110,5 @@ class ReportGeneration:
         summary = ReportGeneration.analyze(AnalysisType.SUMMARY, stock_symbol, report_type, results)
         results['summary'] = summary
         results['score'] = ReportGeneration.get_stock_rating(summary)
-
+        log.info("finish to generate to report")
         return results
