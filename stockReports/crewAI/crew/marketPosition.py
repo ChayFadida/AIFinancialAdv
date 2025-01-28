@@ -5,8 +5,8 @@ from utils.types.report_types import ReportType
 
 @CrewBase
 class MarketPositionCrew(BaseCrew):
-    agents_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/marketPosition/agents.yaml"
-    tasks_config = "/Users/chayfadida/Projects/FinalProject/stockReports/crewAI/configs/marketPosition/tasks.yaml"
+    agents_config = "/Users/tomer_lazarovitch/Documents/AIFinancialAdv/stockReports/crewAI/configs/marketPosition/agents.yaml"
+    tasks_config = "/Users/tomer_lazarovitch/Documents/AIFinancialAdv/stockReports/crewAI/configs/marketPosition/tasks.yaml"
     
     def __init__(self, stock: str, report_type: ReportType):
         super().__init__(stock, report_type)

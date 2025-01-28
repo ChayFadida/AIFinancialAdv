@@ -7,6 +7,7 @@ import { connect as mongoConnect } from 'mongoose';
 import { authRouter } from './src/features/auth';
 import { conversationRouter } from './src/features/conversation/router';
 import { reportsRouter } from './src/features/reports/router';
+import contactRouter from './src/features/contact/router/contactRouter';
 
 const app = express();
 
@@ -14,7 +15,8 @@ const port = process.env.port || 3001;
 
 const MONGO_URI = (process.env.MONGO_URI || '')
   .replace('<db_username>', process.env.MONGO_USERNAME || '')
-  .replace('<db_password>', process.env.MONGO_PASSWORD || '');
+  .replace('<db_password>', process.env.MONGO_PASSWORD || '')
+  .concat('/financeAdv');
 
 const MONGO_CONNECTION_SUCCESS = `server is connected with the MongoDB cluster!`;
 const MONGO_CONNECTION_FAIL = `Connection error - server failed to connect with the MongoDB cluster...`;
@@ -48,6 +50,8 @@ app.use(cors());
 
 //////////////////////////////////////////////////////////
 
+app.use('/api/contact', contactRouter);
+console.log('Available routes:', app._router.stack.filter(r => r.route).map(r => r.route.path));
 app.use('/api/auth', authRouter);
 app.use('/api/conversation', conversationRouter)
 app.use('/api/reports', reportsRouter)
