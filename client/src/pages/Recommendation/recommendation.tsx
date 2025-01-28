@@ -62,7 +62,7 @@ const Recommendation: React.FC = () => {
   
   const [history, setHistory] = React.useState<RecommendationHistory[]>([]);
   const generateReport = async (stockName: string, analysisType: string): Promise<StockReport> => {
-    const report = await getQRReport(stockName);  // Wait for the promise to resolve
+    const report = await getQRReport(stockName, analysisType);  // Wait for the promise to resolve
     const analysis_data = report.analysis_data
     const financeData = await getFinanceData(stockName)
     console.log(financeData)
@@ -265,7 +265,7 @@ const Recommendation: React.FC = () => {
               sx={{ mb: 6 }}
             >
               <FormControlLabel 
-                value="quarterly" 
+                value="qk_report" 
                 control={
                   <Radio 
                     sx={{ 
@@ -280,7 +280,7 @@ const Recommendation: React.FC = () => {
                 sx={{ color: '#fff' }}
               />
               <FormControlLabel 
-                value="news" 
+                value="web_report" 
                 control={
                   <Radio 
                     sx={{ 
