@@ -53,4 +53,14 @@ export const dashboardPaths = {
     absolute: "/dashboard/recommendation",    // Add /dashboard prefix
     relative: "recommendation",
   },
+
+  About: {
+    absolute: "/dashboard/about",    // Add /dashboard prefix
+    relative: "about",
+  },
+
+  FAQ: {
+    absolute: "/dashboard/faq",    // Add /dashboard prefix
+    relative: "faq",
+  },
 } as const;

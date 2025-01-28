@@ -32,7 +32,7 @@ export const Portfolio = () => {
   return (
     <div>
       <Typography variant="h6" mb={2}>
-        Portfolio
+        About
       </Typography>
 
       <Grid container spacing={3}>
