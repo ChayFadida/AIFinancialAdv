@@ -2,6 +2,8 @@ from datetime import datetime
 from pymongo.collection import Collection
 from fastapi import HTTPException
 from utils.types.report_types import ReportType
+from bson import ObjectId
+
 class StockReportRepository:
     def __init__(self, collection: Collection):
         self.collection = collection
@@ -24,10 +26,56 @@ class StockReportRepository:
             "stock_symbol": stock_symbol.upper(),
             "analysis_data": analysis_data,
             "created_at": datetime.utcnow(),
-            "report_type": report_type.name
+            "report_type": report_type.name,
+            "status": "done"
         }
         result = self.collection.insert_one(report)
         return {"id": str(result.inserted_id), "stock_symbol": stock_symbol}
+
+    def create_report_placeholder(self, stock_symbol: str, report_type: ReportType):
+        """
+        Create a placeholder entry in the database indicating that the report generation is in progress.
+
+        Args:
+            stock_symbol (str): The stock symbol.
+            report_type (ReportType): The type of report.
+
+        Returns:
+            str: The ID of the inserted placeholder report.
+        """
+        report = {
+            "stock_symbol": stock_symbol.upper(),
+            "analysis_data": None,  # Placeholder for actual data
+            "created_at": datetime.utcnow(),
+            "report_type": report_type.name,
+            "status": "in_progress"
+        }
+        result = self.collection.insert_one(report)
+        return str(result.inserted_id) 
+
+    def update_report_status(self, report_id: str, status: str, analysis_data: dict = None):
+        """
+        Update the status of a report in the database by its unique ID.
+
+        Args:
+            report_id (str): The unique ID of the report to update.
+            status (str): The new status ('in_progress', 'done', 'failed').
+            analysis_data (dict, optional): The analysis data to update, if available.
+
+        Returns:
+            dict: A response indicating the status of the update.
+        """
+        update_fields = {"status": status}
+        if analysis_data is not None:
+            update_fields["analysis_data"] = analysis_data
+
+        result = self.collection.update_one(
+            {"_id": ObjectId(report_id)},
+            {"$set": update_fields}
+        )
+        if result.modified_count == 0:
+            raise HTTPException(status_code=404, detail=f"No matching report found with ID {report_id}.")
+        return {"status": "updated", "id": report_id}
 
     def get_all_reports(self):
         """
@@ -51,7 +99,8 @@ class StockReportRepository:
         report = self.collection.find_one(
             {
                 "stock_symbol": stock_symbol.upper(),
-                "report_type": report_type.value.upper()
+                "report_type": report_type.value.upper(),
+                "status": "done"
              },
             sort=[("created_at", -1)],  # Sort by created_at descending to get the latest
             projection={"_id": 0}  # Exclude the _id field from the result
