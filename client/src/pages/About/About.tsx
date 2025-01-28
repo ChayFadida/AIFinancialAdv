@@ -40,6 +40,12 @@ export default function About() {
                 <Typography variant="body1">
                     <strong>AI-Powered Reports:</strong> Generate detailed stock analysis reports including Quarterly Reports, News-based Analysis, or comprehensive reports combining both sources using advanced AI technology.
                 </Typography>
+                <Typography variant="body1">
+                    <strong>FAQ Page:</strong> Access our comprehensive FAQ section that addresses common questions about stock trading, platform features, and provides helpful guidance for both new and experienced users.
+                </Typography>
+                <Typography variant="body1">
+                    <strong>Contact Page:</strong> Reach out to our team through our dedicated contact page for support, feedback, or any inquiries about our platform and services.
+                </Typography>
             </Stack>
 
             {/* Team Section */}
