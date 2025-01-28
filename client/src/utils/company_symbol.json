@@ -1,15 +1,15 @@
 [
     {
         "stock_symbol": "AAL",
-        "company": "American Airlines Group Inc. Common Stock"
+        "company": "American Airlines Group Inc."
     },
     {
         "stock_symbol": "AAON",
-        "company": "AAON Inc. Common Stock"
+        "company": "AAON Inc."
     },
     {
         "stock_symbol": "AAPL",
-        "company": "Apple Inc. Common Stock"
+        "company": "Apple Inc."
     },
     {
         "stock_symbol": "ABLLL",
@@ -17,15 +17,15 @@
     },
     {
         "stock_symbol": "ABNB",
-        "company": "Airbnb Inc. Class A Common Stock"
+        "company": "Airbnb Inc. Class A"
     },
     {
         "stock_symbol": "ACAD",
-        "company": "ACADIA Pharmaceuticals Inc. Common Stock"
+        "company": "ACADIA Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "ACGL",
-        "company": "Arch Capital Group Ltd. Common Stock"
+        "company": "Arch Capital Group Ltd."
     },
     {
         "stock_symbol": "ACGLN",
@@ -37,67 +37,67 @@
     },
     {
         "stock_symbol": "ACHC",
-        "company": "Acadia Healthcare Company Inc. Common Stock"
+        "company": "Acadia Healthcare Company Inc."
     },
     {
         "stock_symbol": "ACIW",
-        "company": "ACI Worldwide Inc. Common Stock"
+        "company": "ACI Worldwide Inc."
     },
     {
         "stock_symbol": "ACLS",
-        "company": "Axcelis Technologies Inc. Common Stock"
+        "company": "Axcelis Technologies Inc."
     },
     {
         "stock_symbol": "ACLX",
-        "company": "Arcellx Inc. Common Stock"
+        "company": "Arcellx Inc."
     },
     {
         "stock_symbol": "ACT",
-        "company": "Enact Holdings Inc. Common Stock"
+        "company": "Enact Holdings Inc."
     },
     {
         "stock_symbol": "ACVA",
-        "company": "ACV Auctions Inc. Class A Common Stock"
+        "company": "ACV Auctions Inc. Class A"
     },
     {
         "stock_symbol": "ADBE",
-        "company": "Adobe Inc. Common Stock"
+        "company": "Adobe Inc."
     },
     {
         "stock_symbol": "ADI",
-        "company": "Analog Devices Inc. Common Stock"
+        "company": "Analog Devices Inc."
     },
     {
         "stock_symbol": "ADMA",
-        "company": "ADMA Biologics Inc Common Stock"
+        "company": "ADMA Biologics Inc"
     },
     {
         "stock_symbol": "ADP",
-        "company": "Automatic Data Processing Inc. Common Stock"
+        "company": "Automatic Data Processing Inc."
     },
     {
         "stock_symbol": "ADSK",
-        "company": "Autodesk Inc. Common Stock"
+        "company": "Autodesk Inc."
     },
     {
         "stock_symbol": "ADUS",
-        "company": "Addus HomeCare Corporation Common Stock"
+        "company": "Addus HomeCare Corporation"
     },
     {
         "stock_symbol": "AEIS",
-        "company": "Advanced Energy Industries Inc. Common Stock"
+        "company": "Advanced Energy Industries Inc."
     },
     {
         "stock_symbol": "AEP",
-        "company": "American Electric Power Company Inc. Common Stock"
+        "company": "American Electric Power Company Inc."
     },
     {
         "stock_symbol": "AFRM",
-        "company": "Affirm Holdings Inc. Class A Common Stock"
+        "company": "Affirm Holdings Inc. Class A"
     },
     {
         "stock_symbol": "AGNC",
-        "company": "AGNC Investment Corp. Common Stock"
+        "company": "AGNC Investment Corp."
     },
     {
         "stock_symbol": "AGNCL",
@@ -121,27 +121,27 @@
     },
     {
         "stock_symbol": "AGYS",
-        "company": "Agilysys Inc. Common Stock (DE)"
+        "company": "Agilysys Inc. (DE)"
     },
     {
         "stock_symbol": "AKAM",
-        "company": "Akamai Technologies Inc. Common Stock"
+        "company": "Akamai Technologies Inc."
     },
     {
         "stock_symbol": "ALAB",
-        "company": "Astera Labs Inc. Common Stock"
+        "company": "Astera Labs Inc."
     },
     {
         "stock_symbol": "ALGM",
-        "company": "Allegro MicroSystems Inc. Common Stock"
+        "company": "Allegro MicroSystems Inc."
     },
     {
         "stock_symbol": "ALGN",
-        "company": "Align Technology Inc. Common Stock"
+        "company": "Align Technology Inc."
     },
     {
         "stock_symbol": "ALHC",
-        "company": "Alignment Healthcare Inc. Common Stock"
+        "company": "Alignment Healthcare Inc."
     },
     {
         "stock_symbol": "ALKS",
@@ -149,19 +149,19 @@
     },
     {
         "stock_symbol": "ALKT",
-        "company": "Alkami Technology Inc. Common Stock"
+        "company": "Alkami Technology Inc."
     },
     {
         "stock_symbol": "ALNY",
-        "company": "Alnylam Pharmaceuticals Inc. Common Stock"
+        "company": "Alnylam Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "ALRM",
-        "company": "Alarm.com Holdings Inc. Common Stock"
+        "company": "Alarm.com Holdings Inc."
     },
     {
         "stock_symbol": "ALTR",
-        "company": "Altair Engineering Inc. Class A Common Stock"
+        "company": "Altair Engineering Inc. Class A"
     },
     {
         "stock_symbol": "ALVO",
@@ -169,7 +169,7 @@
     },
     {
         "stock_symbol": "AMAT",
-        "company": "Applied Materials Inc. Common Stock"
+        "company": "Applied Materials Inc."
     },
     {
         "stock_symbol": "AMBA",
@@ -177,59 +177,59 @@
     },
     {
         "stock_symbol": "AMD",
-        "company": "Advanced Micro Devices Inc. Common Stock"
+        "company": "Advanced Micro Devices Inc."
     },
     {
         "stock_symbol": "AMED",
-        "company": "Amedisys Inc Common Stock"
+        "company": "Amedisys Inc"
     },
     {
         "stock_symbol": "AMGN",
-        "company": "Amgen Inc. Common Stock"
+        "company": "Amgen Inc."
     },
     {
         "stock_symbol": "AMKR",
-        "company": "Amkor Technology Inc. Common Stock"
+        "company": "Amkor Technology Inc."
     },
     {
         "stock_symbol": "AMRX",
-        "company": "Amneal Pharmaceuticals Inc. Class A Common Stock"
+        "company": "Amneal Pharmaceuticals Inc. Class A"
     },
     {
         "stock_symbol": "AMZN",
-        "company": "Amazon.com Inc. Common Stock"
+        "company": "Amazon.com Inc."
     },
     {
         "stock_symbol": "ANSS",
-        "company": "ANSYS Inc. Common Stock"
+        "company": "ANSYS Inc."
     },
     {
         "stock_symbol": "APA",
-        "company": "APA Corporation Common Stock"
+        "company": "APA Corporation"
     },
     {
         "stock_symbol": "APGE",
-        "company": "Apogee Therapeutics Inc. Common Stock"
+        "company": "Apogee Therapeutics Inc."
     },
     {
         "stock_symbol": "APLD",
-        "company": "Applied Digital Corporation Common Stock"
+        "company": "Applied Digital Corporation"
     },
     {
         "stock_symbol": "APLS",
-        "company": "Apellis Pharmaceuticals Inc. Common Stock"
+        "company": "Apellis Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "APP",
-        "company": "Applovin Corporation Class A Common Stock"
+        "company": "Applovin Corporation Class A"
     },
     {
         "stock_symbol": "APPF",
-        "company": "AppFolio Inc. Class A Common Stock"
+        "company": "AppFolio Inc. Class A"
     },
     {
         "stock_symbol": "APPN",
-        "company": "Appian Corporation Class A Common Stock"
+        "company": "Appian Corporation Class A"
     },
     {
         "stock_symbol": "ARBKL",
@@ -237,11 +237,11 @@
     },
     {
         "stock_symbol": "ARCB",
-        "company": "ArcBest Corporation Common Stock"
+        "company": "ArcBest Corporation"
     },
     {
         "stock_symbol": "ARCC",
-        "company": "Ares Capital Corporation Common Stock"
+        "company": "Ares Capital Corporation"
     },
     {
         "stock_symbol": "ARGX",
@@ -257,7 +257,7 @@
     },
     {
         "stock_symbol": "ARWR",
-        "company": "Arrowhead Pharmaceuticals Inc. Common Stock"
+        "company": "Arrowhead Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "ASML",
@@ -269,15 +269,15 @@
     },
     {
         "stock_symbol": "ASO",
-        "company": "Academy Sports and Outdoors Inc. Common Stock"
+        "company": "Academy Sports and Outdoors Inc."
     },
     {
         "stock_symbol": "ASTH",
-        "company": "Astrana Health Inc. Common Stock"
+        "company": "Astrana Health Inc."
     },
     {
         "stock_symbol": "ASTS",
-        "company": "AST SpaceMobile Inc. Class A Common Stock"
+        "company": "AST SpaceMobile Inc. Class A"
     },
     {
         "stock_symbol": "ATAT",
@@ -289,7 +289,7 @@
     },
     {
         "stock_symbol": "AUR",
-        "company": "Aurora Innovation Inc. Class A Common Stock"
+        "company": "Aurora Innovation Inc. Class A"
     },
     {
         "stock_symbol": "AUROW",
@@ -297,31 +297,31 @@
     },
     {
         "stock_symbol": "AVAV",
-        "company": "AeroVironment Inc. Common Stock"
+        "company": "AeroVironment Inc."
     },
     {
         "stock_symbol": "AVDX",
-        "company": "AvidXchange Holdings Inc. Common Stock"
+        "company": "AvidXchange Holdings Inc."
     },
     {
         "stock_symbol": "AVGO",
-        "company": "Broadcom Inc. Common Stock"
+        "company": "Broadcom Inc."
     },
     {
         "stock_symbol": "AVPT",
-        "company": "AvePoint Inc. Class A Common Stock"
+        "company": "AvePoint Inc. Class A"
     },
     {
         "stock_symbol": "AVT",
-        "company": "Avnet Inc. Common Stock"
+        "company": "Avnet Inc."
     },
     {
         "stock_symbol": "AXON",
-        "company": "Axon Enterprise Inc. Common Stock"
+        "company": "Axon Enterprise Inc."
     },
     {
         "stock_symbol": "AXSM",
-        "company": "Axsome Therapeutics Inc. Common Stock"
+        "company": "Axsome Therapeutics Inc."
     },
     {
         "stock_symbol": "AZN",
@@ -329,7 +329,7 @@
     },
     {
         "stock_symbol": "AZPN",
-        "company": "Aspen Technology Inc. Common Stock"
+        "company": "Aspen Technology Inc."
     },
     {
         "stock_symbol": "AZTA",
@@ -337,43 +337,43 @@
     },
     {
         "stock_symbol": "BANF",
-        "company": "BancFirst Corporation Common Stock"
+        "company": "BancFirst Corporation"
     },
     {
         "stock_symbol": "BANR",
-        "company": "Banner Corporation Common Stock"
+        "company": "Banner Corporation"
     },
     {
         "stock_symbol": "BATRA",
-        "company": "Atlanta Braves Holdings Inc. Series A Common Stock"
+        "company": "Atlanta Braves Holdings Inc. Series A"
     },
     {
         "stock_symbol": "BATRK",
-        "company": "Atlanta Braves Holdings Inc. Series C Common Stock"
+        "company": "Atlanta Braves Holdings Inc. Series C"
     },
     {
         "stock_symbol": "BBIO",
-        "company": "BridgeBio Pharma Inc. Common Stock"
+        "company": "BridgeBio Pharma Inc."
     },
     {
         "stock_symbol": "BCPC",
-        "company": "Balchem Corporation Common Stock"
+        "company": "Balchem Corporation"
     },
     {
         "stock_symbol": "BEAM",
-        "company": "Beam Therapeutics Inc. Common Stock"
+        "company": "Beam Therapeutics Inc."
     },
     {
         "stock_symbol": "BECN",
-        "company": "Beacon Roofing Supply Inc. Common Stock"
+        "company": "Beacon Roofing Supply Inc."
     },
     {
         "stock_symbol": "BGC",
-        "company": "BGC Group Inc. Class A Common Stock"
+        "company": "BGC Group Inc. Class A"
     },
     {
         "stock_symbol": "BHF",
-        "company": "Brighthouse Financial Inc. Common Stock"
+        "company": "Brighthouse Financial Inc."
     },
     {
         "stock_symbol": "BIDU",
@@ -381,7 +381,7 @@
     },
     {
         "stock_symbol": "BIIB",
-        "company": "Biogen Inc. Common Stock"
+        "company": "Biogen Inc."
     },
     {
         "stock_symbol": "BILI",
@@ -389,23 +389,23 @@
     },
     {
         "stock_symbol": "BKNG",
-        "company": "Booking Holdings Inc. Common Stock"
+        "company": "Booking Holdings Inc."
     },
     {
         "stock_symbol": "BKR",
-        "company": "Baker Hughes Company Class A Common Stock"
+        "company": "Baker Hughes Company Class A"
     },
     {
         "stock_symbol": "BL",
-        "company": "BlackLine Inc. Common Stock"
+        "company": "BlackLine Inc."
     },
     {
         "stock_symbol": "BLKB",
-        "company": "Blackbaud Inc. Common Stock"
+        "company": "Blackbaud Inc."
     },
     {
         "stock_symbol": "BMRN",
-        "company": "BioMarin Pharmaceutical Inc. Common Stock"
+        "company": "BioMarin Pharmaceutical Inc."
     },
     {
         "stock_symbol": "BNTX",
@@ -413,15 +413,15 @@
     },
     {
         "stock_symbol": "BOKF",
-        "company": "BOK Financial Corporation Common Stock"
+        "company": "BOK Financial Corporation"
     },
     {
         "stock_symbol": "BPMC",
-        "company": "Blueprint Medicines Corporation Common Stock"
+        "company": "Blueprint Medicines Corporation"
     },
     {
         "stock_symbol": "BPOP",
-        "company": "Popular Inc. Common Stock"
+        "company": "Popular Inc."
     },
     {
         "stock_symbol": "BPYPM",
@@ -441,15 +441,15 @@
     },
     {
         "stock_symbol": "BRKR",
-        "company": "Bruker Corporation Common Stock"
+        "company": "Bruker Corporation"
     },
     {
         "stock_symbol": "BRZE",
-        "company": "Braze Inc. Class A Common Stock"
+        "company": "Braze Inc. Class A"
     },
     {
         "stock_symbol": "BSY",
-        "company": "Bentley Systems Incorporated Class B Common Stock"
+        "company": "Bentley Systems Incorporated Class B"
     },
     {
         "stock_symbol": "BTDR",
@@ -457,7 +457,7 @@
     },
     {
         "stock_symbol": "BTSG",
-        "company": "BrightSpring Health Services Inc. Common Stock"
+        "company": "BrightSpring Health Services Inc."
     },
     {
         "stock_symbol": "BTSGU",
@@ -465,7 +465,7 @@
     },
     {
         "stock_symbol": "BWIN",
-        "company": "The Baldwin Insurance Group Inc. Class A Common Stock"
+        "company": "The Baldwin Insurance Group Inc. Class A"
     },
     {
         "stock_symbol": "BZ",
@@ -473,15 +473,15 @@
     },
     {
         "stock_symbol": "CACC",
-        "company": "Credit Acceptance Corporation Common Stock"
+        "company": "Credit Acceptance Corporation"
     },
     {
         "stock_symbol": "CAKE",
-        "company": "Cheesecake Factory Incorporated (The) Common Stock"
+        "company": "Cheesecake Factory Incorporated (The)"
     },
     {
         "stock_symbol": "CALM",
-        "company": "Cal-Maine Foods Inc. Common Stock"
+        "company": "Cal-Maine Foods Inc."
     },
     {
         "stock_symbol": "CAMT",
@@ -489,31 +489,31 @@
     },
     {
         "stock_symbol": "CAR",
-        "company": "Avis Budget Group Inc. Common Stock"
+        "company": "Avis Budget Group Inc."
     },
     {
         "stock_symbol": "CARG",
-        "company": "CarGurus Inc. Class A Common Stock "
+        "company": "CarGurus Inc. Class A "
     },
     {
         "stock_symbol": "CART",
-        "company": "Maplebear Inc. Common Stock"
+        "company": "Maplebear Inc."
     },
     {
         "stock_symbol": "CASY",
-        "company": "Casey's General Stores Inc. Common Stock"
+        "company": "Casey's General Stores Inc."
     },
     {
         "stock_symbol": "CATY",
-        "company": "Cathay General Bancorp Common Stock"
+        "company": "Cathay General Bancorp"
     },
     {
         "stock_symbol": "CBSH",
-        "company": "Commerce Bancshares Inc. Common Stock"
+        "company": "Commerce Bancshares Inc."
     },
     {
         "stock_symbol": "CCCS",
-        "company": "CCC Intelligent Solutions Holdings Inc. Common Stock"
+        "company": "CCC Intelligent Solutions Holdings Inc."
     },
     {
         "stock_symbol": "CCEP",
@@ -525,39 +525,39 @@
     },
     {
         "stock_symbol": "CDNS",
-        "company": "Cadence Design Systems Inc. Common Stock"
+        "company": "Cadence Design Systems Inc."
     },
     {
         "stock_symbol": "CDW",
-        "company": "CDW Corporation Common Stock"
+        "company": "CDW Corporation"
     },
     {
         "stock_symbol": "CEG",
-        "company": "Constellation Energy Corporation Common Stock "
+        "company": "Constellation Energy Corporation "
     },
     {
         "stock_symbol": "CELH",
-        "company": "Celsius Holdings Inc. Common Stock"
+        "company": "Celsius Holdings Inc."
     },
     {
         "stock_symbol": "CENT",
-        "company": "Central Garden & Pet Company Common Stock"
+        "company": "Central Garden & Pet Company"
     },
     {
         "stock_symbol": "CENTA",
-        "company": "Central Garden & Pet Company Class A Common Stock Nonvoting"
+        "company": "Central Garden & Pet Company Class A Nonvoting"
     },
     {
         "stock_symbol": "CERT",
-        "company": "Certara Inc. Common Stock"
+        "company": "Certara Inc."
     },
     {
         "stock_symbol": "CFLT",
-        "company": "Confluent Inc. Class A Common Stock"
+        "company": "Confluent Inc. Class A"
     },
     {
         "stock_symbol": "CG",
-        "company": "The Carlyle Group Inc. Common Stock"
+        "company": "The Carlyle Group Inc."
     },
     {
         "stock_symbol": "CGABL",
@@ -565,7 +565,7 @@
     },
     {
         "stock_symbol": "CGNX",
-        "company": "Cognex Corporation Common Stock"
+        "company": "Cognex Corporation"
     },
     {
         "stock_symbol": "CGON",
@@ -573,11 +573,11 @@
     },
     {
         "stock_symbol": "CHDN",
-        "company": "Churchill Downs Incorporated Common Stock"
+        "company": "Churchill Downs Incorporated"
     },
     {
         "stock_symbol": "CHEF",
-        "company": "The Chefs' Warehouse Inc. Common Stock"
+        "company": "The Chefs' Warehouse Inc."
     },
     {
         "stock_symbol": "CHKP",
@@ -585,23 +585,23 @@
     },
     {
         "stock_symbol": "CHRD",
-        "company": "Chord Energy Corporation Common Stock"
+        "company": "Chord Energy Corporation"
     },
     {
         "stock_symbol": "CHRW",
-        "company": "C.H. Robinson Worldwide Inc. Common Stock"
+        "company": "C.H. Robinson Worldwide Inc."
     },
     {
         "stock_symbol": "CHTR",
-        "company": "Charter Communications Inc. Class A Common Stock New"
+        "company": "Charter Communications Inc. Class A New"
     },
     {
         "stock_symbol": "CHX",
-        "company": "ChampionX Corporation Common Stock "
+        "company": "ChampionX Corporation "
     },
     {
         "stock_symbol": "CIFR",
-        "company": "Cipher Mining Inc. Common Stock"
+        "company": "Cipher Mining Inc."
     },
     {
         "stock_symbol": "CIGI",
@@ -609,7 +609,7 @@
     },
     {
         "stock_symbol": "CINF",
-        "company": "Cincinnati Financial Corporation Common Stock"
+        "company": "Cincinnati Financial Corporation"
     },
     {
         "stock_symbol": "CLBT",
@@ -617,19 +617,19 @@
     },
     {
         "stock_symbol": "CLOV",
-        "company": "Clover Health Investments Corp. Class A Common Stock"
+        "company": "Clover Health Investments Corp. Class A"
     },
     {
         "stock_symbol": "CLSK",
-        "company": "CleanSpark Inc. Common Stock"
+        "company": "CleanSpark Inc."
     },
     {
         "stock_symbol": "CMCSA",
-        "company": "Comcast Corporation Class A Common Stock"
+        "company": "Comcast Corporation Class A"
     },
     {
         "stock_symbol": "CME",
-        "company": "CME Group Inc. Class A Common Stock"
+        "company": "CME Group Inc. Class A"
     },
     {
         "stock_symbol": "CNTA",
@@ -637,43 +637,43 @@
     },
     {
         "stock_symbol": "CNXC",
-        "company": "Concentrix Corporation Common Stock"
+        "company": "Concentrix Corporation"
     },
     {
         "stock_symbol": "COCO",
-        "company": "The Vita Coco Company Inc. Common Stock"
+        "company": "The Vita Coco Company Inc."
     },
     {
         "stock_symbol": "COIN",
-        "company": "Coinbase Global Inc. Class A Common Stock"
+        "company": "Coinbase Global Inc. Class A"
     },
     {
         "stock_symbol": "COKE",
-        "company": "Coca-Cola Consolidated Inc. Common Stock"
+        "company": "Coca-Cola Consolidated Inc."
     },
     {
         "stock_symbol": "COLB",
-        "company": "Columbia Banking System Inc. Common Stock"
+        "company": "Columbia Banking System Inc."
     },
     {
         "stock_symbol": "COLM",
-        "company": "Columbia Sportswear Company Common Stock"
+        "company": "Columbia Sportswear Company"
     },
     {
         "stock_symbol": "COO",
-        "company": "The Cooper Companies Inc. Common Stock"
+        "company": "The Cooper Companies Inc."
     },
     {
         "stock_symbol": "COOP",
-        "company": "Mr. Cooper Group Inc. Common Stock"
+        "company": "Mr. Cooper Group Inc."
     },
     {
         "stock_symbol": "CORT",
-        "company": "Corcept Therapeutics Incorporated Common Stock"
+        "company": "Corcept Therapeutics Incorporated"
     },
     {
         "stock_symbol": "CORZ",
-        "company": "Core Scientific Inc. Common Stock"
+        "company": "Core Scientific Inc."
     },
     {
         "stock_symbol": "CORZW",
@@ -685,19 +685,19 @@
     },
     {
         "stock_symbol": "COST",
-        "company": "Costco Wholesale Corporation Common Stock"
+        "company": "Costco Wholesale Corporation"
     },
     {
         "stock_symbol": "CPB",
-        "company": "The Campbell's Company Common Stock"
+        "company": "The Campbell's Company"
     },
     {
         "stock_symbol": "CPRT",
-        "company": "Copart Inc. (DE) Common Stock"
+        "company": "Copart Inc. (DE)"
     },
     {
         "stock_symbol": "CPRX",
-        "company": "Catalyst Pharmaceuticals Inc. Common Stock"
+        "company": "Catalyst Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "CRDO",
@@ -705,11 +705,11 @@
     },
     {
         "stock_symbol": "CRNX",
-        "company": "Crinetics Pharmaceuticals Inc. Common Stock"
+        "company": "Crinetics Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "CROX",
-        "company": "Crocs Inc. Common Stock"
+        "company": "Crocs Inc."
     },
     {
         "stock_symbol": "CRSP",
@@ -721,59 +721,59 @@
     },
     {
         "stock_symbol": "CRUS",
-        "company": "Cirrus Logic Inc. Common Stock"
+        "company": "Cirrus Logic Inc."
     },
     {
         "stock_symbol": "CRVL",
-        "company": "CorVel Corp. Common Stock"
+        "company": "CorVel Corp."
     },
     {
         "stock_symbol": "CRWD",
-        "company": "CrowdStrike Holdings Inc. Class A Common Stock"
+        "company": "CrowdStrike Holdings Inc. Class A"
     },
     {
         "stock_symbol": "CSCO",
-        "company": "Cisco Systems Inc. Common Stock (DE)"
+        "company": "Cisco Systems Inc. (DE)"
     },
     {
         "stock_symbol": "CSGP",
-        "company": "CoStar Group Inc. Common Stock"
+        "company": "CoStar Group Inc."
     },
     {
         "stock_symbol": "CSQ",
-        "company": "Calamos Strategic Total Return Common Stock"
+        "company": "Calamos Strategic Total Return"
     },
     {
         "stock_symbol": "CSWI",
-        "company": "CSW Industrials Inc. Common Stock"
+        "company": "CSW Industrials Inc."
     },
     {
         "stock_symbol": "CSX",
-        "company": "CSX Corporation Common Stock"
+        "company": "CSX Corporation"
     },
     {
         "stock_symbol": "CTAS",
-        "company": "Cintas Corporation Common Stock"
+        "company": "Cintas Corporation"
     },
     {
         "stock_symbol": "CTSH",
-        "company": "Cognizant Technology Solutions Corporation Class A Common Stock"
+        "company": "Cognizant Technology Solutions Corporation Class A"
     },
     {
         "stock_symbol": "CVBF",
-        "company": "CVB Financial Corporation Common Stock"
+        "company": "CVB Financial Corporation"
     },
     {
         "stock_symbol": "CVCO",
-        "company": "Cavco Industries Inc. Common Stock When Issued"
+        "company": "Cavco Industries Inc. When Issued"
     },
     {
         "stock_symbol": "CVLT",
-        "company": "Commvault Systems Inc. Common Stock"
+        "company": "Commvault Systems Inc."
     },
     {
         "stock_symbol": "CWST",
-        "company": "Casella Waste Systems Inc. Class A Common Stock"
+        "company": "Casella Waste Systems Inc. Class A"
     },
     {
         "stock_symbol": "CYBR",
@@ -781,23 +781,23 @@
     },
     {
         "stock_symbol": "CYTK",
-        "company": "Cytokinetics Incorporated Common Stock"
+        "company": "Cytokinetics Incorporated"
     },
     {
         "stock_symbol": "CZR",
-        "company": "Caesars Entertainment Inc. Common Stock"
+        "company": "Caesars Entertainment Inc."
     },
     {
         "stock_symbol": "DASH",
-        "company": "DoorDash Inc. Class A Common Stock"
+        "company": "DoorDash Inc. Class A"
     },
     {
         "stock_symbol": "DBX",
-        "company": "Dropbox Inc. Class A Common Stock"
+        "company": "Dropbox Inc. Class A"
     },
     {
         "stock_symbol": "DDOG",
-        "company": "Datadog Inc. Class A Common Stock"
+        "company": "Datadog Inc. Class A"
     },
     {
         "stock_symbol": "DHCNI",
@@ -809,11 +809,11 @@
     },
     {
         "stock_symbol": "DIOD",
-        "company": "Diodes Incorporated Common Stock"
+        "company": "Diodes Incorporated"
     },
     {
         "stock_symbol": "DJT",
-        "company": "Trump Media & Technology Group Corp. Common Stock"
+        "company": "Trump Media & Technology Group Corp."
     },
     {
         "stock_symbol": "DJTWW",
@@ -821,7 +821,7 @@
     },
     {
         "stock_symbol": "DKNG",
-        "company": "DraftKings Inc. Class A Common Stock"
+        "company": "DraftKings Inc. Class A"
     },
     {
         "stock_symbol": "DLO",
@@ -829,15 +829,15 @@
     },
     {
         "stock_symbol": "DLTR",
-        "company": "Dollar Tree Inc. Common Stock"
+        "company": "Dollar Tree Inc."
     },
     {
         "stock_symbol": "DNLI",
-        "company": "Denali Therapeutics Inc. Common Stock"
+        "company": "Denali Therapeutics Inc."
     },
     {
         "stock_symbol": "DOCU",
-        "company": "DocuSign Inc. Common Stock"
+        "company": "DocuSign Inc."
     },
     {
         "stock_symbol": "DOOO",
@@ -845,7 +845,7 @@
     },
     {
         "stock_symbol": "DORM",
-        "company": "Dorman Products Inc. Common Stock"
+        "company": "Dorman Products Inc."
     },
     {
         "stock_symbol": "DOX",
@@ -853,67 +853,67 @@
     },
     {
         "stock_symbol": "DPZ",
-        "company": "Domino's Pizza Inc Common Stock"
+        "company": "Domino's Pizza Inc"
     },
     {
         "stock_symbol": "DRS",
-        "company": "Leonardo DRS Inc. Common Stock"
+        "company": "Leonardo DRS Inc."
     },
     {
         "stock_symbol": "DRVN",
-        "company": "Driven Brands Holdings Inc. Common Stock"
+        "company": "Driven Brands Holdings Inc."
     },
     {
         "stock_symbol": "DSGX",
-        "company": "Descartes Systems Group Inc. (The) Common Stock"
+        "company": "Descartes Systems Group Inc. (The)"
     },
     {
         "stock_symbol": "DUOL",
-        "company": "Duolingo Inc. Class A Common Stock"
+        "company": "Duolingo Inc. Class A"
     },
     {
         "stock_symbol": "DXCM",
-        "company": "DexCom Inc. Common Stock"
+        "company": "DexCom Inc."
     },
     {
         "stock_symbol": "EA",
-        "company": "Electronic Arts Inc. Common Stock"
+        "company": "Electronic Arts Inc."
     },
     {
         "stock_symbol": "EBAY",
-        "company": "eBay Inc. Common Stock"
+        "company": "eBay Inc."
     },
     {
         "stock_symbol": "EBC",
-        "company": "Eastern Bankshares Inc. Common Stock"
+        "company": "Eastern Bankshares Inc."
     },
     {
         "stock_symbol": "EEFT",
-        "company": "Euronet Worldwide Inc. Common Stock"
+        "company": "Euronet Worldwide Inc."
     },
     {
         "stock_symbol": "EFSC",
-        "company": "Enterprise Financial Services Corporation Common Stock"
+        "company": "Enterprise Financial Services Corporation"
     },
     {
         "stock_symbol": "ENPH",
-        "company": "Enphase Energy Inc. Common Stock"
+        "company": "Enphase Energy Inc."
     },
     {
         "stock_symbol": "ENSG",
-        "company": "The Ensign Group Inc. Common Stock"
+        "company": "The Ensign Group Inc."
     },
     {
         "stock_symbol": "ENTG",
-        "company": "Entegris Inc. Common Stock"
+        "company": "Entegris Inc."
     },
     {
         "stock_symbol": "ENVX",
-        "company": "Enovix Corporation Common Stock"
+        "company": "Enovix Corporation"
     },
     {
         "stock_symbol": "EQIX",
-        "company": "Equinix Inc. Common Stock REIT"
+        "company": "Equinix Inc. REIT"
     },
     {
         "stock_symbol": "ERIC",
@@ -921,7 +921,7 @@
     },
     {
         "stock_symbol": "ERIE",
-        "company": "Erie Indemnity Company Class A Common Stock"
+        "company": "Erie Indemnity Company Class A"
     },
     {
         "stock_symbol": "ESGR",
@@ -933,31 +933,31 @@
     },
     {
         "stock_symbol": "ETSY",
-        "company": "Etsy Inc. Common Stock"
+        "company": "Etsy Inc."
     },
     {
         "stock_symbol": "EVRG",
-        "company": "Evergy Inc. Common Stock"
+        "company": "Evergy Inc."
     },
     {
         "stock_symbol": "EWBC",
-        "company": "East West Bancorp Inc. Common Stock"
+        "company": "East West Bancorp Inc."
     },
     {
         "stock_symbol": "EWTX",
-        "company": "Edgewise Therapeutics Inc. Common Stock"
+        "company": "Edgewise Therapeutics Inc."
     },
     {
         "stock_symbol": "EXAS",
-        "company": "Exact Sciences Corporation Common Stock"
+        "company": "Exact Sciences Corporation"
     },
     {
         "stock_symbol": "EXC",
-        "company": "Exelon Corporation Common Stock"
+        "company": "Exelon Corporation"
     },
     {
         "stock_symbol": "EXE",
-        "company": "Expand Energy Corporation Common Stock"
+        "company": "Expand Energy Corporation"
     },
     {
         "stock_symbol": "EXEEL",
@@ -969,47 +969,47 @@
     },
     {
         "stock_symbol": "EXEL",
-        "company": "Exelixis Inc. Common Stock"
+        "company": "Exelixis Inc."
     },
     {
         "stock_symbol": "EXLS",
-        "company": "ExlService Holdings Inc. Common Stock"
+        "company": "ExlService Holdings Inc."
     },
     {
         "stock_symbol": "EXPE",
-        "company": "Expedia Group Inc. Common Stock"
+        "company": "Expedia Group Inc."
     },
     {
         "stock_symbol": "EXPO",
-        "company": "Exponent Inc. Common Stock"
+        "company": "Exponent Inc."
     },
     {
         "stock_symbol": "EXTR",
-        "company": "Extreme Networks Inc. Common Stock"
+        "company": "Extreme Networks Inc."
     },
     {
         "stock_symbol": "FA",
-        "company": "First Advantage Corporation Common Stock"
+        "company": "First Advantage Corporation"
     },
     {
         "stock_symbol": "FANG",
-        "company": "Diamondback Energy Inc. Common Stock"
+        "company": "Diamondback Energy Inc."
     },
     {
         "stock_symbol": "FAST",
-        "company": "Fastenal Company Common Stock"
+        "company": "Fastenal Company"
     },
     {
         "stock_symbol": "FCFS",
-        "company": "FirstCash Holdings Inc. Common Stock"
+        "company": "FirstCash Holdings Inc."
     },
     {
         "stock_symbol": "FCNCA",
-        "company": "First Citizens BancShares Inc. Class A Common Stock"
+        "company": "First Citizens BancShares Inc. Class A"
     },
     {
         "stock_symbol": "FELE",
-        "company": "Franklin Electric Co. Inc. Common Stock"
+        "company": "Franklin Electric Co. Inc."
     },
     {
         "stock_symbol": "FER",
@@ -1017,27 +1017,27 @@
     },
     {
         "stock_symbol": "FFBC",
-        "company": "First Financial Bancorp. Common Stock"
+        "company": "First Financial Bancorp."
     },
     {
         "stock_symbol": "FFIN",
-        "company": "First Financial Bankshares Inc. Common Stock"
+        "company": "First Financial Bankshares Inc."
     },
     {
         "stock_symbol": "FFIV",
-        "company": "F5 Inc. Common Stock"
+        "company": "F5 Inc."
     },
     {
         "stock_symbol": "FHB",
-        "company": "First Hawaiian Inc. Common Stock"
+        "company": "First Hawaiian Inc."
     },
     {
         "stock_symbol": "FIBK",
-        "company": "First Interstate BancSystem Inc. Common Stock (DE)"
+        "company": "First Interstate BancSystem Inc. (DE)"
     },
     {
         "stock_symbol": "FITB",
-        "company": "Fifth Third Bancorp Common Stock"
+        "company": "Fifth Third Bancorp"
     },
     {
         "stock_symbol": "FITBI",
@@ -1053,15 +1053,15 @@
     },
     {
         "stock_symbol": "FIVE",
-        "company": "Five Below Inc. Common Stock"
+        "company": "Five Below Inc."
     },
     {
         "stock_symbol": "FIVN",
-        "company": "Five9 Inc. Common Stock"
+        "company": "Five9 Inc."
     },
     {
         "stock_symbol": "FIZZ",
-        "company": "National Beverage Corp. Common Stock"
+        "company": "National Beverage Corp."
     },
     {
         "stock_symbol": "FLEX",
@@ -1069,35 +1069,35 @@
     },
     {
         "stock_symbol": "FLNC",
-        "company": "Fluence Energy Inc. Class A Common Stock"
+        "company": "Fluence Energy Inc. Class A"
     },
     {
         "stock_symbol": "FLYW",
-        "company": "Flywire Corporation Voting Common Stock"
+        "company": "Flywire Corporation Voting"
     },
     {
         "stock_symbol": "FOLD",
-        "company": "Amicus Therapeutics Inc. Common Stock"
+        "company": "Amicus Therapeutics Inc."
     },
     {
         "stock_symbol": "FORM",
-        "company": "FormFactor Inc. FormFactor Inc. Common Stock"
+        "company": "FormFactor Inc. FormFactor Inc."
     },
     {
         "stock_symbol": "FOX",
-        "company": "Fox Corporation Class B Common Stock"
+        "company": "Fox Corporation Class B"
     },
     {
         "stock_symbol": "FOXA",
-        "company": "Fox Corporation Class A Common Stock"
+        "company": "Fox Corporation Class A"
     },
     {
         "stock_symbol": "FRHC",
-        "company": "Freedom Holding Corp. Common Stock"
+        "company": "Freedom Holding Corp."
     },
     {
         "stock_symbol": "FRME",
-        "company": "First Merchants Corporation Common Stock"
+        "company": "First Merchants Corporation"
     },
     {
         "stock_symbol": "FROG",
@@ -1105,15 +1105,15 @@
     },
     {
         "stock_symbol": "FRPT",
-        "company": "Freshpet Inc. Common Stock"
+        "company": "Freshpet Inc."
     },
     {
         "stock_symbol": "FRSH",
-        "company": "Freshworks Inc. Class A Common Stock"
+        "company": "Freshworks Inc. Class A"
     },
     {
         "stock_symbol": "FSLR",
-        "company": "First Solar Inc. Common Stock"
+        "company": "First Solar Inc."
     },
     {
         "stock_symbol": "FSV",
@@ -1121,7 +1121,7 @@
     },
     {
         "stock_symbol": "FTAI",
-        "company": "FTAI Aviation Ltd. Common Stock"
+        "company": "FTAI Aviation Ltd."
     },
     {
         "stock_symbol": "FTAIM",
@@ -1137,15 +1137,15 @@
     },
     {
         "stock_symbol": "FTDR",
-        "company": "Frontdoor Inc. Common Stock"
+        "company": "Frontdoor Inc."
     },
     {
         "stock_symbol": "FTNT",
-        "company": "Fortinet Inc. Common Stock"
+        "company": "Fortinet Inc."
     },
     {
         "stock_symbol": "FULT",
-        "company": "Fulton Financial Corporation Common Stock"
+        "company": "Fulton Financial Corporation"
     },
     {
         "stock_symbol": "FULTP",
@@ -1157,23 +1157,23 @@
     },
     {
         "stock_symbol": "FWONA",
-        "company": "Liberty Media Corporation Series A Liberty Formula One Common Stock"
+        "company": "Liberty Media Corporation Series A Liberty Formula One"
     },
     {
         "stock_symbol": "FWONK",
-        "company": "Liberty Media Corporation Series C Liberty Formula One Common Stock"
+        "company": "Liberty Media Corporation Series C Liberty Formula One"
     },
     {
         "stock_symbol": "FYBR",
-        "company": "Frontier Communications Parent Inc. Common Stock"
+        "company": "Frontier Communications Parent Inc."
     },
     {
         "stock_symbol": "GBDC",
-        "company": "Golub Capital BDC Inc. Common Stock"
+        "company": "Golub Capital BDC Inc."
     },
     {
         "stock_symbol": "GCMG",
-        "company": "GCM Grosvenor Inc. Class A Common Stock"
+        "company": "GCM Grosvenor Inc. Class A"
     },
     {
         "stock_symbol": "GDS",
@@ -1181,11 +1181,11 @@
     },
     {
         "stock_symbol": "GEHC",
-        "company": "GE HealthCare Technologies Inc. Common Stock "
+        "company": "GE HealthCare Technologies Inc. "
     },
     {
         "stock_symbol": "GEN",
-        "company": "Gen Digital Inc. Common Stock"
+        "company": "Gen Digital Inc."
     },
     {
         "stock_symbol": "GFS",
@@ -1197,11 +1197,11 @@
     },
     {
         "stock_symbol": "GH",
-        "company": "Guardant Health Inc. Common Stock"
+        "company": "Guardant Health Inc."
     },
     {
         "stock_symbol": "GILD",
-        "company": "Gilead Sciences Inc. Common Stock"
+        "company": "Gilead Sciences Inc."
     },
     {
         "stock_symbol": "GLBE",
@@ -1213,7 +1213,7 @@
     },
     {
         "stock_symbol": "GLPI",
-        "company": "Gaming and Leisure Properties Inc. Common Stock"
+        "company": "Gaming and Leisure Properties Inc."
     },
     {
         "stock_symbol": "GMAB",
@@ -1221,7 +1221,7 @@
     },
     {
         "stock_symbol": "GNTX",
-        "company": "Gentex Corporation Common Stock"
+        "company": "Gentex Corporation"
     },
     {
         "stock_symbol": "GOOG",
@@ -1229,7 +1229,7 @@
     },
     {
         "stock_symbol": "GOOGL",
-        "company": "Alphabet Inc. Class A Common Stock"
+        "company": "Alphabet Inc. Class A"
     },
     {
         "stock_symbol": "GRAB",
@@ -1241,31 +1241,31 @@
     },
     {
         "stock_symbol": "GSHD",
-        "company": "Goosehead Insurance Inc. Class A Common Stock"
+        "company": "Goosehead Insurance Inc. Class A"
     },
     {
         "stock_symbol": "GT",
-        "company": "The Goodyear Tire & Rubber Company Common Stock"
+        "company": "The Goodyear Tire & Rubber Company"
     },
     {
         "stock_symbol": "GTLB",
-        "company": "GitLab Inc. Class A Common Stock"
+        "company": "GitLab Inc. Class A"
     },
     {
         "stock_symbol": "GTX",
-        "company": "Garrett Motion Inc. Common Stock"
+        "company": "Garrett Motion Inc."
     },
     {
         "stock_symbol": "HALO",
-        "company": "Halozyme Therapeutics Inc. Common Stock"
+        "company": "Halozyme Therapeutics Inc."
     },
     {
         "stock_symbol": "HAS",
-        "company": "Hasbro Inc. Common Stock"
+        "company": "Hasbro Inc."
     },
     {
         "stock_symbol": "HBAN",
-        "company": "Huntington Bancshares Incorporated Common Stock"
+        "company": "Huntington Bancshares Incorporated"
     },
     {
         "stock_symbol": "HBANL",
@@ -1285,11 +1285,11 @@
     },
     {
         "stock_symbol": "HCP",
-        "company": "HashiCorp Inc. Class A Common Stock"
+        "company": "HashiCorp Inc. Class A"
     },
     {
         "stock_symbol": "HEES",
-        "company": "H&E Equipment Services Inc. Common Stock"
+        "company": "H&E Equipment Services Inc."
     },
     {
         "stock_symbol": "HIMX",
@@ -1297,31 +1297,31 @@
     },
     {
         "stock_symbol": "HLMN",
-        "company": "Hillman Solutions Corp. Common Stock"
+        "company": "Hillman Solutions Corp."
     },
     {
         "stock_symbol": "HLNE",
-        "company": "Hamilton Lane Incorporated Class A Common Stock"
+        "company": "Hamilton Lane Incorporated Class A"
     },
     {
         "stock_symbol": "HOLX",
-        "company": "Hologic Inc. Common Stock"
+        "company": "Hologic Inc."
     },
     {
         "stock_symbol": "HON",
-        "company": "Honeywell International Inc. Common Stock"
+        "company": "Honeywell International Inc."
     },
     {
         "stock_symbol": "HOOD",
-        "company": "Robinhood Markets Inc. Class A Common Stock"
+        "company": "Robinhood Markets Inc. Class A"
     },
     {
         "stock_symbol": "HQY",
-        "company": "HealthEquity Inc. Common Stock"
+        "company": "HealthEquity Inc."
     },
     {
         "stock_symbol": "HRMY",
-        "company": "Harmony Biosciences Holdings Inc. Common Stock"
+        "company": "Harmony Biosciences Holdings Inc."
     },
     {
         "stock_symbol": "HSAI",
@@ -1329,11 +1329,11 @@
     },
     {
         "stock_symbol": "HSIC",
-        "company": "Henry Schein Inc. Common Stock"
+        "company": "Henry Schein Inc."
     },
     {
         "stock_symbol": "HST",
-        "company": "Host Hotels & Resorts Inc. Common Stock"
+        "company": "Host Hotels & Resorts Inc."
     },
     {
         "stock_symbol": "HTHT",
@@ -1341,23 +1341,23 @@
     },
     {
         "stock_symbol": "HTLF",
-        "company": "Heartland Financial USA Inc. Common Stock"
+        "company": "Heartland Financial USA Inc."
     },
     {
         "stock_symbol": "HUBG",
-        "company": "Hub Group Inc. Class A Common Stock"
+        "company": "Hub Group Inc. Class A"
     },
     {
         "stock_symbol": "HURN",
-        "company": "Huron Consulting Group Inc. Common Stock"
+        "company": "Huron Consulting Group Inc."
     },
     {
         "stock_symbol": "HUT",
-        "company": "Hut 8 Corp. Common Stock"
+        "company": "Hut 8 Corp."
     },
     {
         "stock_symbol": "HWC",
-        "company": "Hancock Whitney Corporation Common Stock"
+        "company": "Hancock Whitney Corporation"
     },
     {
         "stock_symbol": "HWCPZ",
@@ -1365,27 +1365,27 @@
     },
     {
         "stock_symbol": "HWKN",
-        "company": "Hawkins Inc. Common Stock"
+        "company": "Hawkins Inc."
     },
     {
         "stock_symbol": "IAC",
-        "company": "IAC Inc. Common Stock"
+        "company": "IAC Inc."
     },
     {
         "stock_symbol": "IBKR",
-        "company": "Interactive Brokers Group Inc. Class A Common Stock"
+        "company": "Interactive Brokers Group Inc. Class A"
     },
     {
         "stock_symbol": "IBOC",
-        "company": "International Bancshares Corporation Common Stock"
+        "company": "International Bancshares Corporation"
     },
     {
         "stock_symbol": "IBRX",
-        "company": "ImmunityBio Inc. Common Stock"
+        "company": "ImmunityBio Inc."
     },
     {
         "stock_symbol": "ICFI",
-        "company": "ICF International Inc. Common Stock"
+        "company": "ICF International Inc."
     },
     {
         "stock_symbol": "ICLR",
@@ -1393,55 +1393,55 @@
     },
     {
         "stock_symbol": "ICUI",
-        "company": "ICU Medical Inc. Common Stock"
+        "company": "ICU Medical Inc."
     },
     {
         "stock_symbol": "IDCC",
-        "company": "InterDigital Inc. Common Stock"
+        "company": "InterDigital Inc."
     },
     {
         "stock_symbol": "IDXX",
-        "company": "IDEXX Laboratories Inc. Common Stock"
+        "company": "IDEXX Laboratories Inc."
     },
     {
         "stock_symbol": "IDYA",
-        "company": "IDEAYA Biosciences Inc. Common Stock"
+        "company": "IDEAYA Biosciences Inc."
     },
     {
         "stock_symbol": "IEP",
-        "company": "Icahn Enterprises L.P. Common Stock"
+        "company": "Icahn Enterprises L.P."
     },
     {
         "stock_symbol": "IESC",
-        "company": "IES Holdings Inc. Common Stock"
+        "company": "IES Holdings Inc."
     },
     {
         "stock_symbol": "ILMN",
-        "company": "Illumina Inc. Common Stock"
+        "company": "Illumina Inc."
     },
     {
         "stock_symbol": "IMVT",
-        "company": "Immunovant Inc. Common Stock"
+        "company": "Immunovant Inc."
     },
     {
         "stock_symbol": "INCY",
-        "company": "Incyte Corp. Common Stock"
+        "company": "Incyte Corp."
     },
     {
         "stock_symbol": "INDB",
-        "company": "Independent Bank Corp. Common Stock"
+        "company": "Independent Bank Corp."
     },
     {
         "stock_symbol": "INSM",
-        "company": "Insmed Incorporated Common Stock"
+        "company": "Insmed Incorporated"
     },
     {
         "stock_symbol": "INTA",
-        "company": "Intapp Inc. Common Stock"
+        "company": "Intapp Inc."
     },
     {
         "stock_symbol": "INTC",
-        "company": "Intel Corporation Common Stock"
+        "company": "Intel Corporation"
     },
     {
         "stock_symbol": "INTR",
@@ -1449,23 +1449,23 @@
     },
     {
         "stock_symbol": "INTU",
-        "company": "Intuit Inc. Common Stock"
+        "company": "Intuit Inc."
     },
     {
         "stock_symbol": "IONS",
-        "company": "Ionis Pharmaceuticals Inc. Common Stock"
+        "company": "Ionis Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "IOSP",
-        "company": "Innospec Inc. Common Stock"
+        "company": "Innospec Inc."
     },
     {
         "stock_symbol": "IPAR",
-        "company": "Interparfums Inc. Common Stock"
+        "company": "Interparfums Inc."
     },
     {
         "stock_symbol": "IPGP",
-        "company": "IPG Photonics Corporation Common Stock"
+        "company": "IPG Photonics Corporation"
     },
     {
         "stock_symbol": "IQ",
@@ -1473,7 +1473,7 @@
     },
     {
         "stock_symbol": "IRDM",
-        "company": "Iridium Communications Inc Common Stock"
+        "company": "Iridium Communications Inc"
     },
     {
         "stock_symbol": "IREN",
@@ -1481,35 +1481,35 @@
     },
     {
         "stock_symbol": "IRTC",
-        "company": "iRhythm Technologies Inc. Common Stock"
+        "company": "iRhythm Technologies Inc."
     },
     {
         "stock_symbol": "ISRG",
-        "company": "Intuitive Surgical Inc. Common Stock"
+        "company": "Intuitive Surgical Inc."
     },
     {
         "stock_symbol": "ITCI",
-        "company": "Intra-Cellular Therapies Inc. Common Stock"
+        "company": "Intra-Cellular Therapies Inc."
     },
     {
         "stock_symbol": "ITRI",
-        "company": "Itron Inc. Common Stock"
+        "company": "Itron Inc."
     },
     {
         "stock_symbol": "JANX",
-        "company": "Janux Therapeutics Inc. Common Stock"
+        "company": "Janux Therapeutics Inc."
     },
     {
         "stock_symbol": "JAZZ",
-        "company": "Jazz Pharmaceuticals plc Common Stock (Ireland)"
+        "company": "Jazz Pharmaceuticals plc (Ireland)"
     },
     {
         "stock_symbol": "JBHT",
-        "company": "J.B. Hunt Transport Services Inc. Common Stock"
+        "company": "J.B. Hunt Transport Services Inc."
     },
     {
         "stock_symbol": "JBLU",
-        "company": "JetBlue Airways Corporation Common Stock"
+        "company": "JetBlue Airways Corporation"
     },
     {
         "stock_symbol": "JD",
@@ -1517,11 +1517,11 @@
     },
     {
         "stock_symbol": "JJSF",
-        "company": "J & J Snack Foods Corp. Common Stock"
+        "company": "J & J Snack Foods Corp."
     },
     {
         "stock_symbol": "JKHY",
-        "company": "Jack Henry & Associates Inc. Common Stock"
+        "company": "Jack Henry & Associates Inc."
     },
     {
         "stock_symbol": "JSM",
@@ -1533,23 +1533,23 @@
     },
     {
         "stock_symbol": "KDP",
-        "company": "Keurig Dr Pepper Inc. Common Stock"
+        "company": "Keurig Dr Pepper Inc."
     },
     {
         "stock_symbol": "KHC",
-        "company": "The Kraft Heinz Company Common Stock"
+        "company": "The Kraft Heinz Company"
     },
     {
         "stock_symbol": "KLAC",
-        "company": "KLA Corporation Common Stock"
+        "company": "KLA Corporation"
     },
     {
         "stock_symbol": "KLIC",
-        "company": "Kulicke and Soffa Industries Inc. Common Stock"
+        "company": "Kulicke and Soffa Industries Inc."
     },
     {
         "stock_symbol": "KRYS",
-        "company": "Krystal Biotech Inc. Common Stock"
+        "company": "Krystal Biotech Inc."
     },
     {
         "stock_symbol": "KSPI",
@@ -1557,31 +1557,31 @@
     },
     {
         "stock_symbol": "KTOS",
-        "company": "Kratos Defense & Security Solutions Inc. Common Stock"
+        "company": "Kratos Defense & Security Solutions Inc."
     },
     {
         "stock_symbol": "KYMR",
-        "company": "Kymera Therapeutics Inc. Common Stock"
+        "company": "Kymera Therapeutics Inc."
     },
     {
         "stock_symbol": "LAMR",
-        "company": "Lamar Advertising Company Class A Common Stock"
+        "company": "Lamar Advertising Company Class A"
     },
     {
         "stock_symbol": "LANC",
-        "company": "Lancaster Colony Corporation Common Stock"
+        "company": "Lancaster Colony Corporation"
     },
     {
         "stock_symbol": "LAUR",
-        "company": "Laureate Education Inc. Common Stock"
+        "company": "Laureate Education Inc."
     },
     {
         "stock_symbol": "LBRDA",
-        "company": "Liberty Broadband Corporation Class A Common Stock"
+        "company": "Liberty Broadband Corporation Class A"
     },
     {
         "stock_symbol": "LBRDK",
-        "company": "Liberty Broadband Corporation Class C Common Stock"
+        "company": "Liberty Broadband Corporation Class C"
     },
     {
         "stock_symbol": "LBRDP",
@@ -1601,7 +1601,7 @@
     },
     {
         "stock_symbol": "LCID",
-        "company": "Lucid Group Inc. Common Stock"
+        "company": "Lucid Group Inc."
     },
     {
         "stock_symbol": "LECO",
@@ -1613,19 +1613,19 @@
     },
     {
         "stock_symbol": "LFST",
-        "company": "LifeStance Health Group Inc. Common Stock"
+        "company": "LifeStance Health Group Inc."
     },
     {
         "stock_symbol": "LFUS",
-        "company": "Littelfuse Inc. Common Stock"
+        "company": "Littelfuse Inc."
     },
     {
         "stock_symbol": "LGIH",
-        "company": "LGI Homes Inc. Common Stock"
+        "company": "LGI Homes Inc."
     },
     {
         "stock_symbol": "LGND",
-        "company": "Ligand Pharmaceuticals Incorporated Common Stock"
+        "company": "Ligand Pharmaceuticals Incorporated"
     },
     {
         "stock_symbol": "LI",
@@ -1633,7 +1633,7 @@
     },
     {
         "stock_symbol": "LIF",
-        "company": "Life360 Inc. Common Stock"
+        "company": "Life360 Inc."
     },
     {
         "stock_symbol": "LIN",
@@ -1641,7 +1641,7 @@
     },
     {
         "stock_symbol": "LINE",
-        "company": "Lineage Inc. Common Stock"
+        "company": "Lineage Inc."
     },
     {
         "stock_symbol": "LION",
@@ -1649,7 +1649,7 @@
     },
     {
         "stock_symbol": "LITE",
-        "company": "Lumentum Holdings Inc. Common Stock"
+        "company": "Lumentum Holdings Inc."
     },
     {
         "stock_symbol": "LIVN",
@@ -1657,31 +1657,31 @@
     },
     {
         "stock_symbol": "LKQ",
-        "company": "LKQ Corporation Common Stock"
+        "company": "LKQ Corporation"
     },
     {
         "stock_symbol": "LLYVA",
-        "company": "Liberty Media Corporation Series A Liberty Live Common Stock"
+        "company": "Liberty Media Corporation Series A Liberty Live"
     },
     {
         "stock_symbol": "LLYVK",
-        "company": "Liberty Media Corporation Series C Liberty Live Common Stock"
+        "company": "Liberty Media Corporation Series C Liberty Live"
     },
     {
         "stock_symbol": "LMAT",
-        "company": "LeMaitre Vascular Inc. Common Stock"
+        "company": "LeMaitre Vascular Inc."
     },
     {
         "stock_symbol": "LNT",
-        "company": "Alliant Energy Corporation Common Stock"
+        "company": "Alliant Energy Corporation"
     },
     {
         "stock_symbol": "LNTH",
-        "company": "Lantheus Holdings Inc. Common Stock"
+        "company": "Lantheus Holdings Inc."
     },
     {
         "stock_symbol": "LNW",
-        "company": "Light & Wonder Inc. Common Stock"
+        "company": "Light & Wonder Inc."
     },
     {
         "stock_symbol": "LOGI",
@@ -1689,87 +1689,87 @@
     },
     {
         "stock_symbol": "LOPE",
-        "company": "Grand Canyon Education Inc. Common Stock"
+        "company": "Grand Canyon Education Inc."
     },
     {
         "stock_symbol": "LPLA",
-        "company": "LPL Financial Holdings Inc. Common Stock"
+        "company": "LPL Financial Holdings Inc."
     },
     {
         "stock_symbol": "LRCX",
-        "company": "Lam Research Corporation Common Stock"
+        "company": "Lam Research Corporation"
     },
     {
         "stock_symbol": "LSCC",
-        "company": "Lattice Semiconductor Corporation Common Stock"
+        "company": "Lattice Semiconductor Corporation"
     },
     {
         "stock_symbol": "LSTR",
-        "company": "Landstar System Inc. Common Stock"
+        "company": "Landstar System Inc."
     },
     {
         "stock_symbol": "LULU",
-        "company": "lululemon athletica inc. Common Stock"
+        "company": "lululemon athletica inc."
     },
     {
         "stock_symbol": "LUNR",
-        "company": "Intuitive Machines Inc. Class A Common Stock"
+        "company": "Intuitive Machines Inc. Class A"
     },
     {
         "stock_symbol": "LYFT",
-        "company": "Lyft Inc. Class A Common Stock"
+        "company": "Lyft Inc. Class A"
     },
     {
         "stock_symbol": "MANH",
-        "company": "Manhattan Associates Inc. Common Stock"
+        "company": "Manhattan Associates Inc."
     },
     {
         "stock_symbol": "MAR",
-        "company": "Marriott International Class A Common Stock"
+        "company": "Marriott International Class A"
     },
     {
         "stock_symbol": "MARA",
-        "company": "MARA Holdings Inc. Common Stock"
+        "company": "MARA Holdings Inc."
     },
     {
         "stock_symbol": "MASI",
-        "company": "Masimo Corporation Common Stock"
+        "company": "Masimo Corporation"
     },
     {
         "stock_symbol": "MAT",
-        "company": "Mattel Inc. Common Stock"
+        "company": "Mattel Inc."
     },
     {
         "stock_symbol": "MCHP",
-        "company": "Microchip Technology Incorporated Common Stock"
+        "company": "Microchip Technology Incorporated"
     },
     {
         "stock_symbol": "MCW",
-        "company": "Mister Car Wash Inc. Common Stock"
+        "company": "Mister Car Wash Inc."
     },
     {
         "stock_symbol": "MDB",
-        "company": "MongoDB Inc. Class A Common Stock"
+        "company": "MongoDB Inc. Class A"
     },
     {
         "stock_symbol": "MDGL",
-        "company": "Madrigal Pharmaceuticals Inc. Common Stock"
+        "company": "Madrigal Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "MDLZ",
-        "company": "Mondelez International Inc. Class A Common Stock"
+        "company": "Mondelez International Inc. Class A"
     },
     {
         "stock_symbol": "MEDP",
-        "company": "Medpace Holdings Inc. Common Stock"
+        "company": "Medpace Holdings Inc."
     },
     {
         "stock_symbol": "MELI",
-        "company": "MercadoLibre Inc. Common Stock"
+        "company": "MercadoLibre Inc."
     },
     {
         "stock_symbol": "MEOH",
-        "company": "Methanex Corporation Common Stock"
+        "company": "Methanex Corporation"
     },
     {
         "stock_symbol": "MESO",
@@ -1777,7 +1777,7 @@
     },
     {
         "stock_symbol": "META",
-        "company": "Meta Platforms Inc. Class A Common Stock"
+        "company": "Meta Platforms Inc. Class A"
     },
     {
         "stock_symbol": "MFICL",
@@ -1789,27 +1789,27 @@
     },
     {
         "stock_symbol": "MGNI",
-        "company": "Magnite Inc. Common Stock"
+        "company": "Magnite Inc."
     },
     {
         "stock_symbol": "MGRC",
-        "company": "McGrath RentCorp Common Stock"
+        "company": "McGrath RentCorp"
     },
     {
         "stock_symbol": "MIDD",
-        "company": "Middleby Corporation (The) Common Stock"
+        "company": "Middleby Corporation (The)"
     },
     {
         "stock_symbol": "MIRM",
-        "company": "Mirum Pharmaceuticals Inc. Common Stock"
+        "company": "Mirum Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "MKSI",
-        "company": "MKS Instruments Inc. Common Stock"
+        "company": "MKS Instruments Inc."
     },
     {
         "stock_symbol": "MKTX",
-        "company": "MarketAxess Holdings Inc. Common Stock"
+        "company": "MarketAxess Holdings Inc."
     },
     {
         "stock_symbol": "MLCO",
@@ -1821,7 +1821,7 @@
     },
     {
         "stock_symbol": "MMSI",
-        "company": "Merit Medical Systems Inc. Common Stock"
+        "company": "Merit Medical Systems Inc."
     },
     {
         "stock_symbol": "MMYT",
@@ -1837,19 +1837,19 @@
     },
     {
         "stock_symbol": "MORN",
-        "company": "Morningstar Inc. Common Stock"
+        "company": "Morningstar Inc."
     },
     {
         "stock_symbol": "MPWR",
-        "company": "Monolithic Power Systems Inc. Common Stock"
+        "company": "Monolithic Power Systems Inc."
     },
     {
         "stock_symbol": "MRCY",
-        "company": "Mercury Systems Inc Common Stock"
+        "company": "Mercury Systems Inc"
     },
     {
         "stock_symbol": "MRNA",
-        "company": "Moderna Inc. Common Stock"
+        "company": "Moderna Inc."
     },
     {
         "stock_symbol": "MRUS",
@@ -1857,7 +1857,7 @@
     },
     {
         "stock_symbol": "MRVL",
-        "company": "Marvell Technology Inc. Common Stock"
+        "company": "Marvell Technology Inc."
     },
     {
         "stock_symbol": "MRX",
@@ -1865,27 +1865,27 @@
     },
     {
         "stock_symbol": "MSFT",
-        "company": "Microsoft Corporation Common Stock"
+        "company": "Microsoft Corporation"
     },
     {
         "stock_symbol": "MSTR",
-        "company": "MicroStrategy Incorporated Common Stock Class A"
+        "company": "MicroStrategy Incorporated Class A"
     },
     {
         "stock_symbol": "MTCH",
-        "company": "Match Group Inc. Common Stock"
+        "company": "Match Group Inc."
     },
     {
         "stock_symbol": "MTSI",
-        "company": "MACOM Technology Solutions Holdings Inc. Common Stock"
+        "company": "MACOM Technology Solutions Holdings Inc."
     },
     {
         "stock_symbol": "MU",
-        "company": "Micron Technology Inc. Common Stock"
+        "company": "Micron Technology Inc."
     },
     {
         "stock_symbol": "MYRG",
-        "company": "MYR Group Inc. Common Stock"
+        "company": "MYR Group Inc."
     },
     {
         "stock_symbol": "NAMS",
@@ -1893,7 +1893,7 @@
     },
     {
         "stock_symbol": "NARI",
-        "company": "Inari Medical Inc. Common Stock"
+        "company": "Inari Medical Inc."
     },
     {
         "stock_symbol": "NBIS",
@@ -1901,39 +1901,39 @@
     },
     {
         "stock_symbol": "NBIX",
-        "company": "Neurocrine Biosciences Inc. Common Stock"
+        "company": "Neurocrine Biosciences Inc."
     },
     {
         "stock_symbol": "NBTB",
-        "company": "NBT Bancorp Inc. Common Stock"
+        "company": "NBT Bancorp Inc."
     },
     {
         "stock_symbol": "NCNO",
-        "company": "nCino Inc. Common Stock"
+        "company": "nCino Inc."
     },
     {
         "stock_symbol": "NDAQ",
-        "company": "Nasdaq Inc. Common Stock"
+        "company": "Nasdaq Inc."
     },
     {
         "stock_symbol": "NDSN",
-        "company": "Nordson Corporation Common Stock"
+        "company": "Nordson Corporation"
     },
     {
         "stock_symbol": "NEOG",
-        "company": "Neogen Corporation Common Stock"
+        "company": "Neogen Corporation"
     },
     {
         "stock_symbol": "NEXT",
-        "company": "NextDecade Corporation Common Stock"
+        "company": "NextDecade Corporation"
     },
     {
         "stock_symbol": "NFE",
-        "company": "New Fortress Energy Inc. Class A Common Stock"
+        "company": "New Fortress Energy Inc. Class A"
     },
     {
         "stock_symbol": "NFLX",
-        "company": "Netflix Inc. Common Stock"
+        "company": "Netflix Inc."
     },
     {
         "stock_symbol": "NICE",
@@ -1945,23 +1945,23 @@
     },
     {
         "stock_symbol": "NMIH",
-        "company": "NMI Holdings Inc. Common Stock"
+        "company": "NMI Holdings Inc."
     },
     {
         "stock_symbol": "NMRK",
-        "company": "Newmark Group Inc. Class A Common Stock"
+        "company": "Newmark Group Inc. Class A"
     },
     {
         "stock_symbol": "NOVT",
-        "company": "Novanta Inc. Common Stock"
+        "company": "Novanta Inc."
     },
     {
         "stock_symbol": "NSIT",
-        "company": "Insight Enterprises Inc. Common Stock"
+        "company": "Insight Enterprises Inc."
     },
     {
         "stock_symbol": "NTAP",
-        "company": "NetApp Inc. Common Stock"
+        "company": "NetApp Inc."
     },
     {
         "stock_symbol": "NTES",
@@ -1969,15 +1969,15 @@
     },
     {
         "stock_symbol": "NTNX",
-        "company": "Nutanix Inc. Class A Common Stock"
+        "company": "Nutanix Inc. Class A"
     },
     {
         "stock_symbol": "NTRA",
-        "company": "Natera Inc. Common Stock"
+        "company": "Natera Inc."
     },
     {
         "stock_symbol": "NTRS",
-        "company": "Northern Trust Corporation Common Stock"
+        "company": "Northern Trust Corporation"
     },
     {
         "stock_symbol": "NTRSO",
@@ -1985,7 +1985,7 @@
     },
     {
         "stock_symbol": "NUVL",
-        "company": "Nuvalent Inc. Class A Common Stock"
+        "company": "Nuvalent Inc. Class A"
     },
     {
         "stock_symbol": "NVCR",
@@ -1993,7 +1993,7 @@
     },
     {
         "stock_symbol": "NVDA",
-        "company": "NVIDIA Corporation Common Stock"
+        "company": "NVIDIA Corporation"
     },
     {
         "stock_symbol": "NVMI",
@@ -2001,31 +2001,31 @@
     },
     {
         "stock_symbol": "NWE",
-        "company": "NorthWestern Energy Group Inc. Common Stock"
+        "company": "NorthWestern Energy Group Inc."
     },
     {
         "stock_symbol": "NWL",
-        "company": "Newell Brands Inc. Common Stock"
+        "company": "Newell Brands Inc."
     },
     {
         "stock_symbol": "NWS",
-        "company": "News Corporation Class B Common Stock"
+        "company": "News Corporation Class B"
     },
     {
         "stock_symbol": "NWSA",
-        "company": "News Corporation Class A Common Stock"
+        "company": "News Corporation Class A"
     },
     {
         "stock_symbol": "NXPI",
-        "company": "NXP Semiconductors N.V. Common Stock"
+        "company": "NXP Semiconductors N.V."
     },
     {
         "stock_symbol": "NXST",
-        "company": "Nexstar Media Group Inc. Common Stock"
+        "company": "Nexstar Media Group Inc."
     },
     {
         "stock_symbol": "NXT",
-        "company": "Nextracker Inc. Class A Common Stock"
+        "company": "Nextracker Inc. Class A"
     },
     {
         "stock_symbol": "NYMTI",
@@ -2049,19 +2049,19 @@
     },
     {
         "stock_symbol": "ODFL",
-        "company": "Old Dominion Freight Line Inc. Common Stock"
+        "company": "Old Dominion Freight Line Inc."
     },
     {
         "stock_symbol": "OKTA",
-        "company": "Okta Inc. Class A Common Stock"
+        "company": "Okta Inc. Class A"
     },
     {
         "stock_symbol": "OLED",
-        "company": "Universal Display Corporation Common Stock"
+        "company": "Universal Display Corporation"
     },
     {
         "stock_symbol": "OLLI",
-        "company": "Ollie's Bargain Outlet Holdings Inc. Common Stock"
+        "company": "Ollie's Bargain Outlet Holdings Inc."
     },
     {
         "stock_symbol": "OMAB",
@@ -2069,15 +2069,15 @@
     },
     {
         "stock_symbol": "OMCL",
-        "company": "Omnicell Inc. Common Stock ($0.001 par value)"
+        "company": "Omnicell Inc. ($0.001 par value)"
     },
     {
         "stock_symbol": "ON",
-        "company": "ON Semiconductor Corporation Common Stock"
+        "company": "ON Semiconductor Corporation"
     },
     {
         "stock_symbol": "ONB",
-        "company": "Old National Bancorp Common Stock"
+        "company": "Old National Bancorp"
     },
     {
         "stock_symbol": "ONBPO",
@@ -2093,19 +2093,19 @@
     },
     {
         "stock_symbol": "OPCH",
-        "company": "Option Care Health Inc. Common Stock"
+        "company": "Option Care Health Inc."
     },
     {
         "stock_symbol": "ORLY",
-        "company": "O'Reilly Automotive Inc. Common Stock"
+        "company": "O'Reilly Automotive Inc."
     },
     {
         "stock_symbol": "OS",
-        "company": "OneStream Inc. Class A Common Stock"
+        "company": "OneStream Inc. Class A"
     },
     {
         "stock_symbol": "OSIS",
-        "company": "OSI Systems Inc. Common Stock (DE)"
+        "company": "OSI Systems Inc. (DE)"
     },
     {
         "stock_symbol": "OSW",
@@ -2117,7 +2117,7 @@
     },
     {
         "stock_symbol": "OTTR",
-        "company": "Otter Tail Corporation Common Stock"
+        "company": "Otter Tail Corporation"
     },
     {
         "stock_symbol": "OXLCL",
@@ -2141,7 +2141,7 @@
     },
     {
         "stock_symbol": "OZK",
-        "company": "Bank OZK Common Stock"
+        "company": "Bank OZK"
     },
     {
         "stock_symbol": "PAA",
@@ -2153,47 +2153,47 @@
     },
     {
         "stock_symbol": "PANW",
-        "company": "Palo Alto Networks Inc. Common Stock"
+        "company": "Palo Alto Networks Inc."
     },
     {
         "stock_symbol": "PARA",
-        "company": "Paramount Global Class B Common Stock"
+        "company": "Paramount Global Class B"
     },
     {
         "stock_symbol": "PARAA",
-        "company": "Paramount Global Class A Common Stock"
+        "company": "Paramount Global Class A"
     },
     {
         "stock_symbol": "PATK",
-        "company": "Patrick Industries Inc. Common Stock"
+        "company": "Patrick Industries Inc."
     },
     {
         "stock_symbol": "PAYO",
-        "company": "Payoneer Global Inc. Common Stock"
+        "company": "Payoneer Global Inc."
     },
     {
         "stock_symbol": "PAYX",
-        "company": "Paychex Inc. Common Stock"
+        "company": "Paychex Inc."
     },
     {
         "stock_symbol": "PCAR",
-        "company": "PACCAR Inc. Common Stock"
+        "company": "PACCAR Inc."
     },
     {
         "stock_symbol": "PCH",
-        "company": "PotlatchDeltic Corporation Common Stock"
+        "company": "PotlatchDeltic Corporation"
     },
     {
         "stock_symbol": "PCTY",
-        "company": "Paylocity Holding Corporation Common Stock"
+        "company": "Paylocity Holding Corporation"
     },
     {
         "stock_symbol": "PCVX",
-        "company": "Vaxcyte Inc. Common Stock"
+        "company": "Vaxcyte Inc."
     },
     {
         "stock_symbol": "PDCO",
-        "company": "Patterson Companies Inc. Common Stock"
+        "company": "Patterson Companies Inc."
     },
     {
         "stock_symbol": "PDD",
@@ -2201,31 +2201,31 @@
     },
     {
         "stock_symbol": "PECO",
-        "company": "Phillips Edison & Company Inc. Common Stock"
+        "company": "Phillips Edison & Company Inc."
     },
     {
         "stock_symbol": "PEGA",
-        "company": "Pegasystems Inc. Common Stock"
+        "company": "Pegasystems Inc."
     },
     {
         "stock_symbol": "PENN",
-        "company": "PENN Entertainment Inc. Common Stock"
+        "company": "PENN Entertainment Inc."
     },
     {
         "stock_symbol": "PEP",
-        "company": "PepsiCo Inc. Common Stock"
+        "company": "PepsiCo Inc."
     },
     {
         "stock_symbol": "PFG",
-        "company": "Principal Financial Group Inc Common Stock"
+        "company": "Principal Financial Group Inc"
     },
     {
         "stock_symbol": "PI",
-        "company": "Impinj Inc. Common Stock"
+        "company": "Impinj Inc."
     },
     {
         "stock_symbol": "PINC",
-        "company": "Premier Inc. Class A Common Stock"
+        "company": "Premier Inc. Class A"
     },
     {
         "stock_symbol": "PLMR",
@@ -2233,27 +2233,27 @@
     },
     {
         "stock_symbol": "PLTK",
-        "company": "Playtika Holding Corp. Common Stock"
+        "company": "Playtika Holding Corp."
     },
     {
         "stock_symbol": "PLTR",
-        "company": "Palantir Technologies Inc. Class A Common Stock"
+        "company": "Palantir Technologies Inc. Class A"
     },
     {
         "stock_symbol": "PLUS",
-        "company": "ePlus inc. Common Stock"
+        "company": "ePlus inc."
     },
     {
         "stock_symbol": "PLXS",
-        "company": "Plexus Corp. Common Stock"
+        "company": "Plexus Corp."
     },
     {
         "stock_symbol": "PNFP",
-        "company": "Pinnacle Financial Partners Inc. Common Stock"
+        "company": "Pinnacle Financial Partners Inc."
     },
     {
         "stock_symbol": "PODD",
-        "company": "Insulet Corporation Common Stock"
+        "company": "Insulet Corporation"
     },
     {
         "stock_symbol": "PONY",
@@ -2261,15 +2261,15 @@
     },
     {
         "stock_symbol": "POOL",
-        "company": "Pool Corporation Common Stock"
+        "company": "Pool Corporation"
     },
     {
         "stock_symbol": "POWI",
-        "company": "Power Integrations Inc. Common Stock"
+        "company": "Power Integrations Inc."
     },
     {
         "stock_symbol": "POWL",
-        "company": "Powell Industries Inc. Common Stock"
+        "company": "Powell Industries Inc."
     },
     {
         "stock_symbol": "POWWP",
@@ -2281,23 +2281,23 @@
     },
     {
         "stock_symbol": "PPC",
-        "company": "Pilgrim's Pride Corporation Common Stock"
+        "company": "Pilgrim's Pride Corporation"
     },
     {
         "stock_symbol": "PRCT",
-        "company": "PROCEPT BioRobotics Corporation Common Stock"
+        "company": "PROCEPT BioRobotics Corporation"
     },
     {
         "stock_symbol": "PRGS",
-        "company": "Progress Software Corporation Common Stock (DE)"
+        "company": "Progress Software Corporation (DE)"
     },
     {
         "stock_symbol": "PRVA",
-        "company": "Privia Health Group Inc. Common Stock"
+        "company": "Privia Health Group Inc."
     },
     {
         "stock_symbol": "PSMT",
-        "company": "PriceSmart Inc. Common Stock"
+        "company": "PriceSmart Inc."
     },
     {
         "stock_symbol": "PSNY",
@@ -2305,23 +2305,23 @@
     },
     {
         "stock_symbol": "PTC",
-        "company": "PTC Inc. Common Stock"
+        "company": "PTC Inc."
     },
     {
         "stock_symbol": "PTCT",
-        "company": "PTC Therapeutics Inc. Common Stock"
+        "company": "PTC Therapeutics Inc."
     },
     {
         "stock_symbol": "PTEN",
-        "company": "Patterson-UTI Energy Inc. Common Stock"
+        "company": "Patterson-UTI Energy Inc."
     },
     {
         "stock_symbol": "PTGX",
-        "company": "Protagonist Therapeutics Inc. Common Stock"
+        "company": "Protagonist Therapeutics Inc."
     },
     {
         "stock_symbol": "PTON",
-        "company": "Peloton Interactive Inc. Class A Common Stock"
+        "company": "Peloton Interactive Inc. Class A"
     },
     {
         "stock_symbol": "PTVE",
@@ -2329,23 +2329,23 @@
     },
     {
         "stock_symbol": "PWP",
-        "company": "Perella Weinberg Partners Class A Common Stock"
+        "company": "Perella Weinberg Partners Class A"
     },
     {
         "stock_symbol": "PYCR",
-        "company": "Paycor HCM Inc. Common Stock"
+        "company": "Paycor HCM Inc."
     },
     {
         "stock_symbol": "PYPL",
-        "company": "PayPal Holdings Inc. Common Stock"
+        "company": "PayPal Holdings Inc."
     },
     {
         "stock_symbol": "QCOM",
-        "company": "QUALCOMM Incorporated Common Stock"
+        "company": "QUALCOMM Incorporated"
     },
     {
         "stock_symbol": "QDEL",
-        "company": "QuidelOrtho Corporation Common Stock"
+        "company": "QuidelOrtho Corporation"
     },
     {
         "stock_symbol": "QFIN",
@@ -2353,7 +2353,7 @@
     },
     {
         "stock_symbol": "QLYS",
-        "company": "Qualys Inc. Common Stock"
+        "company": "Qualys Inc."
     },
     {
         "stock_symbol": "QRTEP",
@@ -2361,19 +2361,19 @@
     },
     {
         "stock_symbol": "QRVO",
-        "company": "Qorvo Inc. Common Stock"
+        "company": "Qorvo Inc."
     },
     {
         "stock_symbol": "RARE",
-        "company": "Ultragenyx Pharmaceutical Inc. Common Stock"
+        "company": "Ultragenyx Pharmaceutical Inc."
     },
     {
         "stock_symbol": "RDNT",
-        "company": "RadNet Inc. Common Stock"
+        "company": "RadNet Inc."
     },
     {
         "stock_symbol": "REG",
-        "company": "Regency Centers Corporation Common Stock"
+        "company": "Regency Centers Corporation"
     },
     {
         "stock_symbol": "REGCO",
@@ -2385,47 +2385,47 @@
     },
     {
         "stock_symbol": "REGN",
-        "company": "Regeneron Pharmaceuticals Inc. Common Stock"
+        "company": "Regeneron Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "RELY",
-        "company": "Remitly Global Inc. Common Stock"
+        "company": "Remitly Global Inc."
     },
     {
         "stock_symbol": "REYN",
-        "company": "Reynolds Consumer Products Inc. Common Stock"
+        "company": "Reynolds Consumer Products Inc."
     },
     {
         "stock_symbol": "RGEN",
-        "company": "Repligen Corporation Common Stock"
+        "company": "Repligen Corporation"
     },
     {
         "stock_symbol": "RGLD",
-        "company": "Royal Gold Inc. Common Stock"
+        "company": "Royal Gold Inc."
     },
     {
         "stock_symbol": "RGTI",
-        "company": "Rigetti Computing Inc. Common Stock"
+        "company": "Rigetti Computing Inc."
     },
     {
         "stock_symbol": "RIOT",
-        "company": "Riot Platforms Inc. Common Stock "
+        "company": "Riot Platforms Inc. "
     },
     {
         "stock_symbol": "RIVN",
-        "company": "Rivian Automotive Inc. Class A Common Stock"
+        "company": "Rivian Automotive Inc. Class A"
     },
     {
         "stock_symbol": "RKLB",
-        "company": "Rocket Lab USA Inc. Common Stock"
+        "company": "Rocket Lab USA Inc."
     },
     {
         "stock_symbol": "RMBS",
-        "company": "Rambus Inc. Common Stock"
+        "company": "Rambus Inc."
     },
     {
         "stock_symbol": "RNA",
-        "company": "Avidity Biosciences Inc. Common Stock"
+        "company": "Avidity Biosciences Inc."
     },
     {
         "stock_symbol": "RNW",
@@ -2433,11 +2433,11 @@
     },
     {
         "stock_symbol": "ROAD",
-        "company": "Construction Partners Inc. Class A Common Stock"
+        "company": "Construction Partners Inc. Class A"
     },
     {
         "stock_symbol": "ROIC",
-        "company": "Retail Opportunity Investments Corp. Common Stock (MD)"
+        "company": "Retail Opportunity Investments Corp. (MD)"
     },
     {
         "stock_symbol": "ROIV",
@@ -2445,19 +2445,19 @@
     },
     {
         "stock_symbol": "ROKU",
-        "company": "Roku Inc. Class A Common Stock"
+        "company": "Roku Inc. Class A"
     },
     {
         "stock_symbol": "ROP",
-        "company": "Roper Technologies Inc. Common Stock"
+        "company": "Roper Technologies Inc."
     },
     {
         "stock_symbol": "ROST",
-        "company": "Ross Stores Inc. Common Stock"
+        "company": "Ross Stores Inc."
     },
     {
         "stock_symbol": "RPD",
-        "company": "Rapid7 Inc. Common Stock"
+        "company": "Rapid7 Inc."
     },
     {
         "stock_symbol": "RPRX",
@@ -2465,11 +2465,11 @@
     },
     {
         "stock_symbol": "RRR",
-        "company": "Red Rock Resorts Inc. Class A Common Stock"
+        "company": "Red Rock Resorts Inc. Class A"
     },
     {
         "stock_symbol": "RUM",
-        "company": "Rumble Inc. Class A Common Stock"
+        "company": "Rumble Inc. Class A"
     },
     {
         "stock_symbol": "RUMBW",
@@ -2477,11 +2477,11 @@
     },
     {
         "stock_symbol": "RUN",
-        "company": "Sunrun Inc. Common Stock"
+        "company": "Sunrun Inc."
     },
     {
         "stock_symbol": "RUSHA",
-        "company": "Rush Enterprises Inc. Common Stock Cl A"
+        "company": "Rush Enterprises Inc. Cl A"
     },
     {
         "stock_symbol": "RUSHB",
@@ -2489,11 +2489,11 @@
     },
     {
         "stock_symbol": "RVMD",
-        "company": "Revolution Medicines Inc. Common Stock"
+        "company": "Revolution Medicines Inc."
     },
     {
         "stock_symbol": "RXRX",
-        "company": "Recursion Pharmaceuticals Inc. Class A Common Stock"
+        "company": "Recursion Pharmaceuticals Inc. Class A"
     },
     {
         "stock_symbol": "RYAAY",
@@ -2501,87 +2501,87 @@
     },
     {
         "stock_symbol": "RYTM",
-        "company": "Rhythm Pharmaceuticals Inc. Common Stock"
+        "company": "Rhythm Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "SAIA",
-        "company": "Saia Inc. Common Stock"
+        "company": "Saia Inc."
     },
     {
         "stock_symbol": "SAIC",
-        "company": "Science Applications International Corporation Common Stock"
+        "company": "Science Applications International Corporation"
     },
     {
         "stock_symbol": "SANM",
-        "company": "Sanmina Corporation Common Stock"
+        "company": "Sanmina Corporation"
     },
     {
         "stock_symbol": "SATS",
-        "company": "EchoStar  Corporation Common Stock"
+        "company": "EchoStar  Corporation"
     },
     {
         "stock_symbol": "SBAC",
-        "company": "SBA Communications Corporation Class A Common Stock"
+        "company": "SBA Communications Corporation Class A"
     },
     {
         "stock_symbol": "SBCF",
-        "company": "Seacoast Banking Corporation of Florida Common Stock"
+        "company": "Seacoast Banking Corporation of Florida"
     },
     {
         "stock_symbol": "SBRA",
-        "company": "Sabra Health Care REIT Inc. Common Stock"
+        "company": "Sabra Health Care REIT Inc."
     },
     {
         "stock_symbol": "SBUX",
-        "company": "Starbucks Corporation Common Stock"
+        "company": "Starbucks Corporation"
     },
     {
         "stock_symbol": "SEIC",
-        "company": "SEI Investments Company Common Stock"
+        "company": "SEI Investments Company"
     },
     {
         "stock_symbol": "SFM",
-        "company": "Sprouts Farmers Market Inc. Common Stock"
+        "company": "Sprouts Farmers Market Inc."
     },
     {
         "stock_symbol": "SFNC",
-        "company": "Simmons First National Corporation Class A Common Stock"
+        "company": "Simmons First National Corporation Class A"
     },
     {
         "stock_symbol": "SGRY",
-        "company": "Surgery Partners Inc. Common Stock"
+        "company": "Surgery Partners Inc."
     },
     {
         "stock_symbol": "SHC",
-        "company": "Sotera Health Company Common Stock"
+        "company": "Sotera Health Company"
     },
     {
         "stock_symbol": "SHOO",
-        "company": "Steven Madden Ltd. Common Stock"
+        "company": "Steven Madden Ltd."
     },
     {
         "stock_symbol": "SIGI",
-        "company": "Selective Insurance Group Inc. Common Stock"
+        "company": "Selective Insurance Group Inc."
     },
     {
         "stock_symbol": "SIRI",
-        "company": "SiriusXM Holdings Inc. Common Stock"
+        "company": "SiriusXM Holdings Inc."
     },
     {
         "stock_symbol": "SITM",
-        "company": "SiTime Corporation Common Stock"
+        "company": "SiTime Corporation"
     },
     {
         "stock_symbol": "SKYW",
-        "company": "SkyWest Inc. Common Stock"
+        "company": "SkyWest Inc."
     },
     {
         "stock_symbol": "SLAB",
-        "company": "Silicon Laboratories Inc. Common Stock"
+        "company": "Silicon Laboratories Inc."
     },
     {
         "stock_symbol": "SLM",
-        "company": "SLM Corporation Common Stock"
+        "company": "SLM Corporation"
     },
     {
         "stock_symbol": "SLMBP",
@@ -2589,31 +2589,31 @@
     },
     {
         "stock_symbol": "SLNO",
-        "company": "Soleno Therapeutics Inc. Common Stock"
+        "company": "Soleno Therapeutics Inc."
     },
     {
         "stock_symbol": "SMCI",
-        "company": "Super Micro Computer Inc. Common Stock"
+        "company": "Super Micro Computer Inc."
     },
     {
         "stock_symbol": "SMMT",
-        "company": "Summit Therapeutics Inc. Common Stock "
+        "company": "Summit Therapeutics Inc. "
     },
     {
         "stock_symbol": "SMPL",
-        "company": "The Simply Good Foods Company Common Stock"
+        "company": "The Simply Good Foods Company"
     },
     {
         "stock_symbol": "SMTC",
-        "company": "Semtech Corporation Common Stock"
+        "company": "Semtech Corporation"
     },
     {
         "stock_symbol": "SNEX",
-        "company": "StoneX Group Inc. Common Stock"
+        "company": "StoneX Group Inc."
     },
     {
         "stock_symbol": "SNPS",
-        "company": "Synopsys Inc. Common Stock"
+        "company": "Synopsys Inc."
     },
     {
         "stock_symbol": "SNRE",
@@ -2625,11 +2625,11 @@
     },
     {
         "stock_symbol": "SOFI",
-        "company": "SoFi Technologies Inc. Common Stock  "
+        "company": "SoFi Technologies Inc.  "
     },
     {
         "stock_symbol": "SOUN",
-        "company": "SoundHound AI Inc Class A Common Stock"
+        "company": "SoundHound AI Inc Class A"
     },
     {
         "stock_symbol": "SOUNW",
@@ -2637,7 +2637,7 @@
     },
     {
         "stock_symbol": "SPSC",
-        "company": "SPS Commerce Inc. Common Stock"
+        "company": "SPS Commerce Inc."
     },
     {
         "stock_symbol": "SRAD",
@@ -2645,19 +2645,19 @@
     },
     {
         "stock_symbol": "SRPT",
-        "company": "Sarepta Therapeutics Inc. Common Stock (DE)"
+        "company": "Sarepta Therapeutics Inc. (DE)"
     },
     {
         "stock_symbol": "SRRK",
-        "company": "Scholar Rock Holding Corporation Common Stock"
+        "company": "Scholar Rock Holding Corporation"
     },
     {
         "stock_symbol": "SSNC",
-        "company": "SS&C Technologies Holdings Inc. Common Stock"
+        "company": "SS&C Technologies Holdings Inc."
     },
     {
         "stock_symbol": "STEP",
-        "company": "StepStone Group Inc. Class A Common Stock"
+        "company": "StepStone Group Inc. Class A"
     },
     {
         "stock_symbol": "STLD",
@@ -2669,11 +2669,11 @@
     },
     {
         "stock_symbol": "STRA",
-        "company": "Strategic Education Inc. Common Stock"
+        "company": "Strategic Education Inc."
     },
     {
         "stock_symbol": "STRL",
-        "company": "Sterling Infrastructure Inc. Common Stock"
+        "company": "Sterling Infrastructure Inc."
     },
     {
         "stock_symbol": "STX",
@@ -2681,35 +2681,35 @@
     },
     {
         "stock_symbol": "SUPN",
-        "company": "Supernus Pharmaceuticals Inc. Common Stock"
+        "company": "Supernus Pharmaceuticals Inc."
     },
     {
         "stock_symbol": "SWKS",
-        "company": "Skyworks Solutions Inc. Common Stock"
+        "company": "Skyworks Solutions Inc."
     },
     {
         "stock_symbol": "SWTX",
-        "company": "SpringWorks Therapeutics Inc. Common Stock"
+        "company": "SpringWorks Therapeutics Inc."
     },
     {
         "stock_symbol": "SYBT",
-        "company": "Stock Yards Bancorp Inc. Common Stock"
+        "company": "Stock Yards Bancorp Inc."
     },
     {
         "stock_symbol": "SYM",
-        "company": "Symbotic Inc. Class A Common Stock"
+        "company": "Symbotic Inc. Class A"
     },
     {
         "stock_symbol": "SYNA",
-        "company": "Synaptics Incorporated Common Stock $0.001 Par Value"
+        "company": "Synaptics Incorporated $0.001 Par Value"
     },
     {
         "stock_symbol": "TBBK",
-        "company": "The Bancorp Inc Common Stock"
+        "company": "The Bancorp Inc"
     },
     {
         "stock_symbol": "TCBI",
-        "company": "Texas Capital Bancshares Inc. Common Stock"
+        "company": "Texas Capital Bancshares Inc."
     },
     {
         "stock_symbol": "TCOM",
@@ -2717,39 +2717,39 @@
     },
     {
         "stock_symbol": "TEAM",
-        "company": "Atlassian Corporation Class A Common Stock"
+        "company": "Atlassian Corporation Class A"
     },
     {
         "stock_symbol": "TECH",
-        "company": "Bio-Techne Corp Common Stock"
+        "company": "Bio-Techne Corp"
     },
     {
         "stock_symbol": "TEM",
-        "company": "Tempus AI Inc. Class A Common Stock"
+        "company": "Tempus AI Inc. Class A"
     },
     {
         "stock_symbol": "TENB",
-        "company": "Tenable Holdings Inc. Common Stock"
+        "company": "Tenable Holdings Inc."
     },
     {
         "stock_symbol": "TER",
-        "company": "Teradyne Inc. Common Stock"
+        "company": "Teradyne Inc."
     },
     {
         "stock_symbol": "TFSL",
-        "company": "TFS Financial Corporation Common Stock"
+        "company": "TFS Financial Corporation"
     },
     {
         "stock_symbol": "TGTX",
-        "company": "TG Therapeutics Inc. Common Stock"
+        "company": "TG Therapeutics Inc."
     },
     {
         "stock_symbol": "TIGO",
-        "company": "Millicom International Cellular S.A. Common Stock"
+        "company": "Millicom International Cellular S.A."
     },
     {
         "stock_symbol": "TLN",
-        "company": "Talen Energy Corporation Common Stock"
+        "company": "Talen Energy Corporation"
     },
     {
         "stock_symbol": "TLX",
@@ -2757,23 +2757,23 @@
     },
     {
         "stock_symbol": "TMDX",
-        "company": "TransMedics Group Inc. Common Stock"
+        "company": "TransMedics Group Inc."
     },
     {
         "stock_symbol": "TMUS",
-        "company": "T-Mobile US Inc. Common Stock"
+        "company": "T-Mobile US Inc."
     },
     {
         "stock_symbol": "TNDM",
-        "company": "Tandem Diabetes Care Inc. Common Stock"
+        "company": "Tandem Diabetes Care Inc."
     },
     {
         "stock_symbol": "TOWN",
-        "company": "TowneBank Common Stock"
+        "company": "TowneBank"
     },
     {
         "stock_symbol": "TPG",
-        "company": "TPG Inc. Class A Common Stock"
+        "company": "TPG Inc. Class A"
     },
     {
         "stock_symbol": "TPGXL",
@@ -2781,27 +2781,27 @@
     },
     {
         "stock_symbol": "TRIP",
-        "company": "TripAdvisor Inc. Common Stock"
+        "company": "TripAdvisor Inc."
     },
     {
         "stock_symbol": "TRMB",
-        "company": "Trimble Inc. Common Stock"
+        "company": "Trimble Inc."
     },
     {
         "stock_symbol": "TRMK",
-        "company": "Trustmark Corporation Common Stock"
+        "company": "Trustmark Corporation"
     },
     {
         "stock_symbol": "TROW",
-        "company": "T. Rowe Price Group Inc. Common Stock"
+        "company": "T. Rowe Price Group Inc."
     },
     {
         "stock_symbol": "TRUP",
-        "company": "Trupanion Inc. Common Stock"
+        "company": "Trupanion Inc."
     },
     {
         "stock_symbol": "TSCO",
-        "company": "Tractor Supply Company Common Stock"
+        "company": "Tractor Supply Company"
     },
     {
         "stock_symbol": "TSEM",
@@ -2809,67 +2809,67 @@
     },
     {
         "stock_symbol": "TSLA",
-        "company": "Tesla Inc. Common Stock"
+        "company": "Tesla Inc."
     },
     {
         "stock_symbol": "TTAN",
-        "company": "ServiceTitan Inc. Class A Common Stock"
+        "company": "ServiceTitan Inc. Class A"
     },
     {
         "stock_symbol": "TTD",
-        "company": "The Trade Desk Inc. Class A Common Stock"
+        "company": "The Trade Desk Inc. Class A"
     },
     {
         "stock_symbol": "TTEK",
-        "company": "Tetra Tech Inc. Common Stock"
+        "company": "Tetra Tech Inc."
     },
     {
         "stock_symbol": "TTMI",
-        "company": "TTM Technologies Inc. Common Stock"
+        "company": "TTM Technologies Inc."
     },
     {
         "stock_symbol": "TTWO",
-        "company": "Take-Two Interactive Software Inc. Common Stock"
+        "company": "Take-Two Interactive Software Inc."
     },
     {
         "stock_symbol": "TW",
-        "company": "Tradeweb Markets Inc. Class A Common Stock"
+        "company": "Tradeweb Markets Inc. Class A"
     },
     {
         "stock_symbol": "TWST",
-        "company": "Twist Bioscience Corporation Common Stock"
+        "company": "Twist Bioscience Corporation"
     },
     {
         "stock_symbol": "TXN",
-        "company": "Texas Instruments Incorporated Common Stock"
+        "company": "Texas Instruments Incorporated"
     },
     {
         "stock_symbol": "TXRH",
-        "company": "Texas Roadhouse Inc. Common Stock"
+        "company": "Texas Roadhouse Inc."
     },
     {
         "stock_symbol": "UAL",
-        "company": "United Airlines Holdings Inc. Common Stock"
+        "company": "United Airlines Holdings Inc."
     },
     {
         "stock_symbol": "UBSI",
-        "company": "United Bankshares Inc. Common Stock"
+        "company": "United Bankshares Inc."
     },
     {
         "stock_symbol": "UFPI",
-        "company": "UFP Industries Inc. Common Stock"
+        "company": "UFP Industries Inc."
     },
     {
         "stock_symbol": "UFPT",
-        "company": "UFP Technologies Inc. Common Stock"
+        "company": "UFP Technologies Inc."
     },
     {
         "stock_symbol": "ULTA",
-        "company": "Ulta Beauty Inc. Common Stock"
+        "company": "Ulta Beauty Inc."
     },
     {
         "stock_symbol": "UMBF",
-        "company": "UMB Financial Corporation Common Stock"
+        "company": "UMB Financial Corporation"
     },
     {
         "stock_symbol": "UPST",
@@ -2877,35 +2877,35 @@
     },
     {
         "stock_symbol": "UPWK",
-        "company": "Upwork Inc. Common Stock"
+        "company": "Upwork Inc."
     },
     {
         "stock_symbol": "URBN",
-        "company": "Urban Outfitters Inc. Common Stock"
+        "company": "Urban Outfitters Inc."
     },
     {
         "stock_symbol": "USLM",
-        "company": "United States Lime & Minerals Inc. Common Stock"
+        "company": "United States Lime & Minerals Inc."
     },
     {
         "stock_symbol": "UTHR",
-        "company": "United Therapeutics Corporation Common Stock"
+        "company": "United Therapeutics Corporation"
     },
     {
         "stock_symbol": "VC",
-        "company": "Visteon Corporation Common Stock"
+        "company": "Visteon Corporation"
     },
     {
         "stock_symbol": "VCEL",
-        "company": "Vericel Corporation Common Stock"
+        "company": "Vericel Corporation"
     },
     {
         "stock_symbol": "VCTR",
-        "company": "Victory Capital Holdings Inc. Class A Common Stock"
+        "company": "Victory Capital Holdings Inc. Class A"
     },
     {
         "stock_symbol": "VCYT",
-        "company": "Veracyte Inc. Common Stock"
+        "company": "Veracyte Inc."
     },
     {
         "stock_symbol": "VEON",
@@ -2913,11 +2913,11 @@
     },
     {
         "stock_symbol": "VERA",
-        "company": "Vera Therapeutics Inc. Class A Common Stock"
+        "company": "Vera Therapeutics Inc. Class A"
     },
     {
         "stock_symbol": "VERX",
-        "company": "Vertex Inc. Class A Common Stock"
+        "company": "Vertex Inc. Class A"
     },
     {
         "stock_symbol": "VFS",
@@ -2925,23 +2925,23 @@
     },
     {
         "stock_symbol": "VIAV",
-        "company": "Viavi Solutions Inc. Common Stock"
+        "company": "Viavi Solutions Inc."
     },
     {
         "stock_symbol": "VICR",
-        "company": "Vicor Corporation Common Stock"
+        "company": "Vicor Corporation"
     },
     {
         "stock_symbol": "VIRT",
-        "company": "Virtu Financial Inc. Class A Common Stock"
+        "company": "Virtu Financial Inc. Class A"
     },
     {
         "stock_symbol": "VKTX",
-        "company": "Viking Therapeutics Inc. Common Stock"
+        "company": "Viking Therapeutics Inc."
     },
     {
         "stock_symbol": "VLY",
-        "company": "Valley National Bancorp Common Stock"
+        "company": "Valley National Bancorp"
     },
     {
         "stock_symbol": "VLYPO",
@@ -2953,7 +2953,7 @@
     },
     {
         "stock_symbol": "VNOM",
-        "company": "Viper Energy Inc. Class A Common Stock"
+        "company": "Viper Energy Inc. Class A"
     },
     {
         "stock_symbol": "VOD",
@@ -2965,39 +2965,39 @@
     },
     {
         "stock_symbol": "VRNS",
-        "company": "Varonis Systems Inc. Common Stock"
+        "company": "Varonis Systems Inc."
     },
     {
         "stock_symbol": "VRRM",
-        "company": "Verra Mobility Corporation Class A Common Stock"
+        "company": "Verra Mobility Corporation Class A"
     },
     {
         "stock_symbol": "VRSK",
-        "company": "Verisk Analytics Inc. Common Stock"
+        "company": "Verisk Analytics Inc."
     },
     {
         "stock_symbol": "VRSN",
-        "company": "VeriSign Inc. Common Stock"
+        "company": "VeriSign Inc."
     },
     {
         "stock_symbol": "VRTX",
-        "company": "Vertex Pharmaceuticals Incorporated Common Stock"
+        "company": "Vertex Pharmaceuticals Incorporated"
     },
     {
         "stock_symbol": "VSEC",
-        "company": "VSE Corporation Common Stock"
+        "company": "VSE Corporation"
     },
     {
         "stock_symbol": "VTRS",
-        "company": "Viatris Inc. Common Stock"
+        "company": "Viatris Inc."
     },
     {
         "stock_symbol": "WAFD",
-        "company": "WaFd Inc. Common Stock"
+        "company": "WaFd Inc."
     },
     {
         "stock_symbol": "WAY",
-        "company": "Waystar Holding Corp. Common Stock"
+        "company": "Waystar Holding Corp."
     },
     {
         "stock_symbol": "WB",
@@ -3005,31 +3005,31 @@
     },
     {
         "stock_symbol": "WBA",
-        "company": "Walgreens Boots Alliance Inc. Common Stock"
+        "company": "Walgreens Boots Alliance Inc."
     },
     {
         "stock_symbol": "WBD",
-        "company": "Warner Bros. Discovery Inc. Series A Common Stock "
+        "company": "Warner Bros. Discovery Inc. Series A "
     },
     {
         "stock_symbol": "WDAY",
-        "company": "Workday Inc. Class A Common Stock"
+        "company": "Workday Inc. Class A"
     },
     {
         "stock_symbol": "WDC",
-        "company": "Western Digital Corporation Common Stock"
+        "company": "Western Digital Corporation"
     },
     {
         "stock_symbol": "WDFC",
-        "company": "WD-40 Company Common Stock"
+        "company": "WD-40 Company"
     },
     {
         "stock_symbol": "WEN",
-        "company": "Wendy's Company (The) Common Stock"
+        "company": "Wendy's Company (The)"
     },
     {
         "stock_symbol": "WERN",
-        "company": "Werner Enterprises Inc. Common Stock"
+        "company": "Werner Enterprises Inc."
     },
     {
         "stock_symbol": "WFRD",
@@ -3037,11 +3037,11 @@
     },
     {
         "stock_symbol": "WGS",
-        "company": "GeneDx Holdings Corp. Class A Common Stock"
+        "company": "GeneDx Holdings Corp. Class A"
     },
     {
         "stock_symbol": "WING",
-        "company": "Wingstop Inc. Common Stock"
+        "company": "Wingstop Inc."
     },
     {
         "stock_symbol": "WIX",
@@ -3049,7 +3049,7 @@
     },
     {
         "stock_symbol": "WMG",
-        "company": "Warner Music Group Corp. Class A Common Stock"
+        "company": "Warner Music Group Corp. Class A"
     },
     {
         "stock_symbol": "WRD",
@@ -3057,19 +3057,19 @@
     },
     {
         "stock_symbol": "WSBC",
-        "company": "WesBanco Inc. Common Stock"
+        "company": "WesBanco Inc."
     },
     {
         "stock_symbol": "WSC",
-        "company": "WillScot Holdings Corporation Class A Common Stock"
+        "company": "WillScot Holdings Corporation Class A"
     },
     {
         "stock_symbol": "WSFS",
-        "company": "WSFS Financial Corporation Common Stock"
+        "company": "WSFS Financial Corporation"
     },
     {
         "stock_symbol": "WTFC",
-        "company": "Wintrust Financial Corporation Common Stock"
+        "company": "Wintrust Financial Corporation"
     },
     {
         "stock_symbol": "WTW",
@@ -3077,11 +3077,11 @@
     },
     {
         "stock_symbol": "WULF",
-        "company": "TeraWulf Inc. Common Stock"
+        "company": "TeraWulf Inc."
     },
     {
         "stock_symbol": "WWD",
-        "company": "Woodward Inc. Common Stock"
+        "company": "Woodward Inc."
     },
     {
         "stock_symbol": "WYNN",
@@ -3089,7 +3089,7 @@
     },
     {
         "stock_symbol": "XEL",
-        "company": "Xcel Energy Inc. Common Stock"
+        "company": "Xcel Energy Inc."
     },
     {
         "stock_symbol": "XENE",
@@ -3097,11 +3097,11 @@
     },
     {
         "stock_symbol": "XP",
-        "company": "XP Inc. Class A Common Stock"
+        "company": "XP Inc. Class A"
     },
     {
         "stock_symbol": "XRAY",
-        "company": "DENTSPLY SIRONA Inc. Common Stock"
+        "company": "DENTSPLY SIRONA Inc."
     },
     {
         "stock_symbol": "YY",
@@ -3113,23 +3113,23 @@
     },
     {
         "stock_symbol": "ZBRA",
-        "company": "Zebra Technologies Corporation Class A Common Stock"
+        "company": "Zebra Technologies Corporation Class A"
     },
     {
         "stock_symbol": "ZD",
-        "company": "Ziff Davis Inc. Common Stock"
+        "company": "Ziff Davis Inc."
     },
     {
         "stock_symbol": "ZG",
-        "company": "Zillow Group Inc. Class A Common Stock"
+        "company": "Zillow Group Inc. Class A"
     },
     {
         "stock_symbol": "ZI",
-        "company": "ZoomInfo Technologies Inc Common Stock"
+        "company": "ZoomInfo Technologies Inc"
     },
     {
         "stock_symbol": "ZION",
-        "company": "Zions Bancorporation N.A. Common Stock"
+        "company": "Zions Bancorporation N.A."
     },
     {
         "stock_symbol": "ZIONP",
@@ -3141,10 +3141,10 @@
     },
     {
         "stock_symbol": "ZM",
-        "company": "Zoom Communications Inc. Class A Common Stock"
+        "company": "Zoom Communications Inc. Class A"
     },
     {
         "stock_symbol": "ZS",
-        "company": "Zscaler Inc. Common Stock"
+        "company": "Zscaler Inc."
     }
 ]

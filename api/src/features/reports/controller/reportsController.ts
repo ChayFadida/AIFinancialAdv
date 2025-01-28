@@ -57,7 +57,8 @@ export const getAllReport = catchAsync(async (req: GetLatestReportRequest, res: 
       .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize first letter of each word
   
     return {
-      reportName: `${report.stock_symbol} ${reportTypeFormatted}`,
+      reportType: reportTypeFormatted,
+      stock_symbol: report.stock_symbol,
       status: report.status,
     };
   });
