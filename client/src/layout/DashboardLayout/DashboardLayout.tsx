@@ -79,9 +79,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
   const handleSaveChanges = async () => {
     try {
-      console.log('Sending update with data:', editFormData); // Debug log
       const updatedUser = await updateUserProfile(editFormData);
-      console.log('Received response:', updatedUser); // Debug log
       
       if (updatedUser) {
         handleUser({ ...user, ...updatedUser }); // Merge with existing user data
