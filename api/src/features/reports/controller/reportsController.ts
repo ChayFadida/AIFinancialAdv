@@ -9,35 +9,39 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
   if (!stock_symbol) {
     throw 'Stock symbol is required';
   }
+
+  // Check if a report is in progress
   const response_in_progress = await aiAxios.get(`/stocksReports/getLatestReport`, {
     params: { stock: stock_symbol, report_type: report_type, report_status: "in_progress" },
   });
 
-  if (response_in_progress.data && Object.keys(response_in_progress.data).length > 0) {
-    return res.status(202).json({ message: "Report is still in progress" });
-  }
+  const inProgressExists = response_in_progress.data && Object.keys(response_in_progress.data).length > 0;
 
+  // Check if a report is done
   const response_done = await aiAxios.get(`/stocksReports/getLatestReport`, {
     params: { stock: stock_symbol, report_type: report_type, report_status: "done" },
   });
-  // Check if the response data is empty and trigger another API call if true
-  if (!response_done.data || Object.keys(response_done.data).length === 0) {
-    const fallbackResponse = await aiAxios.post(`/stocksReports/analyzeReport`, null, {
-      params: { stock: stock_symbol, report_type: report_type }
-    });
 
-    // If the fallback response is also empty, return a 404 response
-    if (!fallbackResponse.data || Object.keys(fallbackResponse.data).length === 0) {
-      return res.status(404).json({ message: 'Report not found in both attempts' });
-    }
+  const doneExists = response_done.data && Object.keys(response_done.data).length > 0;
 
-    // If fallback response is successful, return the data
-    return res.status(201).json(fallbackResponse.data);
+  // If there is no "done" report but an "in progress" report exists, return 200
+  if (!doneExists && inProgressExists) {
+    return res.status(200).json({ message: "Report is still in progress" });
   }
 
-  // If the original response is not empty, return the data
-  return res.status(200).json(response_done.data);
+  // If there is a "done" report (regardless of an "in progress" report), return the done report
+  if (doneExists) {
+    return res.status(200).json(response_done.data);
+  }
+
+  // If there is no report in progress and no report done, trigger analysis and return 201
+  const fallbackResponse = await aiAxios.post(`/stocksReports/analyzeReport`, null, {
+    params: { stock: stock_symbol, report_type: report_type }
+  });
+
+  return res.status(201).json(fallbackResponse.data);
 });
+
 
 export const getAllReport = catchAsync(async (req: GetLatestReportRequest, res: Response) => {
 
@@ -66,8 +70,20 @@ export const getAllReport = catchAsync(async (req: GetLatestReportRequest, res: 
       reportType: reportTypeMapping[report.report_type] || "Unknown Report", // Use mapping or default to 'Unknown Report'
       stock_symbol: report.stock_symbol,
       status: report.status,
+      date: report.created_at
     };
   });
   return res.status(200).json(progressReports);
 });
 
+
+export const forceGenerateReport = catchAsync(async (req: GetLatestReportRequest, res: Response) => {
+  const { stock_symbol, report_type } = req.query;
+  if (!stock_symbol) {
+    throw 'Stock symbol is required';
+  }
+  const response = await aiAxios.post(`/stocksReports/analyzeReport`, null, {
+    params: { stock: stock_symbol, report_type: report_type }
+  });
+  return res.status(201).json(response.data);
+});

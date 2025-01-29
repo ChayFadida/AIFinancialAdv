@@ -3,14 +3,24 @@ import { RequestProgress } from "../../../pages/Recommendation";
 import company_symbol from "../../../utils/company_symbol.json"
 export type GetReportResponse = any;
 
-export async function getQRReport(stock_symbol: string, report_type: string): Promise<{data: GetReportResponse, status: number}> {
-  const response = await axios.get<GetReportResponse>(`/reports/stocksReports`, {
-    params: { stock_symbol, report_type },
-  });
-  return {
-    data: response.data,
-    status: response.status
-  };
+export async function getQRReport(stock_symbol: string, report_type: string, wantUpdateReport: boolean): Promise<{data: GetReportResponse, status: number}> {
+  if(!wantUpdateReport){
+    const response = await axios.get<GetReportResponse>(`/reports/stocksReports`, {
+        params: { stock_symbol, report_type },
+      });
+      return {
+        data: response.data,
+        status: response.status
+      };
+    } else {
+      const response = await axios.get<GetReportResponse>(`/reports/forceGenerateReport`, {
+        params: { stock_symbol, report_type },
+      });
+      return {
+        data: response.data,
+        status: response.status
+      };     
+    }
 }
 
 export async function getProgressItems(): Promise<{ data: any[]; status: number }> {
@@ -29,6 +39,7 @@ export async function getProgressItems(): Promise<{ data: any[]; status: number 
       return {
         reportName: companyName,
         status: report.status,
+        date: report.date
       };
     });
     return { data: updatedData, status: response.status };

@@ -63,6 +63,7 @@ interface StockReport {
 export interface RequestProgress {
   reportName: string;
   status: "done" | "in_progress";
+  date: string;
 }
 const Recommendation: React.FC = () => {
   const [stockName, setStockName] = React.useState("");
@@ -96,7 +97,7 @@ const Recommendation: React.FC = () => {
     stockName: string,
     analysisType: string
   ): Promise<StockReport | null> => {
-    const response = await getQRReport(stockName, analysisType);
+    const response = await getQRReport(stockName, analysisType, wantUpdatedReport);
 
     if (response.status === 201 || response.status === 202) {
       setShowGeneratingAlert(true);
@@ -111,8 +112,15 @@ const Recommendation: React.FC = () => {
       stockName,
       analysisType,
       financeData,
-      date: new Date().toISOString(),
-      //recommendation: "Buy",
+      date: new Date(response.data.created_at + 'Z').toLocaleString("en-US", {
+        timeZone: "Asia/Jerusalem",
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
       confidence: analysis_data.score,
       currentPrice: 175.34,
       targetPrice: 210.5,
@@ -166,18 +174,23 @@ const Recommendation: React.FC = () => {
       "web_report": "Latest News Report",
     };
     const newRecommendation = await generateReport(stockName, analysisType);
+    const now = new Date();
+    const nowInIsraelTime = new Date(
+      now.toLocaleString("en-US", { timeZone: "Asia/Jerusalem" })
+    );    
     const existingRow = progressItems.find(
       (item) =>
         item.reportName ===
           `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}` &&
         item.status === "done"
     );
-    if (!existingRow) {
+    if (!existingRow || wantUpdatedReport) {
       setProgressItems([
         ...progressItems,
         {
           reportName: `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}`,
           status: "in_progress",
+          date: nowInIsraelTime.toISOString(), // Use adjusted Israel time here
         },
       ]);
     }
@@ -187,8 +200,8 @@ const Recommendation: React.FC = () => {
       const historyItem: RecommendationHistory = {
         id: Date.now().toString(),
         stockName,
-        analysisType,
-        date: new Date().toISOString().split("T")[0],
+        analysisType: reportTypeMapping[analysisType],
+        date: nowInIsraelTime.toISOString().split("T")[0],
       };
       setHistory([historyItem, ...history]);
 
@@ -285,8 +298,19 @@ const Recommendation: React.FC = () => {
               background: "transparent",
             },
           }}>
-            <List>
-              {progressItems.map((item, index) => (
+          <List>
+            {progressItems.map((item, index) => {
+              const dateInIsrael = new Date(item.date + 'Z').toLocaleString("en-US", {
+                timeZone: "Asia/Jerusalem",
+                year: "numeric",
+                month: "short",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              });
+              
+              return (
                 <ListItem
                   key={index}
                   sx={{
@@ -323,6 +347,17 @@ const Recommendation: React.FC = () => {
                       >
                         {item.reportName.split(" ").slice(1).join(" ")}
                       </Typography>
+                      {/* Display the adjusted date and time */}
+                      <Typography
+                        sx={{
+                          color: "#fff",
+                          fontSize: "0.8rem",
+                          lineHeight: 1.2,
+                          mt: 0.5,
+                        }}
+                      >
+                        {dateInIsrael}
+                      </Typography>
                     </Box>
                     <Typography
                       sx={{
@@ -340,8 +375,11 @@ const Recommendation: React.FC = () => {
                     </Typography>
                   </Box>
                 </ListItem>
-              ))}
-            </List>
+              );
+            })}
+          </List>
+
+
           </Box>
         </Box>
 
@@ -623,6 +661,9 @@ const Recommendation: React.FC = () => {
                 color: "#fff",
               }}
             >
+          <Typography variant="h6" sx={{ color: "rgba(255, 255, 255, 0.7)", mb: 2 }}>
+            Report Date: {report.date}
+          </Typography>
               <Box
                 sx={{
                   display: "flex",
