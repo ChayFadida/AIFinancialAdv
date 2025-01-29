@@ -4,5 +4,5 @@ import { dashboardPaths } from "./dashboardRoutes";
 export const paths = {
   auth: authPaths,
   dashboard: dashboardPaths,
-  portfolio: '/portfolio',
+  //portfolio: '/portfolio',
 } as const;
