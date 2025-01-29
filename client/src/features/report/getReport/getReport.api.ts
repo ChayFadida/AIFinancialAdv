@@ -31,7 +31,6 @@ export async function getProgressItems(): Promise<{ data: any[]; status: number 
         status: report.status,
       };
     });
-    console.log(updatedData)
     return { data: updatedData, status: response.status };
   } catch (error) {
     return { data: [], status: 500 }

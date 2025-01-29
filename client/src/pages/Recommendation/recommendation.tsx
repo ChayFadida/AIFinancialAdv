@@ -28,6 +28,8 @@ import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import ReactMarkdown from 'react-markdown'
 import { getQRReport, getProgressItems } from "../../features/report";
 import { getFinanceData } from "../../features/finance";
+import company_symbol from "../../utils/company_symbol.json";
+import Autocomplete from '@mui/material/Autocomplete';
 
 interface RecommendationHistory {
   id: string;
@@ -63,8 +65,10 @@ export interface RequestProgress {
 }
 const Recommendation: React.FC = () => {
   const [stockName, setStockName] = React.useState("");
+  const [companyName, setCompanyName] = React.useState("");
   const [analysisType, setAnalysisType] = React.useState("");
   const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [openStockNotValidSnackbar, setOpenStockNotValidSnackbar] = React.useState(false);
   const [recommendations, setRecommendations] = React.useState<StockReport[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const resultRef = React.useRef<HTMLDivElement>(null);
@@ -136,6 +140,14 @@ const Recommendation: React.FC = () => {
 
   const handleGenerate = async () => {
     setIsLoading(true);
+    const isCompanyStock = company_symbol.some(option => option.company === companyName);
+
+    if (!isCompanyStock) {
+      // Show error alert or Snackbar
+      setOpenStockNotValidSnackbar(true);
+      setIsLoading(false);
+      return;
+    }
     
     const newRecommendation = await generateReport(stockName, analysisType);
     
@@ -350,26 +362,45 @@ const Recommendation: React.FC = () => {
               preferred analysis method below.
             </Typography>
 
-            <TextField
-              fullWidth
-              label="Stock Name"
-              value={stockName}
-              onChange={(e) => setStockName(e.target.value)}
-              sx={{ 
-                mb: 6,
-                '& .MuiOutlinedInput-root': {
-                  color: '#fff',
-                  '& fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.23)',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.4)',
-                  },
-                },
-                '& .MuiInputLabel-root': {
-                  color: 'rgba(255, 255, 255, 0.7)',
-                },
+            <Autocomplete
+              id="stock-name-autocomplete"
+              options={company_symbol.map((option) => option.company)} // Options are the company names
+              value={companyName}
+              onInputChange={(event, newInputValue) => {
+                setCompanyName(newInputValue);
+              
+                // Find the company symbol that matches the new input value
+                const matchedCompany = company_symbol.find((option) => option.company === newInputValue);
+              
+                // If a match is found, set the stockName accordingly
+                if (matchedCompany) {
+                  setStockName(matchedCompany.stock_symbol); // Assuming 'symbol' is the key for the stock symbol
+                } else {
+                  setStockName(''); // You can set an empty string or a default value if no match is found
+                }
               }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Stock Name"
+                  fullWidth
+                  sx={{
+                    mb: 6,
+                    '& .MuiOutlinedInput-root': {
+                      color: '#fff',
+                      '& fieldset': {
+                        borderColor: 'rgba(255, 255, 255, 0.23)',
+                      },
+                      '&:hover fieldset': {
+                        borderColor: 'rgba(255, 255, 255, 0.4)',
+                      },
+                    },
+                    '& .MuiInputLabel-root': {
+                      color: 'rgba(255, 255, 255, 0.7)',
+                    },
+                  }}
+                />
+              )}
             />
 
             <RadioGroup
@@ -595,6 +626,15 @@ const Recommendation: React.FC = () => {
           }
         }}
       />
+      <Snackbar
+        open={openStockNotValidSnackbar}
+        autoHideDuration={6000}
+        onClose={() => setOpenStockNotValidSnackbar(false)}
+      >
+        <Alert onClose={() => setOpenStockNotValidSnackbar(false)} severity="error">
+          Invalid stock name. Please select a valid company.
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
