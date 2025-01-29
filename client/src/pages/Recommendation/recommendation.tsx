@@ -21,6 +21,7 @@ import {
   AlertTitle,
   Dialog,
   DialogContent,
+  Checkbox,
 } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -81,6 +82,7 @@ const Recommendation: React.FC = () => {
   const [progressItems, setProgressItems] = React.useState<RequestProgress[]>(
     []
   );
+  const [wantUpdatedReport, setWantUpdatedReport] = React.useState(false);
 
   const fetchProgressItems = async () => {
     const response = await getProgressItems();
@@ -110,7 +112,7 @@ const Recommendation: React.FC = () => {
       analysisType,
       financeData,
       date: new Date().toISOString(),
-      recommendation: "Buy",
+      //recommendation: "Buy",
       confidence: analysis_data.score,
       currentPrice: 175.34,
       targetPrice: 210.5,
@@ -257,69 +259,90 @@ const Recommendation: React.FC = () => {
             borderRight: "1px solid rgba(255, 255, 255, 0.12)",
             bgcolor: "#0c1014",
             p: 2,
+            height: "600px",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <Typography variant="h6" sx={{ mb: 2, color: "#fff" }}>
             Request Progress
           </Typography>
           <Divider sx={{ bgcolor: "rgba(255, 255, 255, 0.12)", mb: 2 }} />
-          <List>
-            {progressItems.map((item, index) => (
-              <ListItem
-                key={index}
-                sx={{
-                  mb: 1.5,
-                  bgcolor: "rgba(255, 255, 255, 0.05)",
-                  borderRadius: 1,
-                  display: "block",
-                  p: 2,
-                }}
-              >
-                <Box
+          <Box sx={{ 
+            overflow: "auto",
+            "&::-webkit-scrollbar": {
+              width: "8px",
+              background: "transparent",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              background: "rgba(255, 255, 255, 0.1)",
+              borderRadius: "4px",
+              "&:hover": {
+                background: "rgba(255, 255, 255, 0.2)",
+              },
+            },
+            "&::-webkit-scrollbar-track": {
+              background: "transparent",
+            },
+          }}>
+            <List>
+              {progressItems.map((item, index) => (
+                <ListItem
+                  key={index}
                   sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
+                    mb: 1.5,
+                    bgcolor: "rgba(255, 255, 255, 0.05)",
+                    borderRadius: 1,
+                    display: "block",
+                    p: 2,
                   }}
                 >
-                  <Box>
-                    <Typography
-                      sx={{
-                        color: "#fff",
-                        fontSize: "0.95rem",
-                        lineHeight: 1.2,
-                      }}
-                    >
-                      {item.reportName.split(" ")[0]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: "#fff",
-                        fontSize: "0.95rem",
-                        lineHeight: 1.2,
-                      }}
-                    >
-                      {item.reportName.split(" ").slice(1).join(" ")}
-                    </Typography>
-                  </Box>
-                  <Typography
+                  <Box
                     sx={{
-                      ...getStatusStyle(item.status),
-                      fontSize: "0.8rem",
-                      ml: 2,
-                      px: 1.5,
-                      py: 0.5,
-                      borderRadius: "2em",
-                      fontWeight: 500,
-                      whiteSpace: "nowrap",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
                     }}
                   >
-                    {item.status === "done" ? "Done" : "In Progress"}
-                  </Typography>
-                </Box>
-              </ListItem>
-            ))}
-          </List>
+                    <Box>
+                      <Typography
+                        sx={{
+                          color: "#fff",
+                          fontSize: "0.95rem",
+                          lineHeight: 1.2,
+                        }}
+                      >
+                        {item.reportName.split(" ")[0]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: "#fff",
+                          fontSize: "0.95rem",
+                          lineHeight: 1.2,
+                        }}
+                      >
+                        {item.reportName.split(" ").slice(1).join(" ")}
+                      </Typography>
+                    </Box>
+                    <Typography
+                      sx={{
+                        ...getStatusStyle(item.status),
+                        fontSize: "0.8rem",
+                        ml: 2,
+                        px: 1.5,
+                        py: 0.5,
+                        borderRadius: "2em",
+                        fontWeight: 500,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {item.status === "done" ? "Done" : "In Progress"}
+                    </Typography>
+                  </Box>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
         </Box>
 
         {/* History Sidebar */}
@@ -329,50 +352,71 @@ const Recommendation: React.FC = () => {
             borderRight: "1px solid rgba(255, 255, 255, 0.12)",
             bgcolor: "#0c1014",
             p: 2,
+            height: "600px",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <Typography variant="h6" sx={{ mb: 2, color: "#fff" }}>
             Recommendation History
           </Typography>
           <Divider sx={{ bgcolor: "rgba(255, 255, 255, 0.12)" }} />
-          <List>
-            {history.map((item) => (
-              <ListItem
-                key={item.id}
-                disablePadding
-                secondaryAction={
-                  <IconButton
-                    edge="end"
-                    onClick={(e) => handleDeleteHistory(item.id, e)}
+          <Box sx={{ 
+            overflow: "auto",
+            "&::-webkit-scrollbar": {
+              width: "8px",
+              background: "transparent",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              background: "rgba(255, 255, 255, 0.1)",
+              borderRadius: "4px",
+              "&:hover": {
+                background: "rgba(255, 255, 255, 0.2)",
+              },
+            },
+            "&::-webkit-scrollbar-track": {
+              background: "transparent",
+            },
+          }}>
+            <List>
+              {history.map((item) => (
+                <ListItem
+                  key={item.id}
+                  disablePadding
+                  secondaryAction={
+                    <IconButton
+                      edge="end"
+                      onClick={(e) => handleDeleteHistory(item.id, e)}
+                      sx={{
+                        color: "rgba(255, 255, 255, 0.7)",
+                        "&:hover": { color: "#ff4444" },
+                      }}
+                    >
+                      <DeleteOutlineIcon />
+                    </IconButton>
+                  }
+                >
+                  <ListItemButton
+                    onClick={() => handleHistoryClick(item)}
                     sx={{
-                      color: "rgba(255, 255, 255, 0.7)",
-                      "&:hover": { color: "#ff4444" },
+                      "&:hover": {
+                        backgroundColor: "rgba(255, 255, 255, 0.08)",
+                      },
                     }}
                   >
-                    <DeleteOutlineIcon />
-                  </IconButton>
-                }
-              >
-                <ListItemButton
-                  onClick={() => handleHistoryClick(item)}
-                  sx={{
-                    "&:hover": {
-                      backgroundColor: "rgba(255, 255, 255, 0.08)",
-                    },
-                  }}
-                >
-                  <ListItemText
-                    primary={item.stockName}
-                    secondary={`${item.analysisType} • ${item.date}`}
-                    primaryTypographyProps={{ sx: { color: "#fff" } }}
-                    secondaryTypographyProps={{
-                      sx: { color: "rgba(255, 255, 255, 0.7)" },
-                    }}
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+                    <ListItemText
+                      primary={item.stockName}
+                      secondary={`${item.analysisType} • ${item.date}`}
+                      primaryTypographyProps={{ sx: { color: "#fff" } }}
+                      secondaryTypographyProps={{
+                        sx: { color: "rgba(255, 255, 255, 0.7)" },
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
         </Box>
 
         {/* Main Content */}
@@ -510,7 +554,9 @@ const Recommendation: React.FC = () => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 2,
               mt: "auto",
             }}
           >
@@ -535,6 +581,31 @@ const Recommendation: React.FC = () => {
             >
               {isLoading ? "Generating..." : "Generate Recommendation"}
             </Button>
+            
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={wantUpdatedReport}
+                  onChange={(e) => setWantUpdatedReport(e.target.checked)}
+                  sx={{
+                    color: "rgba(255, 255, 255, 0.7)",
+                    "&.Mui-checked": {
+                      color: "#2196f3",
+                    },
+                    "&:hover": {
+                      backgroundColor: "rgba(33, 150, 243, 0.08)",
+                    },
+                  }}
+                />
+              }
+              label="I want an updated report"
+              sx={{
+                color: "rgba(255, 255, 255, 0.7)",
+                "& .MuiFormControlLabel-label": {
+                  fontSize: "0.9rem",
+                },
+              }}
+            />
           </Box>
         </Box>
       </Paper>
@@ -563,17 +634,7 @@ const Recommendation: React.FC = () => {
                 <Typography variant="h5">
                   {report.stockName} Analysis Report
                 </Typography>
-                <Chip
-                  label={report.recommendation}
-                  color={
-                    report.recommendation === "Buy"
-                      ? "success"
-                      : report.recommendation === "Sell"
-                        ? "error"
-                        : "warning"
-                  }
-                  sx={{ fontSize: "1.1rem", px: 2 }}
-                />
+            
               </Box>
 
               <Box sx={{ mb: 4 }}>
