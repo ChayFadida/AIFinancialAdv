@@ -164,7 +164,21 @@ const Recommendation: React.FC = () => {
       "web_report": "Latest News Report",
     };
     const newRecommendation = await generateReport(stockName, analysisType);
-    setProgressItems([...progressItems, { reportName: `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}`, status: "in_progress" }]);
+    const existingRow = progressItems.find(
+      (item) =>
+        item.reportName ===
+          `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}` &&
+        item.status === "done"
+    );
+    if (!existingRow) {
+      setProgressItems([
+        ...progressItems,
+        {
+          reportName: `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}`,
+          status: "in_progress",
+        },
+      ]);
+    }
     if (newRecommendation) {
       setRecommendations([newRecommendation, ...recommendations]);
 
