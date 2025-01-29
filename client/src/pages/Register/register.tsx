@@ -65,11 +65,23 @@ export function Register() {
 
   // Validate email and other inputs
   const validateForm = () => {
+    // Check if any required field is empty
+    if (!formData.name.trim()) {
+      setError("Name is required");
+      return false;
+    }
+    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setError("Invalid email address");
       return false;
     }
+
+    if (!formData.password) {
+      setError("Password is required");
+      return false;
+    }
+
     if (
       passwordError ||
       formData.password !== formData.confirmPassword ||
@@ -78,6 +90,12 @@ export function Register() {
       setError("Passwords do not match or are too short");
       return false;
     }
+
+    if (formData.stocks.length === 0) {
+      setError("Please select at least one stock to follow");
+      return false;
+    }
+
     setError("");
     return true;
   };

@@ -35,6 +35,7 @@ import company_symbol from "../../utils/company_symbol.json";
 import { updateUserProfile } from "../../features/auth/api";
 import HelpIcon from '@mui/icons-material/Help';
 import SendIcon from '@mui/icons-material/Send';
+import { Snackbar, Alert } from "@mui/material";
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
@@ -69,6 +70,9 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
     stocks: user?.stocks || [],
   });
 
+  const [error, setError] = React.useState("");
+  const [successMessage, setSuccessMessage] = React.useState("");
+
   const handleEditClick = () => {
     setIsEditing(true);
     setEditFormData({
@@ -77,22 +81,39 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
     });
   };
 
+  const validateEditForm = () => {
+    if (!editFormData.name.trim()) {
+      setError("Name is required");
+      return false;
+    }
+
+    if (editFormData.stocks.length === 0) {
+      setError("Please select at least one stock to follow");
+      return false;
+    }
+
+    setError("");
+    return true;
+  };
+
   const handleSaveChanges = async () => {
+    if (!validateEditForm()) {
+      return; // The error state will trigger the Snackbar
+    }
+
     try {
       const updatedUser = await updateUserProfile(editFormData);
       
       if (updatedUser) {
-        handleUser({ ...user, ...updatedUser }); // Merge with existing user data
+        handleUser({ ...user, ...updatedUser });
         setIsEditing(false);
         handleMenuClose();
-        // Add a visual feedback
-        alert('Profile updated successfully!');
-        // Force a page refresh if needed
+        setSuccessMessage('Profile updated successfully!');
         window.location.reload();
       }
     } catch (error) {
       console.error('Failed to update profile:', error);
-      alert('Failed to update profile. Please try again.');
+      setError('Failed to update profile. Please try again.');
     }
   };
 
@@ -234,8 +255,13 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               fullWidth
               label="Name"
               value={editFormData.name}
-              onChange={(e) => setEditFormData({ ...editFormData, name: e.target.value })}
+              onChange={(e) => {
+                setEditFormData({ ...editFormData, name: e.target.value });
+                setError(""); // Clear error when user types
+              }}
               sx={{ mb: 2 }}
+              error={!!error && error.includes("Name")}
+              helperText={error && error.includes("Name") ? error : ""}
             />
             <Autocomplete
               multiple
@@ -248,6 +274,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                   ...editFormData, 
                   stocks: newValue as { stock_symbol: string; company: string }[] 
                 });
+                setError(""); // Clear error when user selects stocks
               }}
               renderOption={(props, option, { selected }) => (
                 <li {...props}>
@@ -265,6 +292,8 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                   {...params} 
                   label="Stocks to follow" 
                   placeholder="Select stocks"
+                  error={!!error && error.includes("stock")}
+                  helperText={error && error.includes("stock") ? error : ""}
                 />
               )}
               sx={{ mb: 2 }}
@@ -356,6 +385,36 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
         <DrawerHeader />
         {children}
       </Box>
+      
+      <Snackbar
+        open={!!error}
+        autoHideDuration={3000}
+        onClose={() => setError("")}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert 
+          onClose={() => setError("")} 
+          severity="error" 
+          sx={{ width: '100%' }}
+        >
+          {error}
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={!!successMessage}
+        autoHideDuration={3000}
+        onClose={() => setSuccessMessage("")}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert 
+          onClose={() => setSuccessMessage("")} 
+          severity="success" 
+          sx={{ width: '100%' }}
+        >
+          {successMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
