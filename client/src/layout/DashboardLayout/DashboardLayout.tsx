@@ -27,14 +27,14 @@ import { appStorage } from "../../services/appStorage";
 import { useUser } from "../../context";
 import { Avatar, TextField } from "@mui/material";
 import { Menu, MenuItem, Button } from "@mui/material";
-import Checkbox from '@mui/material/Checkbox';
-import Autocomplete from '@mui/material/Autocomplete';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import Checkbox from "@mui/material/Checkbox";
+import Autocomplete from "@mui/material/Autocomplete";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import company_symbol from "../../utils/company_symbol.json";
 import { updateUserProfile } from "../../features/auth/api";
-import HelpIcon from '@mui/icons-material/Help';
-import SendIcon from '@mui/icons-material/Send';
+import HelpIcon from "@mui/icons-material/Help";
+import SendIcon from "@mui/icons-material/Send";
 import { Snackbar, Alert } from "@mui/material";
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -55,11 +55,11 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const menuOpen = Boolean(anchorEl);
-  
+
   const handleAvatarClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  
+
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
@@ -103,25 +103,24 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
     try {
       const updatedUser = await updateUserProfile(editFormData);
-      
+
       if (updatedUser) {
         handleUser({ ...user, ...updatedUser });
         setIsEditing(false);
         handleMenuClose();
-        setSuccessMessage('Profile updated successfully!');
+        setSuccessMessage("Profile updated successfully!");
         window.location.reload();
       }
     } catch (error) {
-      console.error('Failed to update profile:', error);
-      setError('Failed to update profile. Please try again.');
+      console.error("Failed to update profile:", error);
+      setError("Failed to update profile. Please try again.");
     }
   };
 
   const handleCancel = () => {
     setIsEditing(false);
     handleMenuClose();
-  }
-
+  };
 
   const navItems = [
     {
@@ -191,9 +190,14 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             background: (theme) => theme.palette.background.paper,
           }}
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "100%",
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
@@ -205,113 +209,128 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               </IconButton>
               <Typography variant="h6">Hello, {user?.name}</Typography>
             </Box>
-            <Box >
-              <Avatar sx={{ marginRight: 2, cursor: 'pointer' }} onClick={handleAvatarClick}>{user?.name.substring(0, 1).toUpperCase()}</Avatar>
+            <Box>
+              <Avatar
+                sx={{ marginRight: 2, cursor: "pointer" }}
+                onClick={handleAvatarClick}
+              >
+                {user?.name.substring(0, 1).toUpperCase()}
+              </Avatar>
               {/* <IconButton><ChevronDown></IconButton> */}
-                <Menu
-        anchorEl={anchorEl}
-        open={menuOpen}
-        onClose={handleMenuClose}
-        PaperProps={{
-          sx: {
-            padding: 2,
-            width: 320,
-          }
-        }}
-      >
-        {!isEditing ? (
-          <>
-            <Box sx={{ px: 2, py: 1 }}>
-              <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                {user?.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {user?.email}
-              </Typography>
-            </Box>
-            <Divider sx={{ my: 1 }} />
-            <MenuItem>
-              <Button 
-                fullWidth 
-                variant="contained"
-                onClick={handleEditClick}
+              <Menu
+                anchorEl={anchorEl}
+                open={menuOpen}
+                onClose={handleMenuClose}
+                PaperProps={{
+                  sx: {
+                    padding: 2,
+                    width: 320,
+                  },
+                }}
               >
-                Edit Profile
-              </Button>
-            </MenuItem>
-          </>
-        ) : (
-          <Box sx={{ p: 2 }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>
-              Edit Profile
-            </Typography>
-            <TextField
-              fullWidth
-              label="Name"
-              value={editFormData.name}
-              onChange={(e) => {
-                setEditFormData({ ...editFormData, name: e.target.value });
-                setError(""); // Clear error when user types
-              }}
-              sx={{ mb: 2 }}
-              error={!!error && error.includes("Name")}
-              helperText={error && error.includes("Name") ? error : ""}
-            />
-            <Autocomplete
-              multiple
-              options={company_symbol}
-              disableCloseOnSelect
-              getOptionLabel={(option) => String(option.company)}
-              value={editFormData.stocks}
-              onChange={(event, newValue) => {
-                setEditFormData({ 
-                  ...editFormData, 
-                  stocks: newValue as { stock_symbol: string; company: string }[] 
-                });
-                setError(""); // Clear error when user selects stocks
-              }}
-              renderOption={(props, option, { selected }) => (
-                <li {...props}>
-                  <Checkbox
-                    icon={icon}
-                    checkedIcon={checkedIcon}
-                    style={{ marginRight: 8 }}
-                    checked={selected}
-                  />
-                  {option.stock_symbol} ({option.company})
-                </li>
-              )}
-              renderInput={(params) => (
-                <TextField 
-                  {...params} 
-                  label="Stocks to follow" 
-                  placeholder="Select stocks"
-                  error={!!error && error.includes("stock")}
-                  helperText={error && error.includes("stock") ? error : ""}
-                />
-              )}
-              sx={{ mb: 2 }}
-            />
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <Button 
-                fullWidth 
-                variant="contained"
-                onClick={handleSaveChanges}
-              >
-                Save Changes
-              </Button>
-              <Button 
-                fullWidth 
-                variant="outlined"
-                onClick={handleCancel}
-              >
-                Cancel
-              </Button>
-            </Box>
-          </Box>
-        )}
-      </Menu>
-
+                {!isEditing ? (
+                  <Box>
+                    <Box sx={{ px: 2, py: 1 }}>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ fontWeight: "bold" }}
+                      >
+                        {user?.name}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {user?.email}
+                      </Typography>
+                    </Box>
+                    <Divider sx={{ my: 1 }} />
+                    <MenuItem>
+                      <Button
+                        fullWidth
+                        variant="contained"
+                        onClick={handleEditClick}
+                      >
+                        Edit Profile
+                      </Button>
+                    </MenuItem>
+                  </Box>
+                ) : (
+                  <Box sx={{ p: 2 }}>
+                    <Typography variant="h6" sx={{ mb: 2 }}>
+                      Edit Profile
+                    </Typography>
+                    <TextField
+                      fullWidth
+                      label="Name"
+                      value={editFormData.name}
+                      onChange={(e) => {
+                        setEditFormData({
+                          ...editFormData,
+                          name: e.target.value,
+                        });
+                        setError(""); // Clear error when user types
+                      }}
+                      sx={{ mb: 2 }}
+                      error={!!error && error.includes("Name")}
+                      helperText={error && error.includes("Name") ? error : ""}
+                    />
+                    <Autocomplete
+                      multiple
+                      options={company_symbol}
+                      disableCloseOnSelect
+                      getOptionLabel={(option) => String(option.company)}
+                      value={editFormData.stocks}
+                      onChange={(event, newValue) => {
+                        setEditFormData({
+                          ...editFormData,
+                          stocks: newValue as {
+                            stock_symbol: string;
+                            company: string;
+                          }[],
+                        });
+                        setError(""); // Clear error when user selects stocks
+                      }}
+                      renderOption={(props, option, { selected }) => (
+                        <li {...props}>
+                          <Checkbox
+                            icon={icon}
+                            checkedIcon={checkedIcon}
+                            style={{ marginRight: 8 }}
+                            checked={selected}
+                          />
+                          {option.stock_symbol} ({option.company})
+                        </li>
+                      )}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="Stocks to follow"
+                          placeholder="Select stocks"
+                          error={!!error && error.includes("stock")}
+                          helperText={
+                            error && error.includes("stock") ? error : ""
+                          }
+                        />
+                      )}
+                      sx={{ mb: 2 }}
+                    />
+                    <Box sx={{ display: "flex", gap: 1 }}>
+                      <Button
+                        fullWidth
+                        variant="contained"
+                        onClick={handleSaveChanges}
+                      >
+                        Save Changes
+                      </Button>
+                      <Button
+                        fullWidth
+                        variant="outlined"
+                        onClick={handleCancel}
+                      >
+                        Cancel
+                      </Button>
+                    </Box>
+                  </Box>
+                )}
+              </Menu>
             </Box>
           </Box>
         </Toolbar>
@@ -379,17 +398,17 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
         <DrawerHeader />
         {children}
       </Box>
-      
+
       <Snackbar
         open={!!error}
         autoHideDuration={3000}
         onClose={() => setError("")}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
-        <Alert 
-          onClose={() => setError("")} 
-          severity="error" 
-          sx={{ width: '100%' }}
+        <Alert
+          onClose={() => setError("")}
+          severity="error"
+          sx={{ width: "100%" }}
         >
           {error}
         </Alert>
@@ -399,12 +418,12 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
         open={!!successMessage}
         autoHideDuration={3000}
         onClose={() => setSuccessMessage("")}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
-        <Alert 
-          onClose={() => setSuccessMessage("")} 
-          severity="success" 
-          sx={{ width: '100%' }}
+        <Alert
+          onClose={() => setSuccessMessage("")}
+          severity="success"
+          sx={{ width: "100%" }}
         >
           {successMessage}
         </Alert>

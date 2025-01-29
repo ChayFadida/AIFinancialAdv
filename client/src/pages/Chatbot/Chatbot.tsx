@@ -81,7 +81,7 @@ export default function Chatbot() {
   return (
     <Box
       sx={{
-        maxWidth: '100%',
+        width: '100%',
         height: 'calc(100vh - 100px)',
         margin: '0 auto',
         p: 2,
