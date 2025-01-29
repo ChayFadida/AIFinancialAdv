@@ -158,10 +158,13 @@ const Recommendation: React.FC = () => {
       setIsLoading(false);
       return;
     }
-
+    const reportTypeMapping: Record<string, string> = {
+      "qk_report": "Quarterly & Yearly Report",
+      "both": "Both Method Report",
+      "web_report": "Latest News Report",
+    };
     const newRecommendation = await generateReport(stockName, analysisType);
-
-    setProgressItems([...progressItems, { reportName: stockName, status: "in_progress" }]);
+    setProgressItems([...progressItems, { reportName: `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}`, status: "in_progress" }]);
     if (newRecommendation) {
       setRecommendations([newRecommendation, ...recommendations]);
 
