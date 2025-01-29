@@ -16,7 +16,7 @@ const port = process.env.port || 3001;
 const MONGO_URI = (process.env.MONGO_URI || '')
   .replace('<db_username>', process.env.MONGO_USERNAME || '')
   .replace('<db_password>', process.env.MONGO_PASSWORD || '')
-  .concat('/financeAdv');
+  .replace('/?', process.env.DATABASE_NAME || ''); 
 
 const MONGO_CONNECTION_SUCCESS = `server is connected with the MongoDB cluster!`;
 const MONGO_CONNECTION_FAIL = `Connection error - server failed to connect with the MongoDB cluster...`;
