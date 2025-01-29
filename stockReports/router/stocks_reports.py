@@ -4,6 +4,7 @@ from multiprocessing import Process
 from database.stockReportRepo import StockReportRepository
 from dependency.dependencies import get_stock_report_repo
 from utils.types.report_types import ReportType
+from utils.types.report_status import ReportStatus
 
 router = APIRouter(prefix="/stocksReports", tags=["Stock Reports"])
 
@@ -38,7 +39,7 @@ def analyze_report(
 
 @router.get('/getLatestReport')
 def get_latest_report(
-    stock: str, report_type: ReportType,
+    stock: str, report_type: ReportType, report_status: ReportStatus,
     repo: StockReportRepository = Depends(get_stock_report_repo)
 ):
     """
@@ -50,7 +51,7 @@ def get_latest_report(
     Returns:
         dict: The latest stock report.
     """
-    return repo.get_latest_report(stock, report_type)
+    return repo.get_latest_report(stock, report_type, report_status)
 
 @router.get('/getAllReports')
 def get_all_reports(

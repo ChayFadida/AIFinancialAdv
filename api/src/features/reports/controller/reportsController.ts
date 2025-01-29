@@ -9,12 +9,20 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
   if (!stock_symbol) {
     throw 'Stock symbol is required';
   }
+  const response_in_progress = await aiAxios.get(`/stocksReports/getLatestReport`, {
+    params: { stock: stock_symbol, report_type: report_type, report_status: "in_progress" },
+  });
 
-  const response = await aiAxios.get(`/stocksReports/getLatestReport`, {
-    params: { stock: stock_symbol, report_type: report_type },
+  if (response_in_progress.data && Object.keys(response_in_progress.data).length > 0) {
+    console.log("returning")
+    return res.status(202).json({ message: "Report is still in progress" });
+  }
+
+  const response_done = await aiAxios.get(`/stocksReports/getLatestReport`, {
+    params: { stock: stock_symbol, report_type: report_type, report_status: "done" },
   });
   // Check if the response data is empty and trigger another API call if true
-  if (!response.data || Object.keys(response.data).length === 0) {
+  if (!response_done.data || Object.keys(response_done.data).length === 0) {
     const fallbackResponse = await aiAxios.post(`/stocksReports/analyzeReport`, null, {
       params: { stock: stock_symbol, report_type: report_type }
     });
@@ -29,7 +37,7 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
   }
 
   // If the original response is not empty, return the data
-  return res.status(200).json(response.data);
+  return res.status(200).json(response_done.data);
 });
 
 export const getAllReport = catchAsync(async (req: GetLatestReportRequest, res: Response) => {
@@ -48,16 +56,16 @@ export const getAllReport = catchAsync(async (req: GetLatestReportRequest, res: 
   if (filteredReports.length === 0) {
     return res.status(404).json({ message: 'No reports with status "in_progress" or "done" found' });
   }
-  // Map reports to the required structure
+
+  const reportTypeMapping: Record<string, string> = {
+    "qk_report": "Quarterly & Yearly Report",
+    "both": "Both Method Report",
+    "web_report": "Latest News Report",
+  };
   const progressReports = filteredReports.map((report) => {
-    // Convert report_type to a human-readable string with the first letter capitalized
-    const reportTypeFormatted = report.report_type
-      .replace(/_/g, ' ')            // Replace underscores with spaces
-      .toLowerCase()                 // Convert the whole string to lowercase first
-      .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize first letter of each word
-  
+    console.log(report.report_type)
     return {
-      reportType: reportTypeFormatted,
+      reportType: reportTypeMapping[report.report_type] || "Unknown Report", // Use mapping or default to 'Unknown Report'
       stock_symbol: report.stock_symbol,
       status: report.status,
     };

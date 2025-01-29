@@ -84,7 +84,7 @@ const Recommendation: React.FC = () => {
   const generateReport = async (stockName: string, analysisType: string): Promise<StockReport | null> => {
     const response = await getQRReport(stockName, analysisType);
     
-    if (response.status === 201) {
+    if (response.status === 201 || response.status === 202) {
       setShowGeneratingAlert(true);
       return null;
     }
