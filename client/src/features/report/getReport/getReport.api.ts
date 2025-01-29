@@ -23,7 +23,7 @@ export async function getProgressItems(): Promise<{ data: any[]; status: number 
 
   // Map the response data and replace stock_symbol with the company name
   const updatedData = response.data.map(report => {
-      const companyName = companyMap.get(report.stock_symbol); // Fallback to stock_symbol if not found
+      const companyName = `${companyMap.get(report.stock_symbol)} ${report.reportType}`; // Fallback to stock_symbol if not found
 
     return {
       reportName: companyName,

@@ -3,6 +3,7 @@ from pymongo.collection import Collection
 from fastapi import HTTPException
 from utils.types.report_types import ReportType
 from bson import ObjectId
+from utils.types.report_status import ReportStatus
 
 class StockReportRepository:
     def __init__(self, collection: Collection):
@@ -26,7 +27,7 @@ class StockReportRepository:
             "stock_symbol": stock_symbol.upper(),
             "analysis_data": analysis_data,
             "created_at": datetime.utcnow(),
-            "report_type": report_type.name,
+            "report_type": report_type.value,
             "status": "done"
         }
         result = self.collection.insert_one(report)
@@ -47,7 +48,7 @@ class StockReportRepository:
             "stock_symbol": stock_symbol.upper(),
             "analysis_data": None,  # Placeholder for actual data
             "created_at": datetime.utcnow(),
-            "report_type": report_type.name,
+            "report_type": report_type.value,
             "status": "in_progress"
         }
         result = self.collection.insert_one(report)
@@ -86,7 +87,7 @@ class StockReportRepository:
         """
         return list(self.collection.find({}, {"_id": 0}))
 
-    def get_latest_report(self, stock_symbol: str, report_type: ReportType):
+    def get_latest_report(self, stock_symbol: str, report_type: ReportType, report_status: ReportStatus):
         """
         Retrieve the latest report for a specific stock symbol from the database.
 
@@ -99,8 +100,8 @@ class StockReportRepository:
         report = self.collection.find_one(
             {
                 "stock_symbol": stock_symbol.upper(),
-                "report_type": report_type.value.upper(),
-                "status": "done"
+                "report_type": report_type.value,
+                "status": report_status.value
              },
             sort=[("created_at", -1)],  # Sort by created_at descending to get the latest
             projection={"_id": 0}  # Exclude the _id field from the result
