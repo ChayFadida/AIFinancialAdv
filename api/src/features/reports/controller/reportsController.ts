@@ -14,7 +14,6 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
   });
 
   if (response_in_progress.data && Object.keys(response_in_progress.data).length > 0) {
-    console.log("returning")
     return res.status(202).json({ message: "Report is still in progress" });
   }
 
@@ -63,7 +62,6 @@ export const getAllReport = catchAsync(async (req: GetLatestReportRequest, res: 
     "web_report": "Latest News Report",
   };
   const progressReports = filteredReports.map((report) => {
-    console.log(report.report_type)
     return {
       reportType: reportTypeMapping[report.report_type] || "Unknown Report", // Use mapping or default to 'Unknown Report'
       stock_symbol: report.stock_symbol,
