@@ -1,0 +1,20 @@
+summary_analysis:
+  description: >
+    Analyze the results from different reports (risk, growth, valuation, and market position)
+    to provide a holistic summary of the stock's performance. The summary should take into
+    account the strengths and weaknesses identified in each of the analyses.
+
+  expected_output: >
+    A summary report that aggregates insights from the risk, growth, valuation, and market position
+    analyses, highlighting the strengths, weaknesses, and potential investment risks.
+
+final_recommendation:
+  description: >
+    Based on the insights gathered from the summary analysis, provide a final recommendation
+    on whether the stock is a good investment opportunity. The recommendation should take into account
+    the overall performance, risks, and market position of the company.
+
+  expected_output: >
+    A final recommendation with a clear "buy", "hold", or "sell" suggestion, based on the aggregated
+    findings from the different analyses. The recommendation should be backed by insights from each
+    of the analyses and reflect the stock's potential for growth or risk.
