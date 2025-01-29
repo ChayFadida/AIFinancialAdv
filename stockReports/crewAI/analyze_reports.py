@@ -12,6 +12,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from crewAI.api.stock_api import YahooFinanceAPI
 from utils.types.report_types import ReportType
+from crewAI.tools.report_tool import ReportTools
 
 llm = ChatOllama(model=AI_MODEL)
 prompt = ChatPromptTemplate.from_template(summary_prompt)
@@ -85,6 +86,9 @@ class ReportGeneration:
     @staticmethod
     def getReport(stock_symbol: str, report_type: ReportType):
         results = {}
+        if report_type == ReportType.QK_REPORT:
+            ReportTools.check_for_report(stock_symbol, 'K')
+            ReportTools.check_for_report(stock_symbol, 'Q')
         with ThreadPoolExecutor(max_workers=4) as executor:
             # Dynamically submit the analysis tasks using the available analysis types
             analysis_types = [
