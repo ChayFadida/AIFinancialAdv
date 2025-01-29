@@ -1,7 +1,7 @@
 import { Navigate, Outlet, RouteObject } from "react-router";
 
 import { dashboardPaths } from "./paths";
-import { Dashboard, Portfolio, News } from "../../../pages";
+import { Dashboard , News } from "../../../pages";
 import Chatbot from "../../../pages/Chatbot/Chatbot";
 import { DashboardLayout } from "../../../layout";
 import { useUser } from "../../../context";
@@ -32,10 +32,6 @@ export const dashboardRoutes: RouteObject[] = [
       {
         path: dashboardPaths.absolute,
         element: <Dashboard />,
-      },
-      {
-        path: dashboardPaths.portfolio.relative,
-        element: <Portfolio />,
       },
       {
         path: dashboardPaths.myNews.relative,

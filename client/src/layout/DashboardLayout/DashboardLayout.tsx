@@ -131,12 +131,6 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       path: paths.dashboard.absolute,
     },
     {
-      id: "portfolio",
-      label: "Portfolio",
-      icon: <Person />,
-      path: paths.dashboard.portfolio.absolute,
-    },
-    {
       id: "myNews",
       label: "My News",
       icon: <ArticleIcon />,
