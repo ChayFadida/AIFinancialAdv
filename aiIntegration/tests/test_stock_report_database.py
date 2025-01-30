@@ -1,9 +1,9 @@
 import pytest
 from unittest.mock import MagicMock
-from datetime import datetime
 from fastapi import HTTPException
 from utils.types.report_types import ReportType
 from database.stockReportRepo import StockReportRepository
+from utils.types.report_status import ReportStatus
 
 
 @pytest.fixture
@@ -60,7 +60,8 @@ def test_get_latest_report_not_found(stock_report_repo, mock_collection):
     # Call the method and store the result
     result = stock_report_repo.get_latest_report(
         stock_symbol="AAPL",
-        report_type=ReportType.QK_REPORT
+        report_type=ReportType.QK_REPORT,
+        report_status=ReportStatus.IN_PROGRESS
     )
 
     # Assert that the result is an empty dictionary

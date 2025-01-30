@@ -62,5 +62,3 @@ class ReportTools:
 
         # Return the appropriate tool generation function and call it to get new instances
         return tool_mapping.get(report_type, lambda: [])()  # Default to empty list if report_type is invalid
-
-ReportTools.check_for_report('INTC', 'Q')

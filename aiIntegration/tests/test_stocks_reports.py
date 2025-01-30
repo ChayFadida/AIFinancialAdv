@@ -3,6 +3,7 @@ from fastapi.testclient import TestClient
 from app import app
 from utils.types.report_types import ReportType
 from unittest.mock import patch
+from utils.types.report_status import ReportStatus
 
 # Set up a logger
 logging.basicConfig(level=logging.INFO)
@@ -37,7 +38,7 @@ def test_get_latest_report_valid_request(mock_get_latest_report):
 
     response = client.get(
         "/stocksReports/getLatestReport",
-        params={"stock": "AAPL", "report_type": ReportType.QK_REPORT.value}
+        params={"stock": "AAPL", "report_type": ReportType.QK_REPORT.value, "report_status": ReportStatus.IN_PROGRESS, "report_status": ReportStatus.DONE.value}
     )
 
     assert response.status_code == 200
