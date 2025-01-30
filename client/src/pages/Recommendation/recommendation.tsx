@@ -825,7 +825,7 @@ const Recommendation: React.FC = () => {
           >
             <AlertTitle>Report Generation in Progress</AlertTitle>
             We are currently generating a new report for this stock. This
-            process may take up to an hour. Please try again later.
+            process may take up to 15-20 minutes. Please try again later.
           </Alert>
         </DialogContent>
       </Dialog>
