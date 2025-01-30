@@ -16,11 +16,14 @@ download_lock = threading.Lock()
 class ReportTools:
     @staticmethod
     def check_for_report(stock, report_type):
-        file_path = f"crewAI/reports_cache/{stock}_10{report_type}.txt"
+        report_info = Reports.get_latest_report_info(stock ,report_type)
+        report_date = report_info.get('report_date', '')
+        report_url = report_info.get('report_url', '')
+        file_path = f"crewAI/reports_cache/{stock}_{report_date}_10{report_type}.txt"
         with download_lock:
             if not os.path.exists(file_path):
-                log.info(f'{report_type} report for {stock} does not exist. retrive report from API')
-                report_content = Reports.get_report_content(stock ,report_type)
+                log.info(f'{report_type} {report_date} report for {stock} does not exist. retrive report from API')
+                report_content = Reports.get_report_content(report_url)
                 if report_content:
                     with open(file_path, "w", encoding="utf-8") as file:
                         file.write(report_content)
@@ -59,3 +62,5 @@ class ReportTools:
 
         # Return the appropriate tool generation function and call it to get new instances
         return tool_mapping.get(report_type, lambda: [])()  # Default to empty list if report_type is invalid
+
+ReportTools.check_for_report('INTC', 'Q')
