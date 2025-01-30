@@ -8,6 +8,7 @@ export async function getQRReport(stock_symbol: string, report_type: string, wan
     const response = await axios.get<GetReportResponse>(`/reports/stocksReports`, {
         params: { stock_symbol, report_type },
       });
+      console.log(`this is ${response.status}`)
       return {
         data: response.data,
         status: response.status
