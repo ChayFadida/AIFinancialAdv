@@ -31,6 +31,7 @@ import { getQRReport, getProgressItems } from "../../features/report";
 import { getFinanceData } from "../../features/finance";
 import company_symbol from "../../utils/company_symbol.json";
 import Autocomplete from "@mui/material/Autocomplete";
+import { PieChart } from '@mui/x-charts/PieChart';
 
 interface RecommendationHistory {
   id: string;
@@ -685,10 +686,32 @@ const Recommendation: React.FC = () => {
               </Box>
 
               <Box sx={{ mb: 4 }}>
-                <Typography
-                  variant="body1"
-                  sx={{ color: "rgba(255, 255, 255, 0.7)", mb: 2 }}
-                >
+                <Box sx={{ position: 'relative', width: '400px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+                  <PieChart
+                    series={[
+                      {
+                        data: [
+                          { id: 0, value: 60, label: 'Buy', color: '#4caf50' },
+                          { id: 1, value: 30, label: 'Sell', color: '#ff1303' },
+                          { id: 2, value: 10, label: 'Neutral', color: '#ff9800' },
+                        ],
+                        highlightScope: { faded: 'global', highlighted: 'item' },
+                      },
+                    ]}
+                    width={400}
+                    height={200}
+                    slotProps={{
+                      legend: {
+                        position: { vertical: 'middle', horizontal: 'right' },
+                        direction: 'column',
+                      },
+                    }}
+                  />
+                </Box>
+              </Box>
+
+              <Box sx={{ mb: 4 }}>
+                <Typography variant="h6" gutterBottom>
                   Confidence Score: {report.confidence}%
                 </Typography>
                 <LinearProgress
