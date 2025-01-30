@@ -26,7 +26,8 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
 
   // If there is no "done" report but an "in progress" report exists, return 200
   if (!doneExists && inProgressExists) {
-    return res.status(200).json({ message: "Report is still in progress" });
+    console.log("Report is still in progress")
+    return res.status(201).json({ message: "Report is still in progress" });
   }
 
   // If there is a "done" report (regardless of an "in progress" report), return the done report

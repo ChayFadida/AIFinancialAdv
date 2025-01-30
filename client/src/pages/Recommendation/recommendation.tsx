@@ -177,20 +177,26 @@ const Recommendation: React.FC = () => {
     const now = new Date();
     const nowInIsraelTime = new Date(
       now.toLocaleString("en-US", { timeZone: "Asia/Jerusalem" })
-    );    
+    );
+    const getCurrentFormattedDate = () => {
+      const now = new Date();
+      const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()} ${now.getUTCHours()}:${now.getUTCMinutes().toString().padStart(2, '0')}`;
+      return formattedDate;
+    };
     const existingRow = progressItems.find(
       (item) =>
         item.reportName ===
           `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}` &&
-        item.status === "done"
+        item.status === "in_progress"
     );
-    if (!existingRow || wantUpdatedReport) {
+    
+    if (!existingRow) {
       setProgressItems([
         ...progressItems,
         {
           reportName: `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}`,
           status: "in_progress",
-          date: nowInIsraelTime.toISOString(), // Use adjusted Israel time here
+          date: getCurrentFormattedDate()
         },
       ]);
     }
