@@ -82,6 +82,14 @@ export const forceGenerateReport = catchAsync(async (req: GetLatestReportRequest
   if (!stock_symbol) {
     throw 'Stock symbol is required';
   }
+  const response_in_progress = await aiAxios.get(`/stocksReports/getLatestReport`, {
+    params: { stock: stock_symbol, report_type: report_type, report_status: "in_progress" },
+  });
+
+  const inProgressExists = response_in_progress.data && Object.keys(response_in_progress.data).length > 0;
+  if (inProgressExists) {
+    return res.status(200).json(response_in_progress.data);
+  }
   const response = await aiAxios.post(`/stocksReports/analyzeReport`, null, {
     params: { stock: stock_symbol, report_type: report_type }
   });
