@@ -51,6 +51,7 @@ interface StockReport {
   hold_stat: number,
   buy_stat: number,
   sell_stat: number,
+  pie_explanation: string;
   summary: string;
   keyMetrics: {
     label: string;
@@ -132,6 +133,7 @@ const Recommendation: React.FC = () => {
       hold_stat: analysis_data.hold,
       buy_stat: analysis_data.buy,
       sell_stat: analysis_data.sell,
+      pie_explanation: analysis_data.chart_explain,
       keyMetrics: [
         { label: "Revenue Growth", value: financeData.totalRevenue },
         { label: "Profit Margin", value: financeData.profitMargins },
@@ -714,6 +716,25 @@ const Recommendation: React.FC = () => {
                     }}
                   />
                 </Box>
+              </Box>
+
+              {/* New Pie Chart Explanation Section */}
+              <Box sx={{ mb: 4, textAlign: 'center' }}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "rgba(255, 255, 255, 0.9)",
+                    maxWidth: '600px',
+                    margin: '0 auto',
+                    fontSize: '1.1rem',
+                    lineHeight: 1.6,
+                    bgcolor: 'transparent',
+                    p: 2,
+                    borderRadius: 1,
+                  }}
+                >
+                  {report.pie_explanation}
+                </Typography>
               </Box>
 
               <Box sx={{ mb: 4 }}>
