@@ -192,23 +192,31 @@ const Recommendation: React.FC = () => {
       const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()} ${now.getUTCHours()}:${now.getUTCMinutes().toString().padStart(2, '0')}`;
       return formattedDate;
     };
-    const existingRow = progressItems.find(
-      (item) =>
-        item.reportName ===
-          `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}` &&
-        item.status === "done"
+    const reportName = `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}`;
+
+    const hasDoneReport = progressItems.some(
+      (item) => item.reportName === reportName && item.status === "done"
     );
     
-    if (!existingRow && wantUpdatedReport) {
+    const hasInProgressReport = progressItems.some(
+      (item) => item.reportName === reportName && item.status === "in_progress"
+    );
+    
+    // Create a new progress item if:
+    // - There's no "in_progress" report AND
+    // - (There is a "done" report and user wants an update OR there is no matching report at all)
+    if (!hasInProgressReport && (wantUpdatedReport || (!hasDoneReport && !hasInProgressReport))) {
       setProgressItems([
         ...progressItems,
         {
-          reportName: `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}`,
+          reportName,
           status: "in_progress",
-          date: getCurrentFormattedDate()
+          date: getCurrentFormattedDate(),
         },
       ]);
     }
+    
+    
     if (newRecommendation) {
       setRecommendations([newRecommendation, ...recommendations]);
 
