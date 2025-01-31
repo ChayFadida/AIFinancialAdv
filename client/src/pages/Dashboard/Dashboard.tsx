@@ -4,14 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import { yahooChartAxios } from "../../services/axios/yahooChartAxios";
 import { useUser } from "../../context";
 
-// const stocks = [
-//   { id: "AAPL", label: "Apple Inc." },
-//   { id: "MSFT", label: "Microsoft Corporation" },
-//   { id: "GOOGL", label: "Alphabet Inc." },
-//   { id: "AMZN", label: "Amazon.com Inc." },
-//   { id: "TSLA", label: "Tesla Inc." },
-// ];
-
 export const Dashboard = () => {
   const { user } = useUser()
 
