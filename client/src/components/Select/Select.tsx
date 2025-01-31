@@ -25,7 +25,6 @@ export const Select = ({ label, value, onChange, options, width }: SelectProps) 
         <InputLabel id={label}>{label}</InputLabel>
         <MuiSelect
           labelId={label}
-          id="demo-simple-select"
           value={value}
           label="Age"
           onChange={handleSelectChange}
