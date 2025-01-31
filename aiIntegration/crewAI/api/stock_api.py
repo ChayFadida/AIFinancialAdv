@@ -34,6 +34,6 @@ class YahooFinanceAPI:
 # Example usage:
 if __name__ == "__main__":
 
-    history = YahooFinanceAPI.get_stock_history("AAPL")
+    history = YahooFinanceAPI.get_stock_price("AMZN")
     if history:
         print(history)

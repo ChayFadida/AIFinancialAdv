@@ -1,6 +1,6 @@
 import os
 
-AI_MODEL = "llama3.2-vision:11b"
+AI_MODEL = os.getenv("AI_MODEL", "llama3.2-vision:11b")
 DB_URL = os.getenv('DB_URL')
 DB_NAME='financeAdv'
 api_title = "AI-Driven Financial Advisor API"

@@ -1,4 +1,4 @@
-def getGradesStock(summary: str):
+def getGradesStock(summary: str) -> str:
     return f"""I want you to analyze the following stock summary and provide a structured recommendation. Based on the summary, assign a percentage value for 'keep' (buy/hold), 'sell,' and 'hold' such that their total equals exactly 100. The percentages should reflect the sentiment and risk assessment derived from the summary.
             Consider technical indicators, market trends, and general stock performance when determining the best distribution. The recommendation should be returned in the following structured format:
 
@@ -10,7 +10,8 @@ def getGradesStock(summary: str):
             this is the summary: {summary}
             """
 
-summary_prompt = """
+def getStockConfidence(summary: str) -> str:
+    return f"""
     You have been given a summary of a stock analysis. Based on this summary, provide an integer rating between 1 and 100 to indicate how strongly the stock should be recommended for purchase.
 
     Summary: {summary}

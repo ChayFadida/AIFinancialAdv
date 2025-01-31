@@ -56,3 +56,4 @@ class Reports():
         except Exception as e:
             print(f"Error fetching 10-K URL: {e}")
             return None
+Reports.get_latest_report_info("INTC", 'K')

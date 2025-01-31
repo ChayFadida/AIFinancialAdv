@@ -35,7 +35,7 @@ class ReportTools:
         # Find the file with the latest date
         if files:
             latest_file = max(files, key=lambda x: x[0])
-            return latest_file[1]  # Return the filename
+            return f"{report_folder}/{latest_file[1]}"  # Return the filename
         else:
             return None  # No file found matching the pattern
 
@@ -90,3 +90,5 @@ class ReportTools:
 
         # Return the appropriate tool generation function and call it to get new instances
         return tool_mapping.get(report_type, lambda: [])()  # Default to empty list if report_type is invalid
+    
+ReportTools.get_tools(ReportType.QK_REPORT, "QCOM")

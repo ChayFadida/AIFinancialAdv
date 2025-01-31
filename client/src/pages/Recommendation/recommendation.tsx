@@ -697,9 +697,9 @@ const Recommendation: React.FC = () => {
                     series={[
                       {
                         data: [
-                          { id: 0, value: report.buy_stat, label: 'Buy', color: '#4caf50' },
-                          { id: 1, value: report.sell_stat, label: 'Sell', color: '#ff1303' },
-                          { id: 2, value: report.hold_stat, label: 'Hold', color: '#ff9800' },
+                          { id: 0, value: report.buy_stat, label: `Buy ${report.buy_stat}%`, color: '#4caf50' },
+                          { id: 1, value: report.sell_stat, label: `Sell ${report.sell_stat}%`, color: '#ff1303' },
+                          { id: 2, value: report.hold_stat, label: `Hold ${report.hold_stat}%`, color: '#ff9800' },
                         ],
                         highlightScope: { faded: 'global', highlighted: 'item' },
                       },
@@ -718,7 +718,12 @@ const Recommendation: React.FC = () => {
 
               <Box sx={{ mb: 4 }}>
                 <Typography variant="h6" gutterBottom>
-                  Confidence Score: {report.confidence}%
+                
+                {report.confidence >= 0 && report.confidence <= 100 && (
+                  <Typography variant="h6" gutterBottom>
+                    Confidence Score: {report.confidence}%
+                  </Typography>
+                )}
                 </Typography>
                 <LinearProgress
                   variant="determinate"

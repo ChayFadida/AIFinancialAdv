@@ -6,32 +6,16 @@ from crewAI.crew.valuation import ValuationCrew
 from crewAI.crew.marketPosition import MarketPositionCrew
 from crewAI.crew.summary import SummaryCrew
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from utils.prompts.prompts import summary_prompt, getGradesStock
+from utils.prompts.prompts import getStockConfidence, getGradesStock
 from config.app_contex import AI_MODEL
-from langchain_ollama import ChatOllama
-from langchain_core.prompts import ChatPromptTemplate
 from crewAI.api.stock_api import YahooFinanceAPI
 from utils.types.report_types import ReportType
 from crewAI.tools.report_tool import ReportTools
 from ollama import chat
-from ollama import chat
 from pydantic import BaseModel, Field
 
-llm = ChatOllama(model=AI_MODEL)
-prompt = ChatPromptTemplate.from_template(summary_prompt)
-chain = prompt | llm
 
-def getGradesStock(summary: str):
-    return f"""I want you to analyze the following stock summary and provide a structured recommendation. Based on the summary, assign a percentage value for 'keep' (buy/hold), 'sell,' and 'hold' such that their total equals exactly 100. The percentages should reflect the sentiment and risk assessment derived from the summary.
-            Consider technical indicators, market trends, and general stock performance when determining the best distribution. The recommendation should be returned in the following structured format:
 
-            summary: A brief explanation of the stock's outlook.
-            keep: A percentage (0-100) representing the likelihood of continuing to hold or buy the stock.
-            sell: A percentage (0-100) representing the likelihood of selling the stock.
-            hold: A percentage (0-100) representing a neutral stance.
-            Ensure that keep + sell + hold = 100 and that the distribution aligns with the insights provided in the summary.
-            this is the summary: {summary}
-            """
 class StockRecommendation(BaseModel):
     summary: str
     buy: int = Field(ge=0, le=100)
@@ -46,6 +30,10 @@ class StockRecommendation(BaseModel):
             self.sell = round(self.sell * scale)
             self.hold = 100 - (self.keep + self.sell)  # Ensure it sums exactly to 100
         return self
+
+class StockConfidence(BaseModel):
+    confidence: int = Field(ge=0, le=100)
+
 class ReportGeneration:
 
     @staticmethod
@@ -97,14 +85,21 @@ class ReportGeneration:
 
     @staticmethod
     def get_stock_rating(summary: str) -> int:
-        # Prepare the input for the model with the given summary
-        response = chain.invoke({"summary": summary})
-        rating_response = response.content
-        
+        response = chat(
+            model=AI_MODEL,
+            messages=[
+                {
+                    "role": "user",
+                    "content": getStockConfidence(summary),
+                }
+            ],
+            format=StockConfidence.model_json_schema(),
+        )
+        stock_confidence = StockConfidence.model_validate_json(response.message.content).confidence
         # Ensure the result is a valid integer between 1 and 100
         try:
-            if 1 <= int(rating_response) <= 100:
-                return rating_response
+            if 1 <= int(stock_confidence) <= 100:
+                return stock_confidence
             else:
                 raise ValueError("Rating out of valid range.")
         except (ValueError, TypeError):
@@ -114,7 +109,7 @@ class ReportGeneration:
     @staticmethod
     def get_hold_sell_buy(summary: str) -> dict:
         response = chat(
-            model="llama3.2-vision:11b",
+            model=AI_MODEL,
             messages=[
                 {
                     "role": "user",

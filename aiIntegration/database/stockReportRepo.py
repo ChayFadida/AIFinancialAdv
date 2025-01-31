@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from utils.types.report_types import ReportType
 from bson import ObjectId
 from utils.types.report_status import ReportStatus
-
+from config.app_contex import AI_MODEL
 class StockReportRepository:
     def __init__(self, collection: Collection):
         self.collection = collection
@@ -49,7 +49,8 @@ class StockReportRepository:
             "analysis_data": None,  # Placeholder for actual data
             "created_at": datetime.utcnow(),
             "report_type": report_type.value,
-            "status": "in_progress"
+            "status": "in_progress",
+            "ai_model": AI_MODEL
         }
         result = self.collection.insert_one(report)
         return str(result.inserted_id) 
