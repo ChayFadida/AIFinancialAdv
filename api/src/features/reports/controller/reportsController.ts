@@ -26,7 +26,6 @@ export const getLatestReport = catchAsync(async (req: GetLatestReportRequest, re
 
   // If there is no "done" report but an "in progress" report exists, return 200
   if (!doneExists && inProgressExists) {
-    console.log("Report is still in progress")
     return res.status(201).json({ message: "Report is still in progress" });
   }
 
@@ -89,7 +88,8 @@ export const forceGenerateReport = catchAsync(async (req: GetLatestReportRequest
 
   const inProgressExists = response_in_progress.data && Object.keys(response_in_progress.data).length > 0;
   if (inProgressExists) {
-    return res.status(200).json(response_in_progress.data);
+    console.log("hjew")
+    return res.status(201).json(response_in_progress.data);
   }
   const response = await aiAxios.post(`/stocksReports/analyzeReport`, null, {
     params: { stock: stock_symbol, report_type: report_type }

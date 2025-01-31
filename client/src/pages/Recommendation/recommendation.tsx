@@ -103,7 +103,7 @@ const Recommendation: React.FC = () => {
     analysisType: string
   ): Promise<StockReport | null> => {
     const response = await getQRReport(stockName, analysisType, wantUpdatedReport);
-
+    console.log(response.status)
     if (response.status === 201 || response.status === 202) {
       setShowGeneratingAlert(true);
       return null;
@@ -196,10 +196,10 @@ const Recommendation: React.FC = () => {
       (item) =>
         item.reportName ===
           `${company_symbol.find((option) => option.stock_symbol === stockName)?.company} ${reportTypeMapping[analysisType]}` &&
-        item.status === "in_progress"
+        item.status === "done"
     );
     
-    if (!existingRow) {
+    if (!existingRow && wantUpdatedReport) {
       setProgressItems([
         ...progressItems,
         {
