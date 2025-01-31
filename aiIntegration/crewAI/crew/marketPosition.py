@@ -83,4 +83,5 @@ class MarketPositionCrew(BaseCrew):
             tasks=self.tasks,
             process=Process.sequential,
             verbose=True,
+            cache=False
         )

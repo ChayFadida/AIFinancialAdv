@@ -71,4 +71,5 @@ class SummaryCrew():
                 "config": {"model": AI_MODEL}, # Set the embedding LLM here
             },
             knowledge_sources=self.getStringKnowledgeSource(),
+            cache=False
         )

@@ -48,6 +48,9 @@ interface StockReport {
   confidence: number;
   currentPrice: number;
   targetPrice: number;
+  hold_stat: number,
+  buy_stat: number,
+  sell_stat: number,
   summary: string;
   keyMetrics: {
     label: string;
@@ -126,6 +129,9 @@ const Recommendation: React.FC = () => {
       currentPrice: 175.34,
       targetPrice: 210.5,
       summary: analysis_data.summary,
+      hold_stat: analysis_data.hold,
+      buy_stat: analysis_data.buy,
+      sell_stat: analysis_data.sell,
       keyMetrics: [
         { label: "Revenue Growth", value: financeData.totalRevenue },
         { label: "Profit Margin", value: financeData.profitMargins },
@@ -691,9 +697,9 @@ const Recommendation: React.FC = () => {
                     series={[
                       {
                         data: [
-                          { id: 0, value: 60, label: 'Buy', color: '#4caf50' },
-                          { id: 1, value: 30, label: 'Sell', color: '#ff1303' },
-                          { id: 2, value: 10, label: 'Neutral', color: '#ff9800' },
+                          { id: 0, value: report.buy_stat, label: 'Buy', color: '#4caf50' },
+                          { id: 1, value: report.sell_stat, label: 'Sell', color: '#ff1303' },
+                          { id: 2, value: report.hold_stat, label: 'Hold', color: '#ff9800' },
                         ],
                         highlightScope: { faded: 'global', highlighted: 'item' },
                       },

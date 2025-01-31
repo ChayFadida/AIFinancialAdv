@@ -6,17 +6,46 @@ from crewAI.crew.valuation import ValuationCrew
 from crewAI.crew.marketPosition import MarketPositionCrew
 from crewAI.crew.summary import SummaryCrew
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from utils.prompts.prompts import summary_prompt
+from utils.prompts.prompts import summary_prompt, getGradesStock
 from config.app_contex import AI_MODEL
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from crewAI.api.stock_api import YahooFinanceAPI
 from utils.types.report_types import ReportType
 from crewAI.tools.report_tool import ReportTools
+from ollama import chat
+from ollama import chat
+from pydantic import BaseModel, Field
 
 llm = ChatOllama(model=AI_MODEL)
 prompt = ChatPromptTemplate.from_template(summary_prompt)
 chain = prompt | llm
+
+def getGradesStock(summary: str):
+    return f"""I want you to analyze the following stock summary and provide a structured recommendation. Based on the summary, assign a percentage value for 'keep' (buy/hold), 'sell,' and 'hold' such that their total equals exactly 100. The percentages should reflect the sentiment and risk assessment derived from the summary.
+            Consider technical indicators, market trends, and general stock performance when determining the best distribution. The recommendation should be returned in the following structured format:
+
+            summary: A brief explanation of the stock's outlook.
+            keep: A percentage (0-100) representing the likelihood of continuing to hold or buy the stock.
+            sell: A percentage (0-100) representing the likelihood of selling the stock.
+            hold: A percentage (0-100) representing a neutral stance.
+            Ensure that keep + sell + hold = 100 and that the distribution aligns with the insights provided in the summary.
+            this is the summary: {summary}
+            """
+class StockRecommendation(BaseModel):
+    summary: str
+    buy: int = Field(ge=0, le=100)
+    sell: int = Field(ge=0, le=100)
+    hold: int = Field(ge=0, le=100)
+    def normalize(self):
+        """Ensure the sum of keep, sell, and hold is exactly 100."""
+        total = self.keep + self.sell + self.hold
+        if total != 100:
+            scale = 100 / total
+            self.buy = round(self.keep * scale)
+            self.sell = round(self.sell * scale)
+            self.hold = 100 - (self.keep + self.sell)  # Ensure it sums exactly to 100
+        return self
 class ReportGeneration:
 
     @staticmethod
@@ -82,6 +111,20 @@ class ReportGeneration:
             log.error("Invalid response from the model. Expected an integer between 1 and 100.")
             return -1  # Default fallback
 
+    @staticmethod
+    def get_hold_sell_buy(summary: str) -> dict:
+        response = chat(
+            model="llama3.2-vision:11b",
+            messages=[
+                {
+                    "role": "user",
+                    "content": getGradesStock(summary),
+                }
+            ],
+            format=StockRecommendation.model_json_schema(),
+        )
+        stock_info = StockRecommendation.model_validate_json(response.message.content)
+        return stock_info
 
     @staticmethod
     def getReport(stock_symbol: str, report_type: ReportType):
@@ -114,5 +157,10 @@ class ReportGeneration:
         summary = ReportGeneration.analyze(AnalysisType.SUMMARY, stock_symbol, report_type, results)
         results['summary'] = summary
         results['score'] = ReportGeneration.get_stock_rating(summary)
+        get_hold_sell_buy = ReportGeneration.get_hold_sell_buy(summary)
+        results['hold'] = get_hold_sell_buy.hold
+        results['sell'] = get_hold_sell_buy.sell
+        results['buy'] = get_hold_sell_buy.buy
+        results['chart_explain'] = get_hold_sell_buy.summary
         log.info("finish to generate to report")
         return results

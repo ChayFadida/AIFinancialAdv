@@ -80,12 +80,15 @@ class StockReportRepository:
 
     def get_all_reports(self):
         """
-        Retrieve all stock reports from the database.
+        Retrieve all stock reports from the database with status 'IN_PROGRESS' or 'DONE'.
 
         Returns:
-            list: A list of all reports.
+            list: A list of all reports with status 'in_progress' or 'done'.
         """
-        return list(self.collection.find({}, {"_id": 0}))
+        return list(self.collection.find(
+            {"status": {"$in": [ReportStatus.IN_PROGRESS.value, ReportStatus.DONE.value]}},  # Correct syntax
+            {"_id": 0}  # Exclude the _id field from the result
+        ))
 
     def get_latest_report(self, stock_symbol: str, report_type: ReportType, report_status: ReportStatus):
         """

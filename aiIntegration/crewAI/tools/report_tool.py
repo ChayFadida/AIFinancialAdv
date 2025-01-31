@@ -8,18 +8,43 @@ import threading
 from crewAI.tools.calcTool import CalculatorTool
 from crewai_tools import SerperDevTool
 from crewai_tools import SeleniumScrapingTool
-from crewai_tools import ScrapeWebsiteTool
+from datetime import datetime
 
 file_read_tool_desc = 'A tool to read reports from txt files'
 download_lock = threading.Lock()
-
+cache_folder = 'crewAI/reports_cache'
 class ReportTools:
+    report_cache = {}
+    @staticmethod
+    def get_latest_report(stock, report_type):
+        # Construct the path format
+        report_folder = cache_folder
+        files = []
+
+        # Loop through the files in the report folder
+        for filename in os.listdir(report_folder):
+            if filename.startswith(f"{stock}_") and filename.endswith(f"10{report_type}.txt"):
+                # Extract the date part of the file name
+                try:
+                    date_str = filename.split('_')[1]  # Assuming the second part is the date
+                    report_date = datetime.strptime(date_str, "%Y-%m-%d")  # Adjust the format if necessary
+                    files.append((report_date, filename))
+                except Exception as e:
+                    print(f"Error processing file {filename}: {e}")
+
+        # Find the file with the latest date
+        if files:
+            latest_file = max(files, key=lambda x: x[0])
+            return latest_file[1]  # Return the filename
+        else:
+            return None  # No file found matching the pattern
+
     @staticmethod
     def check_for_report(stock, report_type):
         report_info = Reports.get_latest_report_info(stock ,report_type)
         report_date = report_info.get('report_date', '')
         report_url = report_info.get('report_url', '')
-        file_path = f"crewAI/reports_cache/{stock}_{report_date}_10{report_type}.txt"
+        file_path = f"{cache_folder}/{stock}_{report_date}_10{report_type}.txt"
         with download_lock:
             if not os.path.exists(file_path):
                 log.info(f'{report_type} {report_date} report for {stock} does not exist. retrive report from API')
@@ -33,11 +58,14 @@ class ReportTools:
     @staticmethod
     def get_tools(report_type: ReportType, stock: str):
         """Returns new instances of FileReadTool based on the report type."""
-        
-        # Get the correct report path from the BaseCrew instance
-        report_path_10k = ReportTools.check_for_report(stock, 'K')
-        report_path_10q = ReportTools.check_for_report(stock, 'Q')
-        
+        report_path_10k = report_path_10q = None
+        if report_type in [ReportType.QK_REPORT, ReportType.BOTH]:
+            # Get the correct report path from the BaseCrew instance
+            report_path_10k = ReportTools.get_latest_report(stock, 'K')
+            report_path_10q = ReportTools.get_latest_report(stock, 'Q')
+            if not report_path_10k or not report_path_10q:
+                log.warning(f"Missing report for 10-K or 10-Q for stock {stock}")
+
         # Define a mapping from report type to tool generation
         tool_mapping = {
             ReportType.QK_REPORT: lambda: [
