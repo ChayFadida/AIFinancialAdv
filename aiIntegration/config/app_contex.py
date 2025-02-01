@@ -1,6 +1,7 @@
 import os
 
 AI_MODEL = os.getenv("AI_MODEL", "llama3.2-vision:11b")
+CHAT_BOT_AI_MODEL= os.getenv("AI_MODEL", "0xroyce/plutus:latest")
 DB_URL = os.getenv('DB_URL')
 DB_NAME='financeAdv'
 api_title = "AI-Driven Financial Advisor API"
