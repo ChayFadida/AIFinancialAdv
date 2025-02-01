@@ -49,7 +49,7 @@ def test_get_all_reports(stock_report_repo, mock_collection):
     assert len(result) == 2
     assert result[0]["stock_symbol"] == "AAPL"
     assert result[1]["stock_symbol"] == "GOOGL"
-    mock_collection.find.assert_called_once_with({}, {"_id": 0})
+    mock_collection.find.assert_called_once_with({"status": {"$in": [ReportStatus.IN_PROGRESS.value, ReportStatus.DONE.value]}}, {"_id": 0})
 
 
 
